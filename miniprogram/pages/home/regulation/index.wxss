@@ -1,0 +1,22 @@
+/* pages/home/regulation/index.wxss */
+.item{
+  width: 90%;
+  height: 80rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+}
+.item text{
+  width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+image{
+  height: 52rpx;
+  width: 52rpx;
+}

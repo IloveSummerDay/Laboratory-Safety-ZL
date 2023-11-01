@@ -1,0 +1,42 @@
+<!-- pages/studytask/b_knowledge_introduce/knowledge_introduce.wxml灭火器知识介绍 -->
+<view class="knowintro_top">
+    <image src="http://114.55.238.17:81/LabSafe/icons/studytask/b_knowledge_introduce/know_intro.png" />
+</view>
+<!-- 灭火器分类 -->
+<view class="knowintro_center">
+    <cover-view class="center_bold">灭火器分类</cover-view>
+    <cover-view class="center_light">点击可跳转到对应页面哦</cover-view>
+
+    <navigator open-type="redirect" url="../e_carbondioxidefire_extinguisher/carbondioxidefire_extinguisher" open-type="redirect">
+        <cover-view class="center_er">二氧化碳灭火器</cover-view>
+    </navigator>
+    <navigator open-type="redirect" url="../d_drypowderfire_extinguisher/drypowderfire_extinguishe" open-type="redirect">
+        <cover-view class="center_gan">干粉灭火器</cover-view>
+    </navigator>
+    <cover-view class="center_jie">洁净空气灭火器</cover-view>
+    <cover-view class="center_sui">水滴型灭火器</cover-view>
+</view>
+<!-- 灭火器小知识 -->
+<view class="knowintro_bottom">
+    <cover-view class="bottom_bold">灭火器小知识</cover-view>
+    <cover-view class="bottom_titleone">四位字母标识:</cover-view>
+    <cover-view class="bottom_one">第一位：灭火器本身的标识M，表示灭火 的“灭”</cover-view>
+    <cover-view class="bottom_two">第二位：灭火器的代号，F表示干粉、T表示二氧化</cover-view>
+    <cover-view class="bottom_three">碳、Q表示清水</cover-view>
+    <cover-view class="bottom_four">第三位：形式号，S手提、T推车、B背负式</cover-view>
+    <cover-view class="bottom_five">第四位：阿拉伯数字代表灭火器重量或容积</cover-view>
+
+    <cover-view class="bottom_titletwo">注意事项：</cover-view>
+    <cover-view class="bottom_six">1.实验室内不是所有火灾都能用灭火器扑灭的</cover-view>
+    <cover-view class="bottom_seven">2.灭火器必须放在容易拿的高度</cover-view>
+    <cover-view class="bottom_eight">3.在灭火器箱、消火栓箱前不要有防止阻碍拿取灭</cover-view>
+    <cover-view class="bottom_nine">火器的物品，要确保通畅</cover-view>
+</view>
+
+<navigator open-type="redirect" url="../c_show_video/show_video" open-type="redirect">
+    <view class="knowintro_button">使用演示</view>
+</navigator>
+
+
+
+

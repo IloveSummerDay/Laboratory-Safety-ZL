@@ -1,0 +1,27 @@
+<!--pages/studytask/d_drypowderfire_extinguisher/drypowderfire_extinguishe.wxml-->
+<view class="drypowder_text">干粉灭火器</view>
+<view class="drypowder_top">
+    <image src="http://114.55.238.17:81/LabSafe/icons/studytask/d_drypowderfire_extinguisher/drypowder.png" />
+</view>
+<!-- 灭火器使用方法 -->
+<view class="drypowder_bottom">
+    <cover-view class="bottom1_bold">使用方法：</cover-view>
+    <cover-view class="bottom1_titleone">取出灭火器——>拔掉保险栓——>压合压把</cover-view>
+    <cover-view class="bottom1_one">——>将喷嘴对准火焰根部喷射</cover-view>
+    <cover-view class="bottom1_two">分类：1.BC干粉灭火器：灭火剂为碳酸氢钠，不适用于扑</cover-view>
+    <cover-view class="bottom1_three">灭固体物质火灾，适用于扑灭油类、电气、可燃</cover-view>
+    <cover-view class="bottom1_four">性气体引起的火灾，能扑灭B,C,E型火灾。</cover-view>
+    <cover-view class="bottom1_five">2.ABC干粉灭火器：灭火剂为磷酸铵盐，可扑灭A</cover-view>
+    <cover-view class="bottom1_six">（固体有机物质）类火灾,B（液体或固体可燃物）</cover-view>
+    <cover-view class="bottom1_seven">类火灾,C（气体）类火灾,E类（带电）类火灾。</cover-view>
+    
+    <cover-view class="bottom1_titletwo">注意事项：检查灭火器是否在正常的压力范围 ！</cover-view>
+    <cover-view class="bottom1_eight">ABC灭火器BC灭火器两者灭火剂不可混合</cover-view>
+</view>
+                            
+<navigator open-type="redirect" url="../b_knowledge_introduce/knowledge_introduce" open-type="redirect">
+    <view class="drypowder_back">返回</view>
+</navigator>
+<navigator open-type="redirect" url="../c_show_video/show_video" open-type="redirect">
+    <view class="drypowder_detail">详细操作</view>
+</navigator>

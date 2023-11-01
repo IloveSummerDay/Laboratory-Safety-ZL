@@ -1,0 +1,19 @@
+<!--pages/message/message.wxml-->
+<block wx:for="{{ messageList }}" wx:key="index">
+  <navigator class="message_item shadow" url="../message_detail/index?imgURL={{ 'imgURL' }}&time={{ messageList[index].time }}&messageClassify={{ messageList[index].messageClassify }}&messageTitle={{ messageList[index].messageTitle }}&messageContent={{ messageList[index].messageContent }}"
+  bindtap="handleClick" data-index="{{index}}">
+    <view class="title_box">
+      <image src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/消息通知icon/system_mes_icon.png" mode="aspectFit" />
+      <view class="title_text">
+        {{ messageList[index].messageClassify }}
+      </view>
+      <view class="title_time">
+        {{ messageList[index].time }}
+      </view>
+    </view>
+    <view class="content_box">
+      <text>{{ messageList[index].messageContent }}</text>
+      <image src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/消息通知icon/right_arrow.png" mode="" />
+    </view>
+  </navigator>
+</block>

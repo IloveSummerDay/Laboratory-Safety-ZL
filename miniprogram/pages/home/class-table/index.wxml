@@ -1,0 +1,23 @@
+<!--pages/home/safety-manual/class-table/index.wxml-->
+<video src="{{videoTempURL}}" autoplay />
+<t-tab-bar defaultValue="{{1}}" theme="tag" split="{{false}}" safe-area-inset-bottom="{{false}}" class="nav_bar" fixed="{{false}}" bind:change="handleChange">
+  <t-tab-bar-item wx:for="{{navList}}" wx:key="index" value="{{item.value}}" sub-tab-bar="{{item.children}}">
+    {{item.label}}
+  </t-tab-bar-item>
+</t-tab-bar>
+<scroll-view class="class_list" scroll-y="{{ true }}" enable-flex>
+  <block wx:for="{{ titleList }}" wx:key="index" wx:if="{{ nowNav == 1 }}">
+    <view class="class_item" bindtap="handleSwapVideo" data-index="{{index}}">
+      <text>{{index+1}}. {{item}}</text>
+      <image src="../../../icons/home/video-play.png" mode="" />
+    </view>
+  </block>
+
+  <view wx:if="{{ nowNav == 2 }}">
+    无视频介绍
+  </view>
+
+  <view wx:if="{{ nowNav == 3 }}">
+    无课程介绍
+  </view>
+</scroll-view>

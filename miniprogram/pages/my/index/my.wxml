@@ -1,0 +1,63 @@
+<!-- pages/my/a_my/my.wxml -->
+<view class="top_box"> </view>
+
+<view class="{{ isLogin ? 'login_box_yes' : 'login_box_no' }} shadow">
+  <!-- if  请登录-->
+  <block wx:if="{{!isLogin}}">
+    <navigator class="login_btn" url="../login/index"> 请登录 </navigator>
+  </block>
+  <!-- else  登录后-->
+  <block wx:else>
+    <button
+      class="avatar-wrapper avatar_btn"
+      open-type="chooseAvatar"
+      bind:chooseavatar="onChooseAvatar"
+    >
+      <image style="width: 100%; height: 100%" class="avatar" src="{{avatarUrl}}"></image>
+    </button>
+    <input
+      type="nickname"
+      class="weui-input nick_name"
+      placeholder="点击添加昵称"
+      bindblur="onChooseNickName"
+    />
+  </block>
+</view>
+
+<navigator url="../progress/progress" class="func_item shadow" bindtap="handleClick">
+  <image
+    class="left_icon"
+    src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/个人中心icon/progress.png"
+  />
+  <text>学习进度统计</text>
+  <image
+    class="right_icon"
+    src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/消息通知icon/right_arrow.png"
+  />
+</navigator>
+<navigator
+  url="../identifying_safety/identifying_safety"
+  class="func_item shadow"
+  bindtap="handleClick"
+>
+  <image
+    class="left_icon"
+    src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/个人中心icon/identifying.png"
+  />
+  <text>安全标识</text>
+  <image
+    class="right_icon"
+    src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/消息通知icon/right_arrow.png"
+  />
+</navigator>
+<navigator url="../diploma/index" class="func_item shadow" bindtap="handleClick">
+  <image
+    class="left_icon"
+    src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/个人中心icon/encourage.png"
+  />
+  <text>所获证书</text>
+  <image
+    class="right_icon"
+    src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/消息通知icon/right_arrow.png"
+  />
+</navigator>

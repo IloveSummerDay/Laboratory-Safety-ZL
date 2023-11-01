@@ -1,0 +1,25 @@
+/**app.wxss**/
+@font-face{
+  font-family: "黑体 normal";
+  src: url("https://636c-cloud1-9gesq8mi1d4ae3de-1314621544.tcb.qcloud.la/%E5%AD%97%E4%BD%93woff2/%E9%BB%91%E4%BD%93%20normal.woff2?sign=da2e061e5881e9399803f8d7f729c1cd&t=1698828757") format("woff2");
+}
+page{
+  font-family: "黑体 normal";
+}
+.shadow{
+  box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.02);
+}
+button {
+  background: initial;
+}
+button:focus{
+  outline: 0;
+}
+button::after{
+  border: none;
+}
+page {
+  height: 100%;
+  width: 100%;
+  background: #f6f6f6;
+}

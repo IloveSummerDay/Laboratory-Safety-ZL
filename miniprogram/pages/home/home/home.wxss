@@ -1,0 +1,150 @@
+/* pages/home/home/home.wxss */
+/* 搜索框样式 */
+.search {
+  width: 704rpx;
+  height: 60rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  border-radius: 14rpx;
+  font-size: 28rpx;
+  line-height: 150%;
+  border: rgba(17, 17, 17, 0.03) solid 2rpx;
+  text-align: center;
+  color: rgba(17, 17, 17, 1);
+  background-color: rgba(255, 255, 255, 1);
+  position: relative;
+}
+
+/* 搜索框图片样式 */
+.search image {
+  position: absolute;
+  width: 37rpx;
+  height: 37rpx;
+  left: 253rpx;
+  top: 16rpx;
+}
+
+.search_text {
+  position: absolute;
+  left: 297rpx;
+  top: 16rpx;
+}
+
+.home_center {
+  width: 704rpx;
+  height: 416rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+}
+
+.down {
+  position: relative;
+  width: 704rpx;
+  height: 385rpx;
+  top: 20rpx;
+  left: 25rpx;
+}
+
+.up {
+  position: absolute;
+  top: 235rpx;
+  left: 134rpx;
+  width: 450rpx;
+  height: 121rpx;
+}
+
+/* 安全常识；实时小组 */
+.home_bottom {
+  width: 100%;
+  height: 100%;
+  margin-top: 48rpx;
+  position: relative;
+}
+
+.safetytips {
+  width: 704rpx;
+  height: 316rpx;
+  top: 0rpx;
+  left: 15rpx;
+  position: absolute;
+}
+
+.group_cube {
+  width: 704rpx;
+  height: 316rpx;
+  top: 348rpx;
+  left: 15rpx;
+  position: absolute;
+}
+
+.start_scan {
+  display: flex;
+  width: 600rpx;
+  height: 122rpx;
+  background-color: #105A9D;
+  border-radius: 16px;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.start_scan span {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.desc {
+  position: absolute;
+  left: 380rpx;
+  top: 96rpx;
+}
+
+.desc>span {
+  display: block;
+  color: rgb(17, 17, 17);
+  font-size: 40rpx;
+  line-height: 150%;
+  text-align: left;
+}
+
+.card {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 704rpx;
+  height: 280rpx;
+  border-radius: 12px;
+  box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.02);
+  background-color: #fff;
+  margin-bottom: 50rpx;
+}
+
+.card .title {
+  position: absolute;
+  color: rgb(17, 17, 17);
+  font-size: 16px;
+  line-height: 150%;
+  text-align: left;
+  font-weight: bold;
+  top: 40rpx;
+  left: 46rpx;
+}
+
+.card .content {
+  position: absolute;
+  top: 115rpx;
+  left: 46rpx;
+  color: rgba(17, 17, 17, 1);
+  font-size: 13px;
+  line-height: 150%;
+  text-align: left;
+  width: 340rpx;
+}

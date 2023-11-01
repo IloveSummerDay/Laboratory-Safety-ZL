@@ -1,0 +1,21 @@
+/* pages/studytask/k_lab_goods/lab_goods.wxss */
+.lab_goods_light{
+  margin-left: 9px;
+  margin-bottom: 20rpx;
+	color: rgba(0, 0, 0, 1);
+	font-size: 14px;
+}
+.labgoods_back{
+  position: absolute;
+  height: 58rpx;
+  width: 105rpx;
+  left: 585rpx;
+  top: 838rpx;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(44, 80, 145, 1);
+  border-radius: 9rpx;
+  font-size: 28rpx;
+  line-height: 212%;
+  box-shadow: 0rpx 12rpx 12rpx 0rpx rgba(0, 0, 0, 0.03);
+  text-align: center;
+}

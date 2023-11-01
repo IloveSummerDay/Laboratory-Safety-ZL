@@ -1,0 +1,83 @@
+{
+  "pages": [
+    "pages/home/home/home",
+    "pages/my/index/my",
+    "pages/home/scan/scan",
+    "pages/studytask/b_knowledge_introduce/knowledge_introduce",
+    "pages/studytask/d_drypowderfire_extinguisher/drypowderfire_extinguishe",
+    "pages/studytask/e_carbondioxidefire_extinguisher/carbondioxidefire_extinguisher",
+    "pages/studytask/f_Masterbrake_switch/Masterbrake_switch",
+    "pages/studytask/g_socket/socket",
+    "pages/studytask/h_plug/plug",
+    "pages/studytask/i_plug_tips/plug_tips",
+    "pages/studytask/j_room_goods/room_goods",
+    "pages/studytask/k_lab_goods/lab_goods",
+    "pages/studytask/l_power_lines/power_lines",
+    "pages/studytask/m_safety_notice/safety_notice",
+    "pages/my/c_other_imformations/other_imformations",
+    "pages/my/e_points_list/points_list",
+    "pages/my/f_myself_studytask_totally/myself_studytask_totally",
+    "pages/my/h_add_lab/add_lab",
+    "pages/my/i_all_studytask_totally/all_studytask_totally",
+    "pages/my/j_study_estimate/study_estimate",
+    "pages/my/k_login/login",
+    "pages/group/b_member_argue/member_argue",
+    "pages/studytask/c_show_video/show_video",
+    "pages/message/index/message",
+    "pages/study/exam/exam",
+    "pages/study/practice/practice",
+    "pages/study/index/index",
+    "pages/my/progress/progress",
+    "pages/my/identifying_safety/identifying_safety",
+    "pages/study/answer/answer",
+    "pages/home/safety-manual/index",
+    "pages/home/class-table/index",
+    "pages/my/diploma/index",
+    "pages/message/message_detail/index",
+    "pages/home/regulation/index",
+    "pages/home/regulation-detail/index",
+    "pages/study-aid/qestion-book/index",
+    "pages/study-aid/study-notes/index",
+    "pages/my/login/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "实验室安全",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#335ca5",
+    "backgroundColor": "#f8f8f8",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home/home",
+        "text": "安全教育",
+        "iconPath": "icons/home/home.png",
+        "selectedIconPath": "icons/home/home-o.png"
+      },
+      {
+        "pagePath": "pages/message/index/message",
+        "text": "消息",
+        "iconPath": "icons/message/message_bav_icon_o.png",
+        "selectedIconPath": "icons/message/message_bav_icon.png"
+      },
+      {
+        "pagePath": "pages/study/index/index",
+        "text": "学习考试",
+        "iconPath": "icons/study/study_bar_icon.png",
+        "selectedIconPath": "icons/study/study_bar_icon_o.png"
+      },
+      {
+        "pagePath": "pages/my/index/my",
+        "text": "我的",
+        "iconPath": "icons/home/my.png",
+        "selectedIconPath": "icons/home/my-o.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

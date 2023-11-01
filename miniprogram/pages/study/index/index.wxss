@@ -1,0 +1,59 @@
+/* pages/study/index/index.wxss */
+
+.choose_box{
+  width: 90%;
+  height: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 100rpx;
+  padding-bottom: 40rpx;
+}
+.choose{
+  width: 45%;
+  height: 100%;
+  border-radius: 40rpx;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: linear-gradient(to bottom, #1772c7 0%, #F8F8F8 90%);
+}
+.choose image{
+  width: 110rpx;
+  height: 150rpx;
+}
+.func_box{
+  width: 80%;
+  margin: 0 auto;
+}
+.topic_box, .note_box{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 30rpx;
+  margin-top: 30rpx;
+  position: relative;
+  background-color: white;
+}
+.func_box image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 30rpx;
+}
+.func_box text{
+  margin-left: 20rpx;
+}
+.right_arrow{
+  position: absolute;
+  right: 20rpx;
+}
+.topic_box:active, .note_box:active{
+  background-color: whitesmoke;
+}
+
+
+

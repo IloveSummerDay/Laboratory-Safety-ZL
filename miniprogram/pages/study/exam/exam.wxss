@@ -1,0 +1,74 @@
+/* pages/study/exam/exam.wxss */
+page {
+  --td-button-border-width: 0;
+  --td-countdown-bg-color: #105a9d;
+  --td-radio-bg-color: #F8F8F8
+}
+.func_box {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.func_box .answered,
+.func_box .submit {
+  position: absolute;
+  right: 40rpx;
+  background-color: #105a9d;
+  width: 100rpx;
+  height: 56rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10rpx;
+  color: white;
+}
+.func_box .submit {
+  position: absolute;
+  left: 40rpx;
+}
+
+.exam_questions {
+  width: 90%;
+  margin: 20rpx auto;
+}
+.question_text {
+  width: 75%;
+  height: 1.3em;
+  margin-left: 10rpx;
+  margin-top: 20%;
+  line-height: 1.5em;
+}
+.prev_next {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.prev_btn,
+.next_btn {
+  width: 100rpx;
+  height: 50rpx;
+}
+.func_box .submit:active {
+  background-color: #3178bb;
+}
+.prev_next .t-button {
+  --td-button-primary-bg-color: #105a9d;
+  --td-button-primary-active-bg-color: #3178bb;
+  width: 40%;
+}
+.exam_questions .t-button {
+  --td-button-default-disabled-color: white;
+  --td-button-default-disabled-bg: #b3b3b3;
+  width: 4em;
+  height: 1.3em;
+}
+.exam_questions .t-radio-group {
+  width: 100%;
+  --td-radio-bg-color: #f8f8f8;
+  --td-radio-icon-checked-color: #105a9d;
+}

@@ -1,0 +1,128 @@
+/* pages/studytask/g_socket/socket.wxss */
+/* 直接设置页面背景 */
+page{
+  background:#f8f8f8;
+}
+.index{
+  position: relative;
+}
+.three_photo{
+  width: 704rpx;
+	/* height: 504rpx; */
+  left: 24rpx;
+  background-color: rgba(51, 92, 165, 0.4);
+	border-radius: 9rpx;
+  position: absolute;
+}
+.socket_top{
+  position: absolute;
+  width: 704rpx;
+	height: 246rpx;
+	left: 24rpx;
+	top: 479rpx;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 9rpx;
+	font-size: 28rpx;
+	line-height: 150%;
+	box-shadow: 0rpx 16rpx 16rpx 0rpx rgba(61, 108, 195, 0.05);
+}
+.socket_top image{
+  position: absolute;
+  width: 176rpx;
+	height: 176rpx;
+	left: 28rpx;
+	top: 26rpx;
+}
+.top_bluetext,.top_blacktext1,.top_blacktext2,.top_blacktext3{
+  position: absolute;
+  right: 22rpx;
+}
+.top_bluetext{
+  color: rgba(44, 80, 145, 1);
+	font-size: 32rpx;
+  top: 36rpx;
+}
+.top_blacktext1{
+  top: 91rpx;
+}
+.top_blacktext2{
+  top: 132rpx;
+}
+.top_blacktext3{
+  top: 177rpx;
+}
+/* center */
+.socket_center{
+  position: absolute;
+  width: 704rpx;
+	height: 246rpx;
+	left: 24rpx;
+	top: 765rpx;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 9rpx;
+	font-size: 28rpx;
+	line-height: 150%;
+	box-shadow: 0rpx 16rpx 16rpx 0rpx rgba(61, 108, 195, 0.05);
+}
+.socket_center image{
+  position: absolute;
+  width: 176rpx;
+	height: 176rpx;
+	left: 480rpx;
+	top: 31rpx;
+}
+.center_bluetext,.center_blacktext1,.center_blacktext2,.center_blacktext3{
+  position: absolute;
+  left: 22rpx;
+}
+.center_bluetext{
+  color: rgba(44, 80, 145, 1);
+	font-size: 32rpx;
+  top: 36rpx;
+}
+.center_blacktext1{
+  top: 91rpx;
+}
+.center_blacktext2{
+  top: 132rpx;
+}
+/* bottom */
+.socket_bottom{
+  position: absolute;
+  width: 704rpx;
+	height: 246rpx;
+	left: 24rpx;
+	top: 1054rpx;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 9rpx;
+	font-size: 28rpx;
+	line-height: 150%;
+	box-shadow: 0rpx 16rpx 16rpx 0rpx rgba(61, 108, 195, 0.05);
+}
+.socket_bottom image{
+  position: absolute;
+  width: 176rpx;
+	height: 176rpx;
+	left: 28rpx;
+	top: 42rpx;
+}
+.bottom_bluetext,.bottom_blacktext1,.bottom_blacktext2,.bottom_blacktext3{
+  position: absolute;
+  right: 22rpx;
+}
+.bottom_bluetext{
+  color: rgba(44, 80, 145, 1);
+	font-size: 32rpx;
+  top: 36rpx;
+}
+.bottom_blacktext1{
+  top: 91rpx;
+}
+.bottom_blacktext2{
+  top: 132rpx;
+}
+
+

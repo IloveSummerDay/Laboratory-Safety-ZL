@@ -1,0 +1,10 @@
+/* pages/my/identifying_safety/identifying_safety.wxss */
+image{
+  width: 100vw;
+}
+.warn_icon{
+  margin-top: 40rpx;
+}
+.tip_icon{
+  margin-bottom: 40rpx;
+}

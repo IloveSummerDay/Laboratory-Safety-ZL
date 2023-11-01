@@ -1,0 +1,156 @@
+/* pages/studytask/b_knowledge_introduce/knowledge_introduce.wxss */
+/* 直接设置页面背景 */
+page{
+  background:#f8f8f8;
+}
+.knowintro_top{
+  width: 704rpx;
+  background-color: white;
+  height: 534rpx;
+	border-radius: 9rpx;
+  margin-left: 25rpx;
+  box-shadow: 0rpx 12rpx 12rpx 0rpx rgba(0, 0, 0, 0.03);
+}
+.knowintro_top image{
+  width: 523rpx;
+  height: 571rpx;
+  margin-left: 90rpx;
+  margin-top: -39rpx;
+}
+/* 灭火器分类 */
+.knowintro_center{
+  width: 704rpx;
+  background-color: white;
+  height: 376rpx;
+  border-radius: 9rpx;
+  box-shadow: 0rpx 12rpx 12rpx 0rpx rgba(0, 0, 0, 0.03);
+  margin-left: 25rpx;
+  margin-top: 39rpx;
+  position: relative;
+
+}
+.center_bold{
+  position: absolute;
+  left: 272rpx;
+	top: 24rpx;
+	color: rgba(17, 17, 17, 1);
+	font-size: 32rpx;
+	font-weight: bold;
+}
+.center_light{
+  position: absolute;
+  left: 242rpx;
+	top: 84rpx;
+	color: rgba(165, 165, 165, 1);
+	font-size: 20rpx;
+}
+.center_er,.center_gan,.center_jie,.center_jie,.center_sui{
+  position: absolute;
+  width: 262rpx;
+	height: 70rpx;
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(44, 80, 145, 1);
+	border-radius: 9rpx;
+	font-size: 28rpx;
+	line-height: 250%;
+	text-align: center;
+}
+.center_er{
+	left: 48rpx;
+	top: 144rpx;
+}
+.center_gan{
+  left: 366rpx;
+	top: 144rpx;
+}
+.center_jie{
+  left: 48rpx;
+	top: 250rpx;
+}
+.center_sui{
+  left: 366rpx;
+	top: 250rpx;
+}
+/* 灭火器小知识 */
+.knowintro_bottom{
+  width: 704rpx;
+  background-color: white;
+  height: 746rpx;
+	border-radius: 9rpx;
+  margin-left: 25rpx;
+  margin-top: 39rpx;
+  box-shadow: 0rpx 12rpx 12rpx 0rpx rgba(0, 0, 0, 0.03);
+  position: relative;
+}
+.bottom_bold{
+  position: absolute;
+  left: 272rpx;
+  top: 24rpx;
+	color: rgba(17, 17, 17, 1);
+	font-size: 32rpx;
+	font-weight: bold;
+}
+.bottom_titleone,.bottom_one,.bottom_two,.bottom_three,.bottom_four,.bottom_five,.bottom_titletwo,.bottom_six,.bottom_seven,.bottom_eight,.bottom_nine{
+  position: absolute;
+	color: rgba(17, 17, 17, 1);
+	font-size: 28rpx;
+}
+.bottom_titleone{
+  left: 23rpx;
+	top: 156rpx;
+}
+.bottom_one{
+	left: 40rpx;
+	top: 210rpx;
+}
+.bottom_two{
+  left: 40rpx;
+	top: 252rpx;
+}
+.bottom_three{
+  left: 40rpx;
+	top: 291rpx;
+}
+.bottom_four{
+  left: 40rpx;
+	top: 336rpx;
+}
+.bottom_five{
+  left: 40rpx;
+	top: 378rpx;
+}
+.bottom_titletwo{
+  left: 23rpx;
+	top: 462rpx;
+}
+.bottom_six{
+  left: 40rpx;
+  top: 518rpx;
+}
+.bottom_seven{
+  left: 40rpx;
+  top: 564rpx;
+}
+.bottom_eight{
+  left: 40rpx;
+  top: 610rpx;
+}
+.bottom_nine{
+  left: 40rpx;
+  top: 655rpx;
+}
+/* 按钮 */
+.knowintro_button{
+  position: absolute;
+  width: 232rpx;
+	height: 70rpx;
+	left: 494rpx;
+	top: 1755rpx;
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(44, 80, 145, 1);
+	border-radius: 9rpx;
+	font-size: 28rpx;
+	line-height: 250%;
+	box-shadow: 0rpx 12rpx 12rpx 0rpx rgba(0, 0, 0, 0.03);
+	text-align: center;
+}

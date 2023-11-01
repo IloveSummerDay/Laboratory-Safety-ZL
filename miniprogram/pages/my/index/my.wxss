@@ -1,0 +1,99 @@
+/* pages/my/a_my/my.wxss */
+.top_box {
+  width: 100%;
+  height: 20%;
+  background-color: #105a9d;
+}
+.login_box_no,
+.login_box_yes {
+  width: 90%;
+  height: 20%;
+  background-color: white;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20rpx;
+  margin-top: 40rpx;
+  margin-bottom: 90rpx;
+}
+.login_box_yes {
+  position: relative;
+}
+.head_img {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 70rpx;
+  position: absolute;
+  left: 10%;
+  object-fit: contain;
+  padding: 0;
+}
+.avatar_btn {
+  width: 140rpx;
+  height: 140rpx;
+  position: absolute;
+  left: 10%;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+.avatar_btn image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.nick_name {
+  font-size: 40rpx;
+  font-weight: bold;
+  max-width: 400rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  left: 35%;
+}
+.login_btn {
+  width: 50%;
+  height: 40%;
+  border-radius: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 4rpx;
+  color: rgb(88, 88, 88);
+  border: 2px solid #ccc;
+  font-weight: bold;
+}
+.login_btn:active {
+  background-color: #105a9d;
+  color: white;
+}
+
+.func_item {
+  width: 90%;
+  height: 100rpx;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.func_item image,
+.func_item .left_icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 50rpx;
+}
+.func_item .right_icon {
+  position: absolute;
+  right: 10rpx;
+}
+.func_item text {
+  font-size: 30rpx;
+  margin-left: 40rpx;
+}

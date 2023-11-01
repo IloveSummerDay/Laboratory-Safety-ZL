@@ -1,0 +1,20 @@
+/* pages/my/login/index.wxss */
+page{
+  position: relative;
+  
+}
+.input_box{
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 40rpx;
+}
+.account_input, .password_input{
+  margin-top: 10rpx;
+  --td-input-bg-color: none;
+  --td-input-border-color: #ccc;
+}
+.login_btn{
+  margin-top: 50rpx;
+  --td-button-primary-bg-color: rgba(16, 90, 157, 1);
+  --td-button-border-width: 0;
+}

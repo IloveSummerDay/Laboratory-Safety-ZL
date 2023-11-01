@@ -1,0 +1,23 @@
+/* pages/home/safety-manual/index.wxss */
+image{
+  width: 126rpx;
+  height: 126rpx;
+}
+.box{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30rpx;
+}
+.icon_box{
+  width: 140rpx;
+  height: 230rpx;
+  margin-left: 30rpx;
+  margin-bottom: 30rpx;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}

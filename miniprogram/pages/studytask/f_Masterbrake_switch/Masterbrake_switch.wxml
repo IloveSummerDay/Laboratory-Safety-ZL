@@ -1,0 +1,30 @@
+<!-- 总开关pages/studytask/f_Masterbrake_switch/Masterbrake_switch.wxml -->
+<view class="index">
+  <cover-view class="become_font">{{now_status}}</cover-view>
+  <video 
+  class="switch_video" 
+  src="http://114.55.238.17:81/LabSafe/video/master_switch/master_switch.mp4"
+  controls
+  loop="false"
+  />
+  <cover-view class="bottom_font">提示：离开实验室时需关闭开关哦</cover-view>
+  <view class="open" bindtap="showDialogBtn">开</view>
+  <view class="close" bindtap="showDialogBtn2">关</view>
+  <!-- 弹窗 -->
+  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">请选择当前情况！</view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">本人非最后一位</view>
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">当前为最后离开实验室的人</view>
+    </view>
+  </view>
+   <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal2}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal2}}">
+    <view class="modal-title">请选择当前情况！</view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">本人非最后一位</view>
+      <view class="btn-confirm" bindtap="onConfirm2" data-status="confirm">当前为最后离开实验室的人</view>
+    </view>
+  </view>
+</view>

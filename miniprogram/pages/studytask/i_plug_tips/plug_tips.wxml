@@ -1,0 +1,24 @@
+<!-- 接线板安全要点pages/studytask/i_plug_tips/plug_tips.wxml -->
+<cover-view class="plug_bold">1.避免湿手插拔插头</cover-view>
+<cover-view class="plug_light">水是导体，会导致触电事故发生</cover-view>
+<cover-view class="plug_bold">2.禁止用拽电源线的方法拔插头</cover-view>
+<cover-view class="plug_light">容易江电源线与插头连接的部位拽断，造成电器无法</cover-view>
+<cover-view class="plug_light">正常供电。拽断的部位容易发生短路、漏电，引发火</cover-view>
+<cover-view class="plug_light">灾和触电事故</cover-view>
+
+<cover-view class="plug_bold">3.发现插座插头异常及时更换</cover-view>
+<cover-view class="plug_light">当发现接线板温度过高、出现打火，插头与插座接触</cover-view>
+<cover-view class="plug_light">不良、插头过松或过紧时，应及时停止使用并更换。</cover-view>
+
+<cover-view class="plug_bold">4.避免旧插座超期服役</cover-view>
+<cover-view class="plug_light">插座超过使用寿命后，内部接插的铜件老化，外壳绝</cover-view>
+<cover-view class="plug_light">缘不良，随时都可能发生外壳带电与接触不良现象。</cover-view>
+
+<cover-view class="plug_bold">5.避免“小马拉大车”</cover-view>
+<cover-view class="plug_light">额定电流要求插座所插电器的额定电流不应大于插座</cover-view>
+<cover-view class="plug_light">的额定电流，即不能用小马去拉大车，否则插座会发</cover-view>
+<cover-view class="plug_light">热，影响使用寿命、损坏电器甚至引起火灾。</cover-view>
+
+<navigator open-type="redirect" url="../h_plug/plug" open-type="redirect">
+    <view class="plug_back">返回</view>
+</navigator>

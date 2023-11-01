@@ -1,0 +1,33 @@
+<!-- x学习评价pages/my/j_study_estimate/study_estimate.wxml -->
+<view class="estimate_top">
+  <view class="top_blue"></view>
+  <cover-view class="top_text">学习评价</cover-view>
+  <!-- ftp://admin:admin@192.168.1.100/test.mp3 -->
+  <!-- <image class="date" src="ftp://ftpuser:123456abcABC,.@114.55.238.17:21/LabSafe/icons/my/j_study_estimate/estimate_date.png" /> -->
+  <image class="date" src="http://114.55.238.17:81/LabSafe/icons/my/j_study_estimate/estimate_date.png" />
+  <image class="esti_left" src="http://114.55.238.17:81/LabSafe/icons/my/j_study_estimate/es_left.png" />
+  <image class="esti_right" src="http://114.55.238.17:81/LabSafe/icons/my/j_study_estimate/es_right.png" />
+  <cover-view class="date_text">{{time}}(今天)</cover-view>
+  <image class="not_good" src="http://114.55.238.17:81/LabSafe/icons/my/j_study_estimate/not_good.png" />
+  <cover-view class="not_good_text">不太行>></cover-view>
+  <cover-view class="esti_button">总时长：3分钟</cover-view>
+</view>
+<view class="estimate_bottom">
+  <view class="bottom_blue"></view>
+  <cover-view class="bottom_get_point">获取积分情况</cover-view>
+  <cover-view class="bottom_grade">等级：1</cover-view>
+  <view class="bottom_linghtblue">
+    <progress 
+      class="esti_progress"
+      percent="40" 
+      backgroundColor="white" 
+      activeColor="rgba(44, 80, 145, 1)" 
+      duration="30"  
+       active>
+    </progress>
+    <cover-view class="bottom_all_point">累计积分：40</cover-view>
+    <cover-view class="bottom_grade_point">当前等级积分：8</cover-view>
+  </view>
+
+</view>
+

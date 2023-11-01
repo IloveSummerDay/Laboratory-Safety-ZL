@@ -1,0 +1,4 @@
+<!--pages/studytask/m_safety_notice/safety_notice.wxml-->
+<view style="position: fixed; height: 100%; width: 100%;">
+  <canvas type="webgl" id="canvas" style="width: 100%; height: 100%;" bindtap="tap" bindtouchstart="touchEventHandler" bindtouchmove="touchEventHandler" bindtouchend="touchEventHandler"></canvas>
+</view>

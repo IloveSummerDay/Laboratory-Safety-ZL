@@ -1,0 +1,47 @@
+<!--pages/home/scan/scan.wxml-->
+<view id="aperture">
+  <!-- <camera device-position="{{cameraSide}}" mode="normal"></camera> -->
+  <!-- <canvas id="canvas" type="2d" style="width:{{canvasWidth}}px;height:{{canvasHeight}}px;"></canvas> -->
+  <image
+    wx:if="{{tempPicVisible}}"
+    src="{{tempPicPath}}"
+    mode="aspectFill"
+    id="tempPic"
+    bindtap="hideModal"
+  ></image>
+</view>
+
+<view id="operation">
+  <text id="tip">提示：完整拍摄学习对象</text>
+  <view id="buttons">
+    <image
+      src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/随手拍icon/album.svg"
+      mode="widthFix"
+      id="album"
+      bindtap="toAlbum"
+    ></image>
+    <div id="capture" bindtap="takePhoto"></div>
+    <image
+      src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/随手拍icon/flip.png"
+      mode="widthFix"
+      id="switch"
+      bindtap="switchSide"
+    ></image>
+  </view>
+</view>
+
+<view
+  id="modal"
+  wx:if="{{showModal}}"
+  style="transform: translateY({{translateY}}px);"
+  bindtap="hideModal"
+>
+  <div id="thumb">
+    <div></div>
+  </div>
+  <view id="showcase">
+    <text id="obj-name">{{objName}}</text>
+    <image id="placeholder" src="{{ objPic }}"></image>
+    <div class="button" id="entry" bindtap="toStudy">{{btnTitle}}</div>
+  </view>
+</view>

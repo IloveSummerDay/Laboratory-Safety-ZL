@@ -1,0 +1,10 @@
+<!--pages/study/practice/practice.wxml-->
+<block wx:for="{{ [1,2] }}" wx:key="{{index}}">
+  <navigator class="module" url="../answer/answer">
+    <image src="../../../icons/scan/flip.png" mode="" />
+    <view class="title_progress">
+      <text>题目名称题目名称题目名称题目名称</text>
+      <progress show-info="{{ true }}" percent="50" stroke-width="10" border-radius="5px" font-size="16" activeColor="#0052D9" backgroundColor="#E7E7E7" />
+    </view>
+  </navigator>
+</block>

@@ -1,0 +1,34 @@
+<!--pages/study/exam/exam.wxml-->
+<view class="func_box">
+  <t-count-down content="default" time="{{ 600 *1000 }}" theme="square" size="large" bind:finish="handleTimeEndSubmit"></t-count-down>
+  <view class="submit" bindtap="handleOpenDialog">
+    交卷
+  </view>
+  <view class="answered">
+    <!-- answered 为已答题数量    answered + 1 为题号-->
+    {{ answered + 1 }}/50
+  </view>
+</view>
+
+<view class="exam_questions">
+  <t-button theme="default" content="{{ type }}" disabled="{{true}}"></t-button>
+  <text class="question_text">{{ question }}:</text>
+  <view>
+    <t-radio-group t-class="theme-card" bind:change="onChangeRadio">
+      <block wx:for="{{ options }}" wx:key="index">
+        <t-radio label="{{options[index].label}}" value="{{index}}" checked="{{checked == index ? true : false}}" bind:change="onChangeRadio" />
+      </block>
+    </t-radio-group>
+  </view>
+  <!-- <t-radio-group bind:change="onChangeRadio" options="{{ options }}" default-value="{{defaultOption}}"/> -->
+</view>
+
+<view class="prev_next">
+  <t-button theme="primary" bindtap="handlePrev" content="上一题"></t-button>
+  <t-button theme="primary" bindtap="handleNext" content="下一题"></t-button>
+</view>
+<t-toast id="t-toast" duration="{{ 500 }}" close="getNextQuestion" style="--td-toast-max-width: 400rpx" />
+<!-- 交卷对话框 -->
+<t-dialog visible="{{showConfirm}}" title="是否提交此次作答" content="提交后将计入学习成绩" confirm-btn="{{ { content: '提交', variant: 'base' } }}" cancel-btn="取消" bind:confirm="onCloseDialog" bind:cancel="onCloseDialog" />
+<!-- 答题情况对话框 -->
+<t-dialog visible="{{showAnswerSituationDialog}}" title="答题情况" content="{{ answerSituation }}" confirm-btn="{{ { content:'知道了' , variant: 'base' } }}" bind:confirm="handleExit" />

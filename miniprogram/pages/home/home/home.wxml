@@ -1,0 +1,63 @@
+<!-- pages/home/home/home.wxml -->
+<view class="search">
+  <image src="http://114.55.238.17:81/LabSafe/icons/home/search.png" />
+  <cover-view class="search_text">搜索安全知识</cover-view>
+</view>
+
+<view class="home_center">
+  <view style="width: 100%; height: 50%">
+    <image
+      src="../../../icons/home/home_scan.svg"
+      mode="widthFix"
+      style="position: absolute; top: 54rpx; left: 124rpx; width: 144rpx"
+    ></image>
+    <view class="desc">
+      <span>拍照扫描</span>
+      <span>了解安全知识</span>
+    </view>
+  </view>
+  <!-- 跳转到扫描拍照页面 -->
+  <navigator
+    url="../scan/scan"
+    style="height: 50%; width: 704rpx; position: relative; display: flex; align-items: center"
+  >
+    <view class="start_scan">
+      <image src="../../../icons/home/scan.svg" mode="widthFix" style="width: 58rpx"></image>
+      <span>开始扫描</span>
+    </view>
+  </navigator>
+</view>
+<view style="margin-top: 40rpx">
+  <!-- 跳转到安全手册 -->
+  <navigator
+    url="../../home/safety-manual/index"
+    style="width: 704rpx; margin: 0 auto; border-radius: 12px"
+  >
+    <view class="card">
+      <text class="title">安全手册</text>
+      <text class="content"
+        >实验室的基本安全常识你知道多少呢？快来了解一下并测试自己掌握情况吧！</text
+      >
+      <image
+        src="../../../icons/home/fireman.png"
+        mode="widthFix"
+        style="position: absolute; width: 274rpx; left: 430rpx; top: 32rpx"
+      ></image>
+    </view>
+  </navigator>
+  <!-- 跳转到规则制度 -->
+  <navigator url="../regulation/index" style="width: 704rpx; margin: 0 auto; border-radius: 12px">
+    <view class="card">
+      <text class="title">规则制度</text>
+      <text class="content"
+        >在实验室中学习与实践的过程中，遵守规则制度也是必不可少的，快来了解有哪些规则吧！</text
+      >
+      <image
+        src="../../../icons/home/group.png"
+        mode="widthFix"
+        style="position: absolute; width: 174rpx; left: 470rpx; top: 24rpx"
+      ></image>
+    </view>
+  </navigator>
+  <!-- test  -->
+</view>

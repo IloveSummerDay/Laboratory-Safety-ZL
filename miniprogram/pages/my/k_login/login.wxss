@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 75%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.avatar {
+  height: 200rpx;
+  border-radius: 50%;
+  margin-bottom: 40rpx;
+}
+
+.nickname {
+  margin-bottom: 120rpx;
+  font-weight: bold;
+}
+
+button {
+  border-radius: 10px !important;
+}

@@ -1,0 +1,30 @@
+<!--实验物品pages/studytask/k_lab_goods/lab_goods.wxml-->
+<cover-view class="lab_goods_light">1、所用药品、标样、溶液都应有标签。绝对不要在容器</cover-view>
+<cover-view class="lab_goods_light">内装入与标签不相符的物品。</cover-view>
+
+<cover-view class="lab_goods_light">2、装过强腐蚀性、可燃性、有毒或易爆物品的器皿，应</cover-view>
+<cover-view class="lab_goods_light">由操作者负责洗净。</cover-view>
+
+
+<cover-view class="lab_goods_light">3、将玻璃棒、玻璃管、温度计等插入或拨出胶塞、胶管</cover-view>
+<cover-view class="lab_goods_light">时均应垫有棉布，且不可强行插入或拨出以免折断刺伤</cover-view>
+<cover-view class="lab_goods_light">人。</cover-view>
+
+<cover-view class="lab_goods_light">4、禁止用火焰在煤气管道上寻找漏气的地方，应该用肥</cover-view>
+<cover-view class="lab_goods_light">皂水来检查漏气。</cover-view>
+
+
+<cover-view class="lab_goods_light">5、化验室中应具备有急救药品、消防器材和劳保用品。</cover-view>
+
+<cover-view class="lab_goods_light">6、移动、开启大瓶液体药品时，不能将瓶直接放在水泥</cover-view>
+<cover-view class="lab_goods_light">地板上，最好用橡皮布或草垫垫好。若为石膏包封的可用</cover-view>
+<cover-view class="lab_goods_light">水泡软后打开，严禁锤砸，敲打，以防破裂</cover-view>
+
+<navigator open-type="redirect" url="../j_room_goods/room_goods" open-type="redirect">
+    <view class="labgoods_back">返回</view>
+</navigator>
+
+
+
+
+

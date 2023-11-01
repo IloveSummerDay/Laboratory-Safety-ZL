@@ -1,0 +1,5 @@
+<view class="container">
+  <image class="avatar" src="{{ userInfo.avatarUrl }}" mode="heightFix" />
+  <text class="nickname">{{ userInfo.nickName }}</text>
+  <button type="primary" bindtap="login">使用微信登录</button>
+</view>

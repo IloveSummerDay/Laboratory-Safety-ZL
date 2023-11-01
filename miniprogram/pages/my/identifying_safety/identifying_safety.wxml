@@ -1,0 +1,11 @@
+<!--pages/my/identifying_safety/identifying_safety.wxml-->
+<text space="emsp" style="display: block;padding:20rpx;"> 实验室安全标识是向进入实验室的人员警示实验场所或周围环境的危险状况，指导相关人员采取合理行为的标识。安全标识能够提醒相关人员预防危险，从而避免事故发生；当危险发生时，能够指示相关人员尽快逃离，或者指示相关人员采取正确、有效、得力的措施，对危害加以遏制。
+  实验室安全标识分为禁止标识、警告标识、指令标识、提示标识和专用标识等分类。其中禁止标识用于禁止人们不安全行为；警告标识用于提醒人们对周围环境引起注意，以避免可能发生危险；指令标识用于强调人们必须做出某种动作或采用防范措施；提示标识用于向人们提供某种信息（如标明安全设施或场所等）；专用标识用于针对某种特定的事物、产品或者设备所制定的符号或标志物，用以标示，便于识别。</text>
+<image class="warn_icon" src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/个人中心icon/warn.png" mode="widthFix" />
+<image class="tip_icon" src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/个人中心icon/tip.png" mode="widthFix" />
+<text style="display: block;padding:20rpx;">
+  <text space="emsp" style="font-weight: bold;">注：</text>
+   1-放置生物安全实验室入口处，不同等级生物安全实验室有相应的标注，如生物安全三级实验室标记“BSL-3”；
+   2-处于正常使用、暂停使用、停止使用状态的仪器和设施设备上或其附近；
+   3-医疗（生物类）废物产生、转移、贮存和处置过程中可能造成危害的物品表面。
+</text>

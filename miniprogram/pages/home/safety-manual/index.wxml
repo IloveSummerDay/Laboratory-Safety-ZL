@@ -1,0 +1,9 @@
+<!--pages/home/safety-manual/index.wxml-->
+<view class="box">
+  <block wx:for="{{ categorizeImgURL }}" wx:key="index">
+    <navigator class="icon_box" url="{{ item.nav+'?'+ 'className='+ item.value +'&classIndex='+ index}}">
+      <image src="{{item.url}}" mode="" />
+      <text>{{ item.value }}</text>
+    </navigator>
+  </block>
+</view>

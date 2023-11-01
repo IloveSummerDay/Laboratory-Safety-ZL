@@ -1,0 +1,50 @@
+/* pages/message/message.wxss */
+.message_item {
+  width: 95%;
+  height: 200rpx;
+  border-radius: 20px;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+.title_box, .content_box{
+  width: 90%;
+  height: 50%;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  color: #919191;
+}
+.title_box image{
+  width: 50rpx;
+  height: 100%;
+}
+.title_text {
+  margin-left: 20rpx;
+  font-weight: bold;
+  font-family: "微软雅黑";
+  color: black;
+}
+
+.title_time {
+  position: absolute;
+  right: 0;
+}
+.content_box{
+  border: 0;
+}
+.content_box text{
+  width: 90%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.content_box image{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 0;
+}

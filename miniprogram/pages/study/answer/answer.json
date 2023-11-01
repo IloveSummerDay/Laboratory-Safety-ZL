@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "t-count-down": "tdesign-miniprogram/count-down/count-down",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-radio": "tdesign-miniprogram/radio/radio",
+    "t-radio-group": "tdesign-miniprogram/radio-group/radio-group",
+    "t-toast": "tdesign-miniprogram/toast/toast",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog"
+  },
+  "navigationBarTitleText": "培训练习"
+}

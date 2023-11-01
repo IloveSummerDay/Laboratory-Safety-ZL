@@ -1,0 +1,7 @@
+<!--pages/my/login/index.wxml-->
+<!-- 输入账号目前仅支持学号 -->
+<view class="input_box">
+  <t-input class="account_input" label="账号" placeholder="学号/手机号/邮箱" bind:change="getAccount"></t-input>
+  <t-input class="password_input" label="密码" placeholder="请输入密码" type="password" value="{{textPassword}}" clearable bind:change="getPassword"  />
+  <t-button class="login_btn" theme="primary" size="large" block t-class="external-class" bindtap="handleLogin">登录</t-button>
+</view>

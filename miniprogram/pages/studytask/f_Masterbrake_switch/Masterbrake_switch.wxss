@@ -1,0 +1,113 @@
+/* pages/studytask/f_Masterbrake_switch/Masterbrake_switch.wxss */
+page{
+  background:#f8f8f8;
+}
+.index{
+  position: relative;
+}
+.become_font{
+  position: absolute;
+	left: 25rpx;
+	top: 26rpx;
+	color: rgba(17, 17, 17, 1);
+	font-size: 28rpx;
+	line-height: 150%;
+	text-align: left;
+}
+button:not([size=mini]) {
+  margin-left: auto;
+  margin-right: auto;
+  width: 340rpx;
+}
+.open,.close{
+  position: absolute;
+  width: 340rpx;
+	height: 78rpx;
+	top: 68rpx;
+	letter-spacing: 7rpx;
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(44, 80, 145, 1);
+	border-radius: 9rpx;
+	font-size: 28rpx;
+	line-height: 284%;
+	text-align: center;
+	font-weight: bold;
+}
+.open{
+  left: 25rpx;
+}
+.close{
+  left: 386rpx;
+}
+.switch_video{
+  position: absolute;
+  width: 704rpx;
+	height: 950rpx;
+  /* left: 11rpx; */
+  left: 50%;
+	top: 167rpx;
+  border-radius: 9rpx;
+  transform: translateX(-50%);
+}
+.bottom_font{
+  position: absolute;
+  /* left: 166rpx; */
+  left: 50%;
+	top: 1132rpx;
+	color: rgba(128, 128, 128, 1);
+  font-size: 24rpx;
+  transform: translateX(-50%);
+}
+/*  */
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+.modal-dialog {
+  width: 700rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 25rpx;
+  z-index: 9999;
+  background: #f9f9f9;
+  /* margin: -180rpx 105rpx; */
+  border-radius: 36rpx;
+}
+.modal-title {
+  padding-top: 50rpx;
+  padding-bottom: 30rpx;
+  font-size: 36rpx;
+  text-align: center;
+	color: rgba(80, 80, 80, 1);
+	font-size: 14px;
+}
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 125rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 125rpx;
+}
+.btn-cancel {
+  width: 40%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+.btn-confirm {
+  width: 60%;
+  color: white;
+  text-align: center;
+  background-color: #2C5091;
+}

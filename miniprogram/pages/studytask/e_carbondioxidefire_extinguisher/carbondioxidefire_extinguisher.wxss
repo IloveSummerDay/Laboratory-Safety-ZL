@@ -1,0 +1,97 @@
+/* pages/studytask/e_carbondioxidefire_extinguisher/carbondioxidefire_extinguisher.wxss */
+
+.carbon_text{
+	text-align:center; 
+	color: rgba(80, 80, 80, 1);
+	font-size: 29rpx;
+}
+.carbon_top{
+  width: 704rpx;
+	border-radius: 9rpx;
+  margin-left: 25rpx;
+}
+.carbon_top image{
+  width: 704rpx;
+  height: 662rpx;
+  margin-left: 5rpx;
+  margin-top: 9rpx;
+}
+/* 使用方法 */
+.bottom2_bold,.bottom2_twobold,.bottom2_titletwo,.bottom2_seven,.bottom2_eight,.bottom2_ten,.bottom2_eleven,.bottom2_twelve{
+	font-weight: bold;
+}
+.bottom2_titletwo,.bottom2_bold,.bottom2_twobold,.bottom2_seven,.bottom2_eight,.bottom2_ten,.bottom2_eleven,.bottom2_twelve,.bottom2_titleone,.bottom2_one,.bottom2_two,.bottom2_three,.bottom2_four,.bottom2_five,.bottom2_titletwobold,.bottom2_six,.bottom2_nine{
+  position: absolute;
+	color: rgba(17, 17, 17, 1);
+	font-size: 28rpx;
+}
+.bottom2_bold{
+  left: 26rpx;
+  top: 722rpx;
+}
+.bottom2_titleone{
+  left: 162rpx;
+  top: 722rpx;
+}
+.bottom2_one{
+  left: 162rpx;
+  top: 763rpx;
+}
+.bottom2_twobold{
+  left: 26rpx;
+  top: 800rpx;
+}
+.bottom2_three{
+  left: 162rpx;
+  top: 800rpx;
+}
+.bottom2_four{
+  left: 162rpx;
+  top: 841rpx;
+}
+.bottom2_five{
+  left: 162rpx;
+  top: 882rpx;
+}
+.bottom2_six{
+  left: 162rpx;
+  top: 923rpx;
+}
+.bottom2_titletwo{
+  left: 26rpx;
+  top: 965rpx;
+}
+.bottom2_seven{
+  left: 162rpx;
+  top: 1000rpx;
+}
+.bottom2_eight{
+  left: 162rpx;
+  top: 1041rpx;
+}
+.bottom2_ten{
+  left: 162rpx;
+  top: 1082rpx;
+}
+.bottom2_eleven{
+  left: 162rpx;
+  top: 1123rpx;
+}
+.bottom2_twelve{
+  left: 162rpx;
+  top: 1164rpx;
+}
+.carbon_detail{
+  position: absolute;
+  height: 58rpx;
+  width: 146rpx;
+  left: 585rpx;
+  top: 1215rpx;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(44, 80, 145, 1);
+  border-radius: 9rpx;
+  font-size: 28rpx;
+  line-height: 225%;
+  box-shadow: 0rpx 12rpx 12rpx 0rpx rgba(0, 0, 0, 0.03);
+  text-align: center;
+}

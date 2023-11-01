@@ -1,0 +1,61 @@
+<!-- pages/my/f_myself_studytask_totally/myself_studytask_totally.wxml -->
+<view class="index">
+  <view class="top">
+    <cover-view class="study_list">学习清单</cover-view>
+    <progress 
+      class="study_list_progress"
+      percent="{{study_list_percent}}" 
+      backgroundColor="white" 
+      activeColor="rgba(74, 130, 233, 1)" 
+      duration="30" 
+      border-radius="14rpx" 
+      font-size="26rpx" 
+      bindtap="study_list_progress" 
+      show-info active>
+    </progress>
+    <!-- 
+      1 当某测试任务页面被点击或完成任务之后 此处改变样式 
+    -->
+    <view>
+    <!-- 接线板 -->
+      <navigator url="http://114.55.238.17:81/LabSafe/icons/studytask/h_plug/plug.wxml">
+        <cover-view 
+        class="study_list1" 
+        style="background-color:{{list1_background_color}};color:{{list1_color}}"
+        bindtap="changeStyle1"
+        >1</cover-view>
+      </navigator>
+
+    <!-- 实验室内物品 -->
+    <navigator url="http://114.55.238.17:81/LabSafe/icons/studytask/j_room_goods/room_goods.wxml">
+      <cover-view class="study_list2"
+      style="background-color:{{list2_background_color}};color:{{list2_color}}"
+      bindtap="changeStyle2"
+      >2</cover-view>
+    </navigator>
+    <!-- 设备电源线 -->
+    <navigator url="http://114.55.238.17:81/LabSafe/icons/studytask/l_power_lines/power_lines.wxml">
+      <cover-view class="study_list3"
+      style="background-color:{{list3_background_color}};color:{{list3_color}}"
+      bindtap="changeStyle3"
+      >3</cover-view>
+    </navigator>
+    </view>
+  </view>
+
+<view class="bottom">
+  <cover-view class="test_task">测试任务</cover-view>
+  <progress 
+    class="test_task_progress"
+    percent="{{test_task_percent}}" 
+    backgroundColor="white" 
+    activeColor="rgba(255, 204, 22, 1)" 
+    duration="30" 
+    border-radius="14rpx" 
+    font-size="26rpx" 
+    bindtap="test_task_progress" 
+    show-info active>
+  </progress>
+</view>
+ 
+</view>

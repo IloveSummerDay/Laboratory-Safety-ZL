@@ -1,0 +1,25 @@
+<!-- 插头插座pages/studytask/g_socket/socket.wxml -->
+<view class="index">
+  <view class="three_photo">
+    <image src="https://labsafe-1310569006.cos.ap-shanghai.myqcloud.com/socket_banner.jpg" mode="widthFix" style="width: 100%;"></image>
+  </view>
+  <view class="socket_top">
+    <image src="http://114.55.238.17:81/LabSafe/icons/studytask/g_socket/socket_top.png" />
+    <cover-view class="top_bluetext">"切勿触摸"</cover-view>
+    <cover-view class="top_blacktext1">切记不要用湿手</cover-view>
+    <cover-view class="top_blacktext2">触摸插头插座严禁</cover-view>
+    <cover-view class="top_blacktext3">使用任何导体触碰电源</cover-view>
+  </view>
+  <view class="socket_center">
+    <image src="http://114.55.238.17:81/LabSafe/icons/studytask/g_socket/socket_center.png" />
+    <cover-view class="center_bluetext">"断电保护"</cover-view>
+    <cover-view class="center_blacktext1">及时切断电源总开关</cover-view>
+    <cover-view class="center_blacktext2">采取断电保护</cover-view>
+  </view>
+  <view class="socket_bottom">
+    <image src="http://114.55.238.17:81/LabSafe/icons/studytask/g_socket/socket_bottom.png" />
+    <cover-view class="bottom_bluetext">"后勤保修"</cover-view>
+    <cover-view class="bottom_blacktext1">勿私自改装</cover-view>
+    <cover-view class="bottom_blacktext2">切记破损后即使报修</cover-view>
+  </view>
+</view>

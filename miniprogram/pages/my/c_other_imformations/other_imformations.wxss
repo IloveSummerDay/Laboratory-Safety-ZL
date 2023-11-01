@@ -1,0 +1,63 @@
+/* pages/my/c_other_imformations/other_imformations.wxss */
+page{
+  background:#f8f8f8;
+}
+.other{
+  position: relative;
+}
+.other image{
+  position: absolute;
+  width: 184rpx;
+	height: 184rpx;
+	left: 24rpx;
+	top: 29rpx;
+	border-radius: 94rpx;
+}
+.bold_text{
+  position: absolute;
+  width: 96rpx;
+	height: 48rpx;
+	left: 268rpx;
+	top: 39rpx;
+	color: rgba(0, 0, 0, 1);
+	font-size: 32rpx;
+	font-weight: bold;
+}
+.box{
+  position: absolute;
+  width: 698rpx;
+	height: 91rpx;
+	left: 28rpx;
+	top: 252rpx;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 33rpx;
+	font-size: 28rpx;
+	box-shadow: 0rpx 0rpx 12rpx 5rpx rgba(0, 0, 0, 0.03);
+}
+.lab_text,.lab_name{
+  position: absolute;
+  top: 282rpx;
+	color: rgba(0, 0, 0, 1);
+	font-size: 28rpx;
+}
+.lab_text{
+	left: 67rpx;
+}
+.lab_name{
+  left: 223rpx;
+}
+.add_fri{
+  position: absolute;
+  width: 224rpx;
+	height: 83rpx;
+	left: 502rpx;
+	top: 428rpx;
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(51, 92, 165, 1);
+	border-radius: 21rpx;
+	font-size: 28rpx;
+	line-height: 310%;
+	box-shadow: 0rpx 0rpx 16rpx 16rpx rgba(0, 0, 0, 0.05);
+	text-align: center;
+}

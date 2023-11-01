@@ -1,0 +1,28 @@
+<!--pages/studytask/e_carbondioxidefire_extinguisher/carbondioxidefire_extinguisher.wxml-->
+<view class="carbon_text">二氧化碳灭火器</view>
+<view class="carbon_top">
+    <image src="http://114.55.238.17:81/LabSafe/icons/studytask/e_carbondioxidefire_extinguisher/carbon.jpg" />
+</view>
+<!-- 灭火器使用方法 -->
+<view class="carbon_bottom">
+    <cover-view class="bottom2_bold">使用方法：</cover-view>
+    <cover-view class="bottom2_titleone">取出灭火器——>拔掉保险栓——>压合压把</cover-view>
+    <cover-view class="bottom2_one">——>将喷嘴对准火焰根部喷射</cover-view>
+
+    <cover-view class="bottom2_twobold">适用范围：</cover-view>
+    <cover-view class="bottom2_three">流动性好，喷射率高、不腐蚀容器不易变</cover-view>
+    <cover-view class="bottom2_four">质，适用于扑灭图书、档案、高档设备、精</cover-view>
+    <cover-view class="bottom2_five">密仪器、600V以下精密仪器和油类的初起</cover-view>
+    <cover-view class="bottom2_six">火灾</cover-view>
+  
+    <cover-view class="bottom2_titletwo">注意事项：检查灭火器是否在正常的压力范围 ！</cover-view>
+    <cover-view class="bottom2_seven">使用时不能直接用手抓住喇叭筒外壁和金属连接</cover-view>
+    <cover-view class="bottom2_eight">管，以防冻伤；</cover-view>
+    <cover-view class="bottom2_ten">在狭小的空间内使用后立即离开，防止窒息! </cover-view>
+    <cover-view class="bottom2_eleven">不能扑灭600V及以上电压的电器设备，以防</cover-view>
+    <cover-view class="bottom2_twelve">二氧化碳被击穿使用者触电，必须先断电后灭火 </cover-view>
+</view> 
+                       
+<navigator open-type="redirect" url="../c_show_video/show_video" open-type="redirect">
+    <view class="carbon_detail">详细操作</view>
+</navigator>

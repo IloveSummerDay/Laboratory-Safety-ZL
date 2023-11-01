@@ -1,0 +1,29 @@
+<!--pages/study/answer/answer.wxml-->
+<view class="func_box">
+  <view class="answered" style="left: 50%;transform: translateX(-50%);">
+  <!-- answered 为已答题数量  answered + 1 为题号-->
+    {{ answered + 1 }}/50
+  </view>
+  <text class="exit" style="position: absolute;left: 5%;" bindtap="handleOpenDialog">退出</text>
+</view>
+
+<view class="exam_questions">
+  <t-button theme="default" content="{{ type }}" disabled="{{true}}"></t-button>
+  <text class="question_text">{{ question }}:</text>
+  <view>
+    <t-radio-group t-class="theme-card" bind:change="onChangeRadio">
+      <block wx:for="{{ options }}" wx:key="index">
+        <t-radio label="{{options[index].label}}" value="{{index}}" checked="{{checked == index ? true : false}}" bind:change="onChangeRadio" />
+      </block>
+    </t-radio-group>
+  </view>
+</view>
+
+<view class="prev_next">
+  <!-- <t-button theme="primary" bindtap="handlePrev" content="上一题"></t-button> -->
+  <t-button theme="primary" bindtap="handleNext" content="下一题"></t-button>
+</view>
+<t-toast id="t-toast" duration="{{ 500 }}"  close="getNextQuestion" style="--td-toast-max-width: 400rpx" />
+
+<!-- 练习情况对话框 -->
+<t-dialog visible="{{showAnswerSituationDialog}}" title="答题情况" content="{{ answerSituation }}" confirm-btn="{{ { content:'知道了' , variant: 'base' } }}" bind:confirm="handleExit" />

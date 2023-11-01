@@ -1,0 +1,56 @@
+/* pages/message/message_detail/index.wxss */
+page{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.box{
+  width: 90%;
+  background-color: white;
+  position: absolute;
+  top: 30rpx;
+  border-radius: 40rpx;
+  padding-bottom: 40rpx;
+}
+.title_box, .content_box{
+  width: 90%;
+  height: 100rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: white;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+}
+.title_box image{
+  width: 50rpx;
+  height: 100%;
+}
+.title_text {
+  margin-left: 20rpx;
+  font-weight: bold;
+  font-family: "微软雅黑";
+  color: black;
+}
+
+.title_time {
+  position: absolute;
+  right: 0;
+}
+
+.content_box{
+  height: auto;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-top: 50rpx;
+  padding-bottom: 40rpx;
+}
+.title{
+  font-weight: bold;
+  font-size: 40rpx;
+}
+.content{
+  text-indent: 2em;
+  margin-top: 40rpx;
+  font-size: 30rpx;
+}
