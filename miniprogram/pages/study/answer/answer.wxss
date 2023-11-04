@@ -66,6 +66,24 @@ page {
 }
 .exam_questions .t-radio-group {
   width: 100%;
-  --td-radio-bg-color: #f8f8f8;
+  --td-radio-bg-color: none;
   --td-radio-icon-checked-color: #105a9d;
+  --td-radio-border-color: none;
+}
+.van-checkbox {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 60rpx;
+}
+.van-checkbox-group {
+  padding-left: 20rpx;
+}
+.label-class,
+.van-checkbox__label {
+  display: inline-block;
+  width: 80% !important;
+  height: 90%;
+  display: flex;
+  align-items: center;
 }

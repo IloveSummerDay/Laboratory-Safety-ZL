@@ -24,8 +24,8 @@ video {
   align-items: center;
   border-radius: 20rpx;
 }
-.class_item:active {
-  background-color: rgb(241, 241, 241);
+.class_active {
+  background-color: rgb(224, 224, 224);
 }
 .class_item text {
   position: absolute;

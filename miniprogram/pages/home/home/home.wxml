@@ -4,29 +4,25 @@
   <cover-view class="search_text">搜索安全知识</cover-view>
 </view>
 
+<!-- 跳转到扫描拍照页面 -->
 <view class="home_center">
-  <view style="width: 100%; height: 50%">
+  <navigator class="ar_photo_box" url="../scan/scan">
     <image
-      src="../../../icons/home/home_scan.svg"
-      mode="widthFix"
-      style="position: absolute; top: 54rpx; left: 124rpx; width: 144rpx"
-    ></image>
-    <view class="desc">
-      <span>拍照扫描</span>
-      <span>了解安全知识</span>
-    </view>
-  </view>
-  <!-- 跳转到扫描拍照页面 -->
-  <navigator
-    url="../scan/scan"
-    style="height: 50%; width: 704rpx; position: relative; display: flex; align-items: center"
-  >
-    <view class="start_scan">
-      <image src="../../../icons/home/scan.svg" mode="widthFix" style="width: 58rpx"></image>
-      <span>开始扫描</span>
-    </view>
+      lazy-load="true"
+      src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/随手拍icon/ar_photo.svg"
+      mode=""
+    />
+    <text>AR 随手拍</text>
+  </navigator>
+  <navigator class="danger_photo_box" url="../danger-report/index">
+    <image
+      src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/随手拍icon/danger_photo.svg"
+      mode=""
+    />
+    <text>隐患随手拍</text>
   </navigator>
 </view>
+
 <view style="margin-top: 40rpx">
   <!-- 跳转到安全手册 -->
   <navigator
@@ -39,12 +35,12 @@
         >实验室的基本安全常识你知道多少呢？快来了解一下并测试自己掌握情况吧！</text
       >
       <image
-        src="../../../icons/home/fireman.png"
+        src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/安全手册icon/安全手册.png"
         mode="widthFix"
-        style="position: absolute; width: 274rpx; left: 430rpx; top: 32rpx"
       ></image>
     </view>
   </navigator>
+
   <!-- 跳转到规则制度 -->
   <navigator url="../regulation/index" style="width: 704rpx; margin: 0 auto; border-radius: 12px">
     <view class="card">
@@ -53,11 +49,9 @@
         >在实验室中学习与实践的过程中，遵守规则制度也是必不可少的，快来了解有哪些规则吧！</text
       >
       <image
-        src="../../../icons/home/group.png"
+        src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/规则制度icon/规则制度.png"
         mode="widthFix"
-        style="position: absolute; width: 174rpx; left: 470rpx; top: 24rpx"
       ></image>
     </view>
   </navigator>
-  <!-- test  -->
 </view>

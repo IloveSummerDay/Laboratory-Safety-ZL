@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "t-dialog": "tdesign-miniprogram/dialog/dialog"
+  },
+  "navigationBarTitleText": "隐患随手拍"
+}

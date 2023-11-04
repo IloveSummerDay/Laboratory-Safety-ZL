@@ -1,6 +1,19 @@
 <!--pages/home/scan/scan.wxml-->
+<t-dialog
+  visible="{{showLoginDialog}}"
+  title="未登录"
+  content="由于您未登录，目前无法使用此功能"
+  confirm-btn="{{ { content: '去登录', variant: 'base' } }}"
+  bind:confirm="toLogin"
+/>
+
 <view id="aperture">
-  <!-- <camera device-position="{{cameraSide}}" mode="normal"></camera> -->
+  <camera
+    device-position="{{cameraSide}}"
+    mode="normal"
+    id="camera"
+    style="height: 100%; width: 100%"
+  ></camera>
   <!-- <canvas id="canvas" type="2d" style="width:{{canvasWidth}}px;height:{{canvasHeight}}px;"></canvas> -->
   <image
     wx:if="{{tempPicVisible}}"

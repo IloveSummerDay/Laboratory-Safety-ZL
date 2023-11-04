@@ -1,9 +1,13 @@
 <!--pages/study/exam/exam.wxml-->
 <view class="func_box">
-  <t-count-down content="default" time="{{ 600 *1000 }}" theme="square" size="large" bind:finish="handleTimeEndSubmit"></t-count-down>
-  <view class="submit" bindtap="handleOpenDialog">
-    交卷
-  </view>
+  <t-count-down
+    content="default"
+    time="{{ 600 *1000 }}"
+    theme="square"
+    size="large"
+    bind:finish="handleTimeEndSubmit"
+  ></t-count-down>
+  <view class="submit" bindtap="handleOpenDialog"> 交卷 </view>
   <view class="answered">
     <!-- answered 为已答题数量    answered + 1 为题号-->
     {{ answered + 1 }}/50
@@ -13,12 +17,47 @@
 <view class="exam_questions">
   <t-button theme="default" content="{{ type }}" disabled="{{true}}"></t-button>
   <text class="question_text">{{ question }}:</text>
-  <view>
-    <t-radio-group t-class="theme-card" bind:change="onChangeRadio">
+  <view style="padding-top: 30rpx">
+    <!-- 单选 / 判断选项-->
+    <t-radio-group t-class="theme-card" wx:if="{{type != '多选'}}" bind:change="onChangeRadio">
       <block wx:for="{{ options }}" wx:key="index">
-        <t-radio label="{{options[index].label}}" value="{{index}}" checked="{{checked == index ? true : false}}" bind:change="onChangeRadio" />
+        <t-radio
+          allow-uncheck
+          label="{{options[index].label}}"
+          value="{{index}}"
+          checked="{{checked == index}}"
+        />
       </block>
     </t-radio-group>
+    <!-- 多选选项 -->
+    <!-- T-Design UI库 -->
+    <!-- <t-checkbox-group t-class="theme-card" borderless wx:if="{{ type == '多选' }}" bind:change="onChangeCheckbox" >
+      <block wx:for="{{ options }}" wx:key="index">
+        <t-checkbox block="{{true}}" value="{{index}}" label="{{options[index].label}}" checked="{{checked[index] == index}}" />
+      </block>
+    </t-checkbox-group> -->
+    <!-- 原生checkbox -->
+    <!-- <checkbox-group wx:if="{{ type == '多选' }}" bindchange="onChangeCheckbox">
+      <block wx:for="{{ options }}" wx:key="index">
+        <checkbox value="{{index}}" checked="{{checked[index] == index}}" style="display: block;">
+          {{options[index].label}}
+        </checkbox>
+      </block>
+    </checkbox-group> -->
+    <!-- Vant UI库 -->
+    <van-checkbox-group value="{{chooseCheckBoxOption}}" bind:change="onChangeCheckbox" wx:else>
+      <block wx:for="{{ options }}" wx:key="index">
+        <van-checkbox
+          value="{{ checked[index] == index }}"
+          name="{{['A','B','C','D'][index]}}"
+          checked-color="#105a9d"
+        >
+          {{item.label}}
+        </van-checkbox>
+      </block>
+    </van-checkbox-group>
+    <!-- <van-checkbox use-icon-slot value="{{ checked }}" bind:change="onChange"></van-checkbox> -->
+    <!-- 自定义图标 <image slot="icon" src="{{ checked ? activeIcon : inactiveIcon }}" /> -->
   </view>
   <!-- <t-radio-group bind:change="onChangeRadio" options="{{ options }}" default-value="{{defaultOption}}"/> -->
 </view>
@@ -27,8 +66,35 @@
   <t-button theme="primary" bindtap="handlePrev" content="上一题"></t-button>
   <t-button theme="primary" bindtap="handleNext" content="下一题"></t-button>
 </view>
-<t-toast id="t-toast" duration="{{ 500 }}" close="getNextQuestion" style="--td-toast-max-width: 400rpx" />
+<t-toast
+  id="t-toast"
+  duration="{{ 500 }}"
+  close="getNextQuestion"
+  style="--td-toast-max-width: 400rpx"
+/>
 <!-- 交卷对话框 -->
-<t-dialog visible="{{showConfirm}}" title="是否提交此次作答" content="提交后将计入学习成绩" confirm-btn="{{ { content: '提交', variant: 'base' } }}" cancel-btn="取消" bind:confirm="onCloseDialog" bind:cancel="onCloseDialog" />
+<t-dialog
+  visible="{{showConfirm}}"
+  title="是否提交此次作答"
+  content="提交后将计入学习成绩"
+  confirm-btn="{{ { content: '提交', variant: 'base' } }}"
+  cancel-btn="取消"
+  bind:confirm="onCloseDialog"
+  bind:cancel="onCloseDialog"
+/>
 <!-- 答题情况对话框 -->
-<t-dialog visible="{{showAnswerSituationDialog}}" title="答题情况" content="{{ answerSituation }}" confirm-btn="{{ { content:'知道了' , variant: 'base' } }}" bind:confirm="handleExit" />
+<t-dialog
+  visible="{{showAnswerSituationDialog}}"
+  title="答题情况"
+  content="{{ answerSituation }}"
+  confirm-btn="{{ { content:'知道了' , variant: 'base' } }}"
+  bind:confirm="handleExit"
+/>
+<!-- 未登录对话框 -->
+<t-dialog
+  visible="{{showLoginDialog}}"
+  title="未登录"
+  content="由于您未登录，目前无法使用此功能"
+  confirm-btn="{{ { content: '去登录', variant: 'base' } }}"
+  bind:confirm="toLogin"
+/>

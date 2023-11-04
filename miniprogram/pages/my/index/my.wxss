@@ -56,16 +56,17 @@
   left: 35%;
 }
 .login_btn {
-  width: 50%;
-  height: 40%;
-  border-radius: 30rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100rpx;
   display: flex;
   justify-content: center;
   align-items: center;
   letter-spacing: 4rpx;
-  color: rgb(88, 88, 88);
-  border: 2px solid #ccc;
+  color: white;
+  background-color: #105a9d;
   font-weight: bold;
+  font-size: 40rpx;
 }
 .login_btn:active {
   background-color: #105a9d;

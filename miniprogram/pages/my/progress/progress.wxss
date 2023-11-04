@@ -1,13 +1,13 @@
-page{
+page {
   display: flex;
   flex-direction: column;
 }
-.top_box{
+.top_box {
   width: 100%;
   height: 35%;
   display: flex;
 }
-.top_box text{
+.top_box text {
   display: inline-block;
   width: 100%;
   height: auto;
@@ -15,13 +15,16 @@ page{
   justify-content: center;
   align-items: center;
 }
-.progress_box{
+.progress_box {
   margin-top: 50rpx;
   flex: 1;
 }
-
-.know_progress_box, .identifying_progress_box, 
-.system_progress_box{
+.progress_box text {
+  font-weight: bolder;
+}
+.know_progress_box,
+.identifying_progress_box,
+.system_progress_box {
   width: 80%;
   display: flex;
   justify-content: space-evenly;
@@ -31,21 +34,16 @@ page{
   padding-top: 20rpx;
   border-bottom: 1px solid #ccc;
 }
-.system_progress_box{
+.system_progress_box {
   border: none;
 }
-text {
-  color: black;
-  font-weight: bold;
-  font-family: "微软雅黑";
-  font-size: 40rpx;
-  width: 200rpx;
-}
-.top_box text{
+.top_box text {
   text-align: left;
   font-size: 30rpx;
-}
-ec-canvas {
-  width: 100%;
-  height: 100%;
+  color: black;
+  font-weight: bold;
+  font-family: '黑体 normal';
+  font-size: 30rpx;
+  width: 80%;
+  margin: 0 auto;
 }

@@ -1,26 +1,51 @@
 <!--pages/my/progress/progress.wxml-->
 <view class="top_box">
-  <text>爱好学习实验室知识的小伙伴
-  你好~ 
-  安全知识学习进度为：{{knowProgress}}%
-  安全标识学习进度为：{{identifyingProgress}}%
-  规则制度学习进度为：{{systemProgress}}%
-  要注意安全知识的学习规划哦~</text>
+  <text
+    >爱好学习实验室知识的小伙伴 你好~ 
+    安全知识学习进度为：{{knowProgress}}%
+    安全标识学习进度为：{{identifyingProgress}}% 
+    规则制度学习进度为：{{systemProgress}}%
+    要注意安全知识的学习规划哦~</text
+  >
 </view>
 
 <view class="progress_box">
   <view class="know_progress_box">
-    <t-progress theme="circle" percentage="{{knowProgress}}" color="{{ knowProgress == 100 ? '#2BA471': '#105A9D'}}" status="{{ knowProgress == 100 ? 'success' : '' }}" />
+    <t-progress
+      theme="circle"
+      percentage="{{knowProgress}}"
+      color="{{ knowProgress == 100 ? '#2BA471': '#105A9D'}}"
+      status="{{ knowProgress == 100 ? 'success' : '' }}"
+    />
     <text>安全知识</text>
   </view>
 
   <view class="identifying_progress_box">
     <text>安全标识</text>
-    <t-progress theme="circle" percentage="{{identifyingProgress}}" color="{{ identifyingProgress == 100 ? '#2BA471': '#105A9D'}}" status="{{ identifyingProgress == 100 ? 'success' : '' }}" />
+    <t-progress
+      theme="circle"
+      percentage="{{identifyingProgress}}"
+      color="{{ identifyingProgress == 100 ? '#2BA471': '#105A9D'}}"
+      status="{{ identifyingProgress == 100 ? 'success' : '' }}"
+    />
   </view>
 
   <view class="system_progress_box">
-    <t-progress theme="circle" percentage="{{systemProgress}}" color="{{ systemProgress == 100 ? '#2BA471': '#105A9D'}}" status="{{ systemProgress == 100 ? 'success' : '' }}" />
+    <t-progress
+      theme="circle"
+      percentage="{{systemProgress}}"
+      color="{{ systemProgress == 100 ? '#2BA471': '#105A9D'}}"
+      status="{{ systemProgress == 100 ? 'success' : '' }}"
+    />
     <text>规则制度</text>
   </view>
 </view>
+
+<!-- 未登录对话框 -->
+<t-dialog
+  visible="{{showLoginDialog}}"
+  title="未登录"
+  content="由于您未登录，目前无法使用此功能"
+  confirm-btn="{{ { content: '去登录', variant: 'base' } }}"
+  bind:confirm="toLogin"
+/>

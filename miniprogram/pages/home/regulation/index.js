@@ -1,16 +1,16 @@
 // pages/home/regulation/index.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
+    showLoginDialog: false,
     rules: [
-      "浙江传媒学院实验室安全管理办法",
-      "浙江传媒学院实验室安全卫生守则",
-      "媒体工程学院实验室突发事件应急处理预案",
-      "浙江传媒学院实验室安全管理办法",
-      "媒体工程学院实验室突发事件应急处理预案",
+      '浙江传媒学院实验室安全管理办法',
+      '浙江传媒学院实验室安全卫生守则',
+      '媒体工程学院实验室突发事件应急处理预案',
+      '浙江传媒学院实验室安全管理办法',
+      '媒体工程学院实验室突发事件应急处理预案'
     ]
   },
 
@@ -18,55 +18,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    let app = getApp()
+    if (!app.globalData.isLogin) {
+      this.setData({
+        showLoginDialog: true
+      })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  toLogin() {
+    console.log('【跳转到个人中心去登录】')
+    wx.switchTab({
+      url: '../../my/index/my'
+    })
   }
 })

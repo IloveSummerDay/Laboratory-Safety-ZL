@@ -5,8 +5,9 @@ page {
   flex-direction: column;
 }
 #aperture {
+  overflow: hidden;
   background-color: wheat;
-  flex: 4;
+  height: 80%;
 }
 #tempPic {
   top: 0;
@@ -17,7 +18,7 @@ page {
 }
 #operation {
   display: flex;
-  flex: 1;
+  height: 20%;
   flex-direction: column;
   align-items: center;
 }
@@ -48,13 +49,6 @@ page {
 }
 canvas {
   position: absolute;
-}
-camera {
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
 }
 
 #mask {

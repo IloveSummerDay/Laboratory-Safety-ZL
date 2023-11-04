@@ -9,3 +9,12 @@
    2-处于正常使用、暂停使用、停止使用状态的仪器和设施设备上或其附近；
    3-医疗（生物类）废物产生、转移、贮存和处置过程中可能造成危害的物品表面。
 </text>
+
+<!-- 未登录对话框 -->
+<t-dialog
+  visible="{{showLoginDialog}}"
+  title="未登录"
+  content="由于您未登录，目前无法使用此功能"
+  confirm-btn="{{ { content: '去登录', variant: 'base' } }}"
+  bind:confirm="toLogin"
+/>

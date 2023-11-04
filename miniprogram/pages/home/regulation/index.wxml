@@ -1,4 +1,12 @@
 <!--pages/home/regulation/index.wxml-->
+<t-dialog
+  visible="{{showLoginDialog}}"
+  title="未登录"
+  content="由于您未登录，目前无法使用此功能"
+  confirm-btn="{{ { content: '去登录', variant: 'base' } }}"
+  bind:confirm="toLogin"
+/>
+
 <block wx:for="{{ rules }}" wx:key="{{ index }}">
   <navigator class="item" url="../regulation-detail/index">
     <text>{{ item }}</text>

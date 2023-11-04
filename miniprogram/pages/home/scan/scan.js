@@ -25,6 +25,7 @@ const nameMap = {
 let cameraCtx = null
 Page({
   data: {
+    showLoginDialog: false,
     btnTitle: '进入学习',
     cameraSide: 'back',
     tempPicVisible: false,
@@ -62,7 +63,10 @@ Page({
               err => {
                 console.log(err)
                 wx.hideLoading()
-                this.showModal(err)
+                wx.showToast({
+                  title: '请重新拍照上传'
+                })
+                // this.showModal(err)
               }
             )
           },
@@ -117,7 +121,6 @@ Page({
     else cameraSide = 'back'
     this.setData({ cameraSide })
   },
-  cameraError() {},
   toBase64() {
     try {
       const base64 = wx.getFileSystemManager().readFileSync(tempPicPath, 'base64')
@@ -167,64 +170,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.authorize({
-      scope: 'scope.camera'
+    let app = getApp()
+    if (!app.globalData.isLogin) {
+      this.setData({
+        showLoginDialog: true
+      })
+    } else {
+      wx.authorize({
+        scope: 'scope.camera'
+      })
+      cameraCtx = wx.createCameraContext()
+    }
+  },
+  toLogin() {
+    console.log('【跳转到个人中心去登录】');
+    wx.switchTab({
+      url: '../../my/index/my'
     })
-    cameraCtx = wx.createCameraContext()
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    // const query = wx.createSelectorQuery();
-    // query.select('#canvas')
-    //   .fields({ node: true, size: true})
-    //   .exec((res) => {
-    //     const canvas = res[1].node;
-    //     const canvasCtx = canvas.getContext('2d');
-    //     const dpr = wx.getSystemInfoSync().pixelRatio;
-    //     canvas.width = res[0].width * dpr;
-    //     canvas.height = res[0].height * dpr;
-    //     canvasCtx.scale(dpr, dpr);
-    //     this.setData({
-    //       canvas,
-    //       canvasCtx,
-    //       canvasWidth: res[0].width,
-    //       canvasHeight: res[0].height
-    //     });
-    //   });
-    //   const listener = this.data.cameraCtx.onCameraFrame(this.onTick);
-    //   listener.start();
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {},
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {},
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {},
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {},
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {},
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {}
+  }
 })

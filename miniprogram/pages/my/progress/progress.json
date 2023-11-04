@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "t-progress": "tdesign-miniprogram/progress/progress"
+    "t-progress": "tdesign-miniprogram/progress/progress",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog"
   },
   "navigationBarTitleText": "学习进度统计"
 }

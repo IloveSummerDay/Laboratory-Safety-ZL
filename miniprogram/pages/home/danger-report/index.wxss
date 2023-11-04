@@ -1,0 +1,142 @@
+/* pages/danger-report/index.wxss */
+page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+#aperture {
+  overflow: hidden;
+  background-color: wheat;
+  height: 80%;
+}
+#tempPic {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#operation {
+  display: flex;
+  height: 20%;
+  flex-direction: column;
+  align-items: center;
+}
+#tip {
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+}
+#buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+#album {
+  width: 72rpx;
+}
+#capture {
+  display: inline-block;
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  background-color: #f8f8f8;
+  border: 4rpx solid #000;
+}
+#switch {
+  width: 74rpx;
+}
+canvas {
+  position: absolute;
+}
+
+#mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#modal {
+  position: fixed;
+  bottom: 0;
+  width: 750rpx;
+  height: 600rpx;
+  background-color: #fff;
+  border-radius: 36px 36px 0 0;
+  overflow: hidden;
+  animation: modal-enter 0.8s cubic-bezier(0.17, 0.84, 0.44, 1);
+  transition: transform ease;
+}
+
+#thumb {
+  display: block;
+  width: 750rpx;
+  margin: 25rpx auto;
+}
+
+#thumb > div {
+  display: block;
+  background-color: #aab3b9;
+  width: 100rpx;
+  height: 15rpx;
+  border-radius: 32px;
+  margin: 0 auto;
+}
+
+#showcase {
+  width: 750rpx;
+  height: 100%;
+}
+
+#obj-name {
+  display: block;
+  text-align: center;
+  margin: 30rpx auto;
+  margin-bottom: 15rpx;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+#placeholder {
+  display: flex;
+  margin: 0 auto;
+  border-radius: 24px;
+  width: 280rpx;
+  height: 280rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  display: inline-block;
+  background-color: rgb(44, 80, 145);
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.button:hover,
+button:focus {
+  background-color: rgb(86, 123, 196);
+}
+
+#entry {
+  display: block;
+  width: 320rpx;
+  margin: 0 auto;
+  margin-top: 40rpx;
+}
+
+@keyframes modal-enter {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -2,7 +2,10 @@
 page {
   --td-button-border-width: 0;
   --td-countdown-bg-color: #105a9d;
-  --td-radio-bg-color: #F8F8F8
+  --td-radio-bg-color: #f6f6f6;
+  --td-radio-border-color: none;
+  --td-checkbox-bg-color: #f6f6f6;
+  --td-checkbox-icon-checked-color: #105a9d;
 }
 .func_box {
   width: 100%;
@@ -69,6 +72,23 @@ page {
 }
 .exam_questions .t-radio-group {
   width: 100%;
-  --td-radio-bg-color: #f8f8f8;
+  --td-radio-bg-color: none;
   --td-radio-icon-checked-color: #105a9d;
+}
+.van-checkbox {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 60rpx;
+}
+.van-checkbox-group {
+  padding-left: 20rpx;
+}
+.label-class,
+.van-checkbox__label {
+  display: inline-block;
+  width: 80% !important;
+  height: 90%;
+  display: flex;
+  align-items: center;
 }

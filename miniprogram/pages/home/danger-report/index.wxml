@@ -1,0 +1,39 @@
+<!--pages/danger-report/index.wxml-->
+<t-dialog
+  visible="{{showLoginDialog}}"
+  title="未登录"
+  content="由于您未登录，目前无法使用此功能"
+  confirm-btn="{{ { content: '去登录', variant: 'base' } }}"
+  bind:confirm="toLogin"
+/>
+
+<view id="aperture">
+  <camera
+    device-position="{{cameraSide}}"
+    mode="normal"
+    id="camera"
+    style="height: 100%; width: 100%"
+  ></camera>
+</view>
+
+<view id="operation">
+  <text id="tip">若有安全隐患，可拍照上报管理员，感谢你的反馈</text>
+  <view id="buttons">
+    <!-- 从相册中选择 -->
+    <image
+      src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/随手拍icon/album.svg"
+      mode="widthFix"
+      id="album"
+      bindtap="toAlbum"
+    ></image>
+    <!-- 拍照按钮 -->
+    <div id="capture" bindtap="takePhoto"></div>
+    <!-- 反转相机 -->
+    <image
+      src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/随手拍icon/flip.png"
+      mode="widthFix"
+      id="switch"
+      bindtap="switchSide"
+    ></image>
+  </view>
+</view>

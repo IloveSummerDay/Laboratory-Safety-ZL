@@ -4,7 +4,7 @@
 <view class="{{ isLogin ? 'login_box_yes' : 'login_box_no' }} shadow">
   <!-- if  请登录-->
   <block wx:if="{{!isLogin}}">
-    <navigator class="login_btn" url="../login/index"> 请登录 </navigator>
+    <navigator class="login_btn shadow" url="../login/index"> 请登录 </navigator>
   </block>
   <!-- else  登录后-->
   <block wx:else>

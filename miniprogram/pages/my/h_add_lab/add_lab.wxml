@@ -1,12 +1,2 @@
 <!--pages/my/h_add_lab/add_lab.wxml-->
-<view class="top">
-  <image src="http://114.55.238.17:81/LabSafe/icons/my/b_study_friends/friend_one.jpeg" />
-  <cover-view class="top_text">603实验室</cover-view>
-</view>
-<view class="center">
-  <cover-view class="center_test">填写验证信息</cover-view>
-  <cover-view class="center_text"></cover-view>
-  <cover-view class="center_bottom"></cover-view>
-  <cover-view class="bottom_text">备注：</cover-view>
-</view>
-<view class="add_friend">添加实验室</view>
+<text>pages/my/h_add_lab/add_lab.wxml</text>
