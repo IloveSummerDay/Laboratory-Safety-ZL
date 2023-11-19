@@ -1,5 +1,5 @@
 // pages/home/scan/scan.js
-import detectObject from '../../../request/http.js'
+import detectObject from '../../../request/http.js' // detectObject( ImageBase64 )
 const nameMap = {
   extinguisher: {
     name: '灭火器',
@@ -38,11 +38,11 @@ Page({
     tempPicPath: undefined
   },
   takePhoto() {
-    //调用Camera拍照
+    // 1、调用Camera拍照
     cameraCtx.takePhoto({
       qulaty: 'high',
       success: res => {
-        //拍照成功压缩图片
+        // 2、拍照成功压缩图片
         wx.compressImage({
           src: res.tempImagePath,
           quality: 80,
@@ -55,32 +55,44 @@ Page({
               title: '扫描中',
               mask: true
             })
-            detectObject(this.toBase64()).then(
-              res => {
-                wx.hideLoading()
-                this.showModal(res)
-              },
-              err => {
-                console.log(err)
-                wx.hideLoading()
-                wx.showToast({
-                  title: '请重新拍照上传'
-                })
-                // this.showModal(err)
-              }
-            )
+            let ImageBase64 = this.toBase64()
+            this.detectObjectAPI(ImageBase64)
           },
           fail: err => {
-            console.log(err)
+            console.log('【错误！！！ ----- 调用Camera拍照】', err)
           }
         })
       },
       fail: err => {
-        console.log('failed', err)
+        console.log('【错误！！！ ----- 拍照成功压缩图片】', err)
       }
     })
   },
-
+  /**
+   * @desc 请求后端接口，调用腾讯云图像AI识别物体
+   * @param {string} ImageBase64
+   */
+  detectObjectAPI(ImageBase64) {
+    detectObject(ImageBase64).then(
+      res => {
+        // res = extinguisher || socket || wiringBoard || switch
+        console.log(
+          '【调用腾讯云图像AI识别物体返回结果 extinguisher || socket || wiringBoard || switch】',
+          res
+        )
+        wx.hideLoading()
+        this.showModal(res)
+      },
+      err => {
+        console.log('【错误！！！ ----- 请求后端接口，调用腾讯云图像AI识别物体】', err)
+        wx.hideLoading()
+        wx.showToast({
+          title: '请重新拍照上传'
+        })
+        // this.showModal(err)
+      }
+    )
+  },
   toAlbum() {
     wx.chooseMedia({
       count: 1,
@@ -130,10 +142,11 @@ Page({
     }
   },
   showModal(name) {
+    // name = extinguisher || socket || wiringBoard || switch
     let resolvedName = name,
       btnTitle = '确定'
     if (nameMap[name]) {
-      resolvedName = nameMap[name].name
+      resolvedName = nameMap[name].name // 灭火器 || 插座插头....
       btnTitle = '进入学习'
     }
     this.setData({
@@ -183,7 +196,7 @@ Page({
     }
   },
   toLogin() {
-    console.log('【跳转到个人中心去登录】');
+    console.log('【跳转到个人中心去登录】')
     wx.switchTab({
       url: '../../my/index/my'
     })

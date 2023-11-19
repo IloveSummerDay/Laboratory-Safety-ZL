@@ -1,0 +1,2 @@
+<!--pages/my/personal-data/index.wxml-->
+<view class="exit" bindtap="handleExit"> 退出 </view>

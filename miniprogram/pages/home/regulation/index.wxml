@@ -8,8 +8,11 @@
 />
 
 <block wx:for="{{ rules }}" wx:key="{{ index }}">
-  <navigator class="item" url="../regulation-detail/index">
-    <text>{{ item }}</text>
-    <image src="../../../icons/message/right_arrow.png" mode="" />
+  <navigator
+    class="item shadow shadow_inside"
+    url="../regulation-detail/index?index={{index}}"
+    open-type="navigate"
+  >
+    <text>{{(index+1) + '. ' + item }}</text>
   </navigator>
 </block>

@@ -43,6 +43,7 @@
   </view>
 </view>
 
+<!-- 进入学习提示板 -->
 <view
   id="modal"
   wx:if="{{showModal}}"

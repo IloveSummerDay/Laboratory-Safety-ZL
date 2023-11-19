@@ -22,9 +22,21 @@ Page({
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload() {
+  async onUnload() {
     let app = getApp()
-    if (app.globalData.identifierProgress !== 100) app.globalData.identifierProgress = 100
+    if (app.globalData.safeSign || !app.globalData.isLogin) return
+    const res = await app.call({
+      path: `/setSafeSign?id=${app.globalData.id}`,
+      method: 'PUT'
+    })
+    if (res.code == 200) {
+      wx.showToast({
+        title: '已完成'
+      })
+      app.globalData.safeSign = true
+      console.log('【完成安全标识学习回调】', res)
+      console.log('【恭喜你，已经完成安全标识学习！】')
+    }
   },
   toLogin() {
     console.log('【跳转到个人中心去登录】')

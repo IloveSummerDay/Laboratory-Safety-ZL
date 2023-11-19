@@ -10,7 +10,7 @@
   <view class="submit" bindtap="handleOpenDialog"> 交卷 </view>
   <view class="answered">
     <!-- answered 为已答题数量    answered + 1 为题号-->
-    {{ answered + 1 }}/50
+    {{ questionNumber }}/{{examQuestionsSum}}
   </view>
 </view>
 
@@ -18,18 +18,50 @@
   <t-button theme="default" content="{{ type }}" disabled="{{true}}"></t-button>
   <text class="question_text">{{ question }}:</text>
   <view style="padding-top: 30rpx">
-    <!-- 单选 / 判断选项-->
-    <t-radio-group t-class="theme-card" wx:if="{{type != '多选'}}" bind:change="onChangeRadio">
-      <block wx:for="{{ options }}" wx:key="index">
-        <t-radio
-          allow-uncheck
-          label="{{options[index].label}}"
-          value="{{index}}"
-          checked="{{checked == index}}"
-        />
-      </block>
-    </t-radio-group>
+    <!-- 单选选项-->
+    <block wx:if="{{type == '单选'}}">
+      <t-radio-group t-class="theme-card" bind:change="onChangeRadio" value="{{checked}}">
+        <block wx:for="{{ options }}" wx:key="index">
+          <t-radio
+            allow-uncheck
+            label="{{options[index].label}}"
+            value="{{index}}"
+            checked="{{checked == index}}"
+          />
+          <!-- checked="{{checked == index}}" -->
+        </block>
+      </t-radio-group>
+    </block>
+    <!-- ---------------------------------- -->
+    <!-- 判断选项 -->
+    <block wx:elif="{{type == '判断'}}">
+      <t-radio-group t-class="theme-card" bind:change="onChangeRadio" value="{{checked}}">
+        <block wx:for="{{ options }}" wx:key="index">
+          <t-radio
+            allow-uncheck
+            label="{{options[index].label}}"
+            value="{{index}}"
+            checked="{{checked == index}}"
+          />
+        </block>
+      </t-radio-group>
+    </block>
+    <!-- ---------------------------------- -->
     <!-- 多选选项 -->
+    <!-- Vant UI库 -->
+    <block wx:else>
+      <van-checkbox-group value="{{chooseCheckBoxOption}}" bind:change="onChangeCheckbox">
+        <block wx:for="{{ options }}" wx:key="index">
+          <!-- value="{{ checked[index] == index }}" -->
+          <van-checkbox name="{{['A','B','C','D'][index]}}" checked-color="#105a9d">
+            {{item.label}}
+          </van-checkbox>
+        </block>
+      </van-checkbox-group>
+    </block>
+    <!-- <van-checkbox use-icon-slot value="{{ checked }}" bind:change="onChange"></van-checkbox> -->
+    <!-- 自定义图标 <image slot="icon" src="{{ checked ? activeIcon : inactiveIcon }}" /> -->
+
     <!-- T-Design UI库 -->
     <!-- <t-checkbox-group t-class="theme-card" borderless wx:if="{{ type == '多选' }}" bind:change="onChangeCheckbox" >
       <block wx:for="{{ options }}" wx:key="index">
@@ -44,20 +76,6 @@
         </checkbox>
       </block>
     </checkbox-group> -->
-    <!-- Vant UI库 -->
-    <van-checkbox-group value="{{chooseCheckBoxOption}}" bind:change="onChangeCheckbox" wx:else>
-      <block wx:for="{{ options }}" wx:key="index">
-        <van-checkbox
-          value="{{ checked[index] == index }}"
-          name="{{['A','B','C','D'][index]}}"
-          checked-color="#105a9d"
-        >
-          {{item.label}}
-        </van-checkbox>
-      </block>
-    </van-checkbox-group>
-    <!-- <van-checkbox use-icon-slot value="{{ checked }}" bind:change="onChange"></van-checkbox> -->
-    <!-- 自定义图标 <image slot="icon" src="{{ checked ? activeIcon : inactiveIcon }}" /> -->
   </view>
   <!-- <t-radio-group bind:change="onChangeRadio" options="{{ options }}" default-value="{{defaultOption}}"/> -->
 </view>
@@ -87,7 +105,7 @@
   visible="{{showAnswerSituationDialog}}"
   title="答题情况"
   content="{{ answerSituation }}"
-  confirm-btn="{{ { content:'知道了' , variant: 'base' } }}"
+  confirm-btn="{{ { content:'知道且退出' , variant: 'base' } }}"
   bind:confirm="handleExit"
 />
 <!-- 未登录对话框 -->
@@ -97,4 +115,11 @@
   content="由于您未登录，目前无法使用此功能"
   confirm-btn="{{ { content: '去登录', variant: 'base' } }}"
   bind:confirm="toLogin"
+/>
+<t-dialog
+  visible="{{showExamQualificationsDialog}}"
+  title="未获取考试资格"
+  content="很遗憾你的学习进度未达标，你暂未获取考试资格"
+  confirm-btn="{{ { content: '去学习', variant: 'base' } }}"
+  bind:confirm="handleExit"
 />

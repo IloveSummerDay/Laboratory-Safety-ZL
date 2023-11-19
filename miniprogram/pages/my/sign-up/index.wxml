@@ -1,0 +1,39 @@
+<!--pages/my/sign-up/index.wxml-->
+<t-input
+  class="input"
+  type="text"
+  bind:change="getName"
+  prefixIcon="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/注册页icon/name.svg"
+  placeholder="请输入真实姓名"
+/>
+<t-input
+  class="input"
+  type="nickname"
+  bind:change="getNickName"
+  prefixIcon="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/注册页icon/nickName.svg"
+  placeholder="请输入昵称"
+  maxlength="{{8}}"
+/>
+<t-input
+  class="input"
+  bind:change="getXueHao"
+  type="number"
+  prefixIcon="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/注册页icon/xuehao.svg"
+  placeholder="请输入学号/手机号/邮箱"
+/>
+<t-input
+  class="input"
+  bind:change="getGrade"
+  type="text"
+  prefixIcon="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/注册页icon/grade.svg"
+  placeholder="请输入年级（如21数字媒体技术2班）"
+/>
+<t-input
+  class="input"
+  bind:change="getPassword"
+  prefixIcon="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/注册页icon/password.svg"
+  placeholder="请输入密码"
+  type="safe-password"
+/>
+<t-button t-class="btn" theme="primary" size="large" bindtap="handleSignUp">确认注册</t-button>
+<view class="text" bindtap="toLogin"> 已有账号？去登录 </view>

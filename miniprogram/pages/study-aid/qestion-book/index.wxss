@@ -1,1 +1,45 @@
 /* pages/study-aid/qestion-book/index.wxss */
+.tabBar {
+  width: 100%;
+  display: flex;
+}
+.scroll_view {
+  flex: 1;
+  overflow-y: scroll;
+}
+.err_box {
+  padding: 20rpx 40rpx 20rpx 40rpx;
+  border-bottom: 1px #ccc solid;
+}
+.answer_box {
+  padding-top: 40rpx;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.look_analysis {
+  --td-button-border-width: 20rpx;
+  --td-button-primary-bg-color: #105a9d;
+  --td-button-primary-active-bg-color: #3178bb;
+}
+.none_err_img {
+  display: block;
+  width: 300rpx;
+  margin: 0 auto;
+  margin-top: 50%;
+  transform: translateY(-50%);
+}
+.t-class {
+  --td-collapse-horizontal-padding: 20rpx !important;
+  --td-collapse-header-height: 20rpx !important;
+  --td-collapse-title-font-size: 20rpx;
+  --td-collapse-title-font-size: 20rpx;
+}
+.t-class-header {
+  height: 0;
+  padding: 10rpx;
+  background-color: aquamarine;
+}
+.t-class-content {
+  background-color: aquamarine;
+}

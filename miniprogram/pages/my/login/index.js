@@ -5,7 +5,14 @@ Page({
    */
   data: {
     account: undefined, // string
-    password: undefined // string
+    password: undefined, // string
+    errMessage: '密码或用户不正确',
+    showContentOnly: false
+  },
+  closeDialog() {
+    this.setData({
+      showContentOnly: false
+    })
   },
   getAccount(e) {
     this.setData({
@@ -17,31 +24,63 @@ Page({
       password: String(e.detail.value)
     })
   },
-  // 账号 215701214  密码 123456
+  // 账号 215701214  密码 12345678
   async handleLogin() {
     console.log('【账号 密码】', this.data.account, this.data.password)
-    wx.cloud.callContainer({
-      config: {
-        env: 'prod-2gchtexr0201dccd' // 微信云托管的环境ID
-      },
+    wx.showLoading({
+      title: '请稍候'
+    })
+    let app = getApp()
+    const res = await app.call({
       path: `/login?id=${this.data.account}&password=${this.data.password}`,
       method: 'POST',
       header: {
-        'X-WX-SERVICE': 'springboot-07ie',
         'content-type': 'application/form-data'
-      },
-      success: res => {
-        console.log('【登陆成功回调】', res.data)
-        let app = getApp()
-        app.globalData.isLogin = true
-        // 回退原来页
-        wx.showToast({
-          title: '登录成功'
-        })
-        wx.navigateBack({
-          delta: 1
-        })
       }
+    })
+    // 登录失败
+    if (typeof res.data == 'string') {
+      console.log('【登录失败回调】', res, typeof res == 'string')
+      wx.hideLoading()
+      this.setData({
+        errMessage: res.data,
+        showContentOnly: true
+      })
+    }
+    // 登录成功
+    else {
+      console.log('【登录成功回调】', res[0], typeof res == 'string')
+      let data = res[0]
+      // 记录用户信息（赋值客户端全局变量）
+      app.globalData.isLogin = data.sign
+      app.globalData.nickName = data.netName
+      for (let prop in data) {
+        if (data.hasOwnProperty(prop) && app.globalData.hasOwnProperty(prop)) {
+          app.globalData[prop] = data[prop]
+          console.log(prop, app.globalData[prop])
+        }
+      }
+      // 回退原来页
+      wx.hideLoading()
+      wx.showToast({
+        title: '登录成功'
+      })
+      wx.navigateBack({
+        delta: 1
+      })
+    }
+  },
+  handleFindPassword() {
+    wx.showToast({
+      title: '还未开发'
+    })
+    // wx.navigateTo({
+    //   url: 'url'
+    // })
+  },
+  handleSignUp() {
+    wx.navigateTo({
+      url: '../sign-up/index'
     })
   },
   /**

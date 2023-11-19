@@ -1,20 +1,36 @@
 /* pages/my/login/index.wxss */
-page{
+page {
   position: relative;
-  
 }
-.input_box{
+.input_box {
   width: 90%;
   margin: 0 auto;
   padding-top: 40rpx;
 }
-.account_input, .password_input{
+.account_input,
+.password_input {
   margin-top: 10rpx;
   --td-input-bg-color: none;
   --td-input-border-color: #ccc;
 }
-.login_btn{
-  margin-top: 50rpx;
+.forget_box {
+  display: flex;
+  justify-content: space-between;
+  padding: 40rpx 0 20rpx 20rpx;
+}
+.forget_password {
+  color: black;
+}
+.forget_password:active,
+.login:active {
+  color: #ccc;
+}
+.login {
+  color: rgba(189, 185, 185, 0.8);
+  text-decoration: underline;
+}
+.login_btn {
+  margin-top: 60rpx;
   --td-button-primary-bg-color: rgba(16, 90, 157, 1);
   --td-button-border-width: 0;
 }

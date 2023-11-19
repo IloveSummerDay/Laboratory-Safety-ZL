@@ -1,22 +1,21 @@
 /* pages/home/regulation/index.wxss */
-.item{
-  width: 90%;
-  height: 80rpx;
+.item {
+  width: 85%;
+  padding: 0 10rpx 0 30rpx;
+  min-height: 80rpx;
   margin: 0 auto;
-  margin-top: 20rpx;
+  margin-top: 30rpx;
   border-radius: 20rpx;
   display: flex;
   align-items: center;
-  justify-content: space-around;
   background-color: white;
 }
-.item text{
+.item text {
   width: 80%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-image{
-  height: 52rpx;
-  width: 52rpx;
+.shadow_inside {
+  box-shadow: inset 0 0 10px rgba(95, 95, 95, 0.2);
 }

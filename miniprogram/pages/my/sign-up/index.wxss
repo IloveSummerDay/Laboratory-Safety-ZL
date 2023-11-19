@@ -1,0 +1,22 @@
+/* pages/my/sign-up/index.wxss */
+.input {
+  width: 600rpx;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  border-radius: 20rpx;
+}
+.btn {
+  margin-top: 60rpx;
+  width: 600rpx;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  --td-button-primary-bg-color: rgba(16, 90, 157, 1);
+  --td-button-border-width: 0;
+}
+.text {
+  text-align: center;
+  color: #ccc;
+  text-decoration: underline;
+  margin-top: 40rpx;
+}

@@ -7,25 +7,20 @@
     "pages/home/regulation/index",
     "pages/home/regulation-detail/index",
     "pages/home/danger-report/index",
-
     "pages/message/index/message",
     "pages/message/message_detail/index",
-
     "pages/study/exam/exam",
     "pages/study/practice/practice",
     "pages/study/index/index",
     "pages/study/answer/answer",
-
     "pages/my/index/my",
     "pages/my/k_login/login",
     "pages/my/progress/progress",
     "pages/my/identifying_safety/identifying_safety",
     "pages/my/diploma/index",
     "pages/my/login/index",
-
     "pages/study-aid/qestion-book/index",
     "pages/study-aid/study-notes/index",
-
     "pages/studytask/b_knowledge_introduce/knowledge_introduce",
     "pages/studytask/d_drypowderfire_extinguisher/drypowderfire_extinguishe",
     "pages/studytask/e_carbondioxidefire_extinguisher/carbondioxidefire_extinguisher",
@@ -37,14 +32,16 @@
     "pages/studytask/k_lab_goods/lab_goods",
     "pages/studytask/l_power_lines/power_lines",
     "pages/studytask/m_safety_notice/safety_notice",
-    "pages/studytask/c_show_video/show_video"
+    "pages/studytask/c_show_video/show_video",
+    "pages/my/sign-up/index",
+    "pages/my/personal-data/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "待填写...",
     "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": false
   },
   "tabBar": {
     "color": "#999",

@@ -6,11 +6,11 @@ Page({
   data: {
     showLoginDialog: false,
     rules: [
-      '浙江传媒学院实验室安全管理办法',
-      '浙江传媒学院实验室安全卫生守则',
-      '媒体工程学院实验室突发事件应急处理预案',
-      '浙江传媒学院实验室安全管理办法',
-      '媒体工程学院实验室突发事件应急处理预案'
+      '实验室安全管理办法',
+      '实验室安全卫生守则',
+      '实验室突发事件应急处理预案',
+      '实验室安全管理办法',
+      '实验室突发事件应急处理预案'
     ]
   },
 
@@ -19,6 +19,7 @@ Page({
    */
   onLoad(options) {
     let app = getApp()
+    // 核验是否登录
     if (!app.globalData.isLogin) {
       this.setData({
         showLoginDialog: true

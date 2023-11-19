@@ -60,8 +60,8 @@ Page({
     })
   },
   handleSwapVideo(e) {
+    console.log('【切换视频 或不切】', e.currentTarget.dataset.index)
     if (videoURLIndex == e.currentTarget.dataset.index) return
-    console.log('【切换视频】', e.currentTarget.dataset.index)
     videoURLIndex = e.currentTarget.dataset.index
     totalTime += deltaTime
     deltaTime = 0
@@ -71,6 +71,15 @@ Page({
     this.loadVideo()
   },
   getVideoTempURL() {},
+  async setModuleComplete() {
+    let app = getApp()
+    let modulesName = ['setDianqi', 'setFeiwu', 'setXiaofang', 'setJiuyuan', 'setYanlian']
+    const res = await app.call({
+      path: `/${modulesName[classIndex]}?id=${app.globalData.id}`,
+      method: 'PUT'
+    })
+    if (res.code == 200) console.log('【设置安全手册模块完成回调】', res)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -79,9 +88,7 @@ Page({
       '【章节目录 视频分类】',
       options.classIndex,
       options.className,
-      table[options.classIndex][options.className],
-      totalTime,
-      deltaTime
+      table[options.classIndex][options.className]
     )
     className = options.className
     classIndex = options.classIndex
@@ -96,14 +103,7 @@ Page({
    */
   async onUnload() {
     let app = getApp()
-    /**
-     * @desc 此处这样写 完全是为了演示
-     * 安全手册学习种类总共 为5
-     */
-    // if (app.globalData.learnedModule.includes(className)) return
-    // app.globalData.learnedModule.push(className)
-    // app.globalData.konwLedgeProgress += 100 / 5
-    totalTime += deltaTime
+    totalTime += deltaTime // 汇总此次页面的学习时长 （单位 - 秒）
     if (totalTime <= 60) {
       // 此次学习时长不足一分钟时 不作记录
       wx.showToast({
@@ -112,30 +112,30 @@ Page({
       })
     } else {
       // 调用增加时长接口， 更新数据库学习时长
-      wx.request({
-        url: 'https://springboot-07ie-78136-5-1314621544.sh.run.tcloudbase.com/addTime',
+      const res = await app.call({
+        path: `/addTime?id=${app.globalData.id}&learn_time=${Math.ceil(totalTime / 60)}`,
         method: 'PUT',
         header: {
           'content-type': 'application/form-data'
-        },
-        data: {
-          id: '215701214',
-          learn_time: 20
-        },
-        success: res => {
-          console.log('【增加学时成功回调】', res)
-          app.globalData.studyTime += Math.ceil(totalTime / 60)
-        },
-        fail: (errno, errMsg) => {
-          console.log('【查询题目失败回调】', errno, errMsg)
         }
       })
+      // 接口成功回调 callback
+      if (res.code == 200) {
+        wx.showToast({
+          title: '学时增加完成'
+        })
+        console.log('【增加学时成功回调】', res)
+        console.log('【离开安全手册视频学习页后 全局状态 本页学习时长秒】', totalTime)
+      } else {
+        wx.showToast({
+          title: '网络欠佳'
+        })
+      }
     }
-    console.log(
-      '【离开安全手册视频学习页后 全局状态 】 学习总时长分 本页学习时长秒',
-      app.globalData.studyTime,
-      totalTime
-    )
+    // 暂定学习5分钟即可算作完成该模块
+    if (totalTime > 300) {
+      this.setModuleComplete()
+    }
     // 重置 本页学习时长统计
     totalTime = 0
     deltaTime = 0

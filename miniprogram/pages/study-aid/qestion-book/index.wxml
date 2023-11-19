@@ -1,2 +1,53 @@
-<!--pages/study-aid/qestion-book/index.wxml-->
-<text>暂未完善</text>
+<t-sticky>
+  <t-tab-bar
+    t-class="tabBar"
+    value="{{value}}"
+    bindchange="onChangeNav"
+    theme="tag"
+    split="{{false}}"
+    fixed="{{false}}"
+    safe-area-inset-bottom="{{false}}"
+  >
+    <t-tab-bar-item wx:for="{{list}}" wx:key="index" value="{{item.value}}">
+      {{item.label}}
+    </t-tab-bar-item>
+  </t-tab-bar>
+</t-sticky>
+<view>
+  <image class="none_err_img"
+    src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/学习考试icon/noneErrorQuestion.png"
+    mode=""
+    wx:if="{{ errorList.length == 0 }}"
+  />
+  <view class="scroll_view">
+    <t-collapse value="{{activeValues}}" t-class="zl">
+      <block wx:for="{{errorList}}" wx:key="index">
+        <view class="err_box">
+          <view> {{item.questionText}} </view>
+
+          <view class="answer_box">
+            <text style="color: #13b05d">正确答案：{{item.currentAnswer}}</text>
+            <text style="padding-left: 40rpx; color: #e80101">我的答案：{{item.myAnswer}}</text>
+            <t-button
+              t-class="look_analysis"
+              theme="primary"
+              bindtap="handleLookAnalysis"
+              data-index="{{ index }}"
+              shape="round"
+              size="small"
+              content="查看解析"
+            ></t-button>
+          </view>
+
+          <view class="analysis_box" style="margin-top: 20rpx" wx:if="{{activeAnalysis[index]}}">
+            <!-- <t-collapse value="{{item.activeValues}}" bind:change="handleLookAnalysis" t-class="nalysis_header"> -->
+            <t-collapse-panel value="{{index}}" header="答案详解如下" expandIcon>
+              此处可自定义内容此处可自定义内容此处可自定义内容此处可自定义内容此处可自定义内容此处可自定义内容此处可自定义内容此处可自定义内容
+            </t-collapse-panel>
+            <!-- </t-collapse> -->
+          </view>
+        </view>
+      </block>
+    </t-collapse>
+  </view>
+</view>

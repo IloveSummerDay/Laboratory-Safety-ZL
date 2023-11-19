@@ -46,7 +46,7 @@
 .nick_name {
   font-size: 40rpx;
   font-weight: bold;
-  max-width: 400rpx;
+  max-width: 300rpx;
   height: 100rpx;
   line-height: 100rpx;
   white-space: nowrap;
@@ -55,6 +55,13 @@
   position: absolute;
   left: 35%;
 }
+.more_icon {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 30rpx;
+}
+
 .login_btn {
   width: 200rpx;
   height: 200rpx;
