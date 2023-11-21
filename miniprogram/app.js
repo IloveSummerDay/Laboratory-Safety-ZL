@@ -66,6 +66,7 @@ App({
     rule5: false,
     safeSign: false,
     grade: '',
+    name: '',
     nickName: undefined,
     // ----------------------------- //
     userInfo: {}, // 用户信息

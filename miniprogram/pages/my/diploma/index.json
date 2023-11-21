@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "t-message": "tdesign-miniprogram/message/message"
+  },
   "navigationBarTitleText": "所获证书"
 }

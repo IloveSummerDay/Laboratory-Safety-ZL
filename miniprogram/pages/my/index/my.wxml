@@ -19,6 +19,7 @@
       type="nickname"
       class="weui-input nick_name"
       placeholder="点击添加昵称"
+      value="{{nickName}}"
       bindblur="onChooseNickName"
     />
     <image

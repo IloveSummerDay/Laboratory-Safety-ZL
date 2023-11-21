@@ -1,7 +1,7 @@
 // pages/study-aid/qestion-book/index.js
 Page({
   data: {
-    errorList: [],
+    questionsList: [],
     value: 'AllError',
     list: [
       { value: 'AllError', label: '全部错题' },
@@ -9,7 +9,7 @@ Page({
       { value: 'Studied', label: '已学习' }
     ],
     activeValues: [],
-    activeAnalysis: {}
+    activeAnalysis: {} // { 0: true, 1: true ...}
   },
   onChangeNav(e) {
     console.log(e.detail.value)
@@ -19,12 +19,12 @@ Page({
       },
       UnStudy: () => {
         this.setData({
-          errorList: []
+          questionsList: []
         })
       },
       Studied: () => {
         this.setData({
-          errorList: []
+          questionsList: []
         })
       }
     }
@@ -45,7 +45,7 @@ Page({
     } else {
       activeValues.push(index)
     }
-    console.log(e.detail.value, index, activeValues)
+    console.log(index, activeValues)
     for (let j = 0; j < activeValues.length; j++) {
       activeAnalysis[activeValues[j]] = true
     }
@@ -53,7 +53,6 @@ Page({
       activeAnalysis: activeAnalysis
     })
     wx.nextTick(() => {
-      console.log(this.data.activeAnalysis[index])
       this.setData({
         activeValues
       })
@@ -61,29 +60,38 @@ Page({
   },
   async getErrQuestions() {
     const app = getApp()
+    let res = undefined
     if (!app.globalData.isLogin) return
     wx.showLoading({
       title: '查询错题中'
     })
-    const res = await app.call({
-      path: `/getWrong?user_id=${app.globalData.id}`,
-      header: {
-        'content-type': 'application/form-data'
-      },
-      method: 'POST'
-    })
-    console.log('【从后端查询得到错题列表】', res)
-    if (res) {
-      wx.hideLoading()
-      let errorList = res.map((item, index) => {
-        return {
-          questionText: item.content,
-          myAnswer: item.student_answer,
-          currentAnswer: item.answer
+    try {
+      res = await app.call({
+        path: `/getWrong?user_id=${app.globalData.id}`,
+        header: {
+          'content-type': 'application/form-data'
+        },
+        method: 'POST'
+      })
+    } catch (error) {
+      wx.showModal({
+        title: '网络不佳',
+        content: '请尝试重新进入错题册',
+        complete: res => {
+          if (res.confirm) {
+            wx.switchTab({
+              url: '../../study/index/index'
+            })
+          }
         }
       })
+    }
+    console.log('【从后端查询得到错题列表】', res)
+    if (res.length >= 0) {
+      wx.hideLoading()
+      let questionsList = res
       this.setData({
-        errorList
+        questionsList
       })
     }
   },

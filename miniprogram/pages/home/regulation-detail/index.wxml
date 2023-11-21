@@ -1,2 +1,5 @@
 <!--pages/home/regulation-detail/index.wxml-->
-<text>详细内容暂未填充</text>
+<view class="main_title"> {{regulationTitle}} </view>
+<block wx:for="{{regualtionsParas}}" wx:key="index">
+  <text class="para">{{item + '\n'}}</text>
+</block>

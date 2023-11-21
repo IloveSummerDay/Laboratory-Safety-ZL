@@ -2,17 +2,17 @@
 
 <view class="choose_box">
   <block wx:for="{{ classify }}" wx:key="index">
-    <navigator
-      open-type="redirect"
+    <view
       class="choose shadow"
-      url="{{ index == 0 ? '../answer/answer' : '../exam/exam' }}"
+      bindtap="handleAnswer"
+      data-type="{{ index == 0 ? 'practice' : 'exam' }}"
     >
       <image
         src="{{ index == 0 ? 'cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/学习考试icon/practice.png' : 'cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/学习考试icon/exam.png' }}"
         mode=""
       />
       <text>{{ item }}</text>
-    </navigator>
+    </view>
   </block>
 </view>
 
@@ -22,7 +22,7 @@
       src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/学习考试icon/topic.svg"
       mode=""
     />
-    <text>错题册</text>
+    <text>错题册 <text style="color: #ccc">（仅记录考试错题）</text></text>
     <image
       class="right_arrow"
       src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/消息通知icon/right_arrow.png"
@@ -42,3 +42,24 @@
     />
   </navigator>
 </view>
+
+<!-- 对话框 -->
+<!-- 去培训 -->
+<t-dialog
+  visible="{{showPracticeDialog}}"
+  title="进入培训前告知"
+  content="培训练习时，所答题目对应有解析，希望你有所收获！"
+  confirm-btn="{{ { content: '进入', variant: 'base'} }}"
+  cancel-btn="取消"
+  bind:confirm="toPractice"
+  bind:cancel="closePracticeDialog"
+/>
+<!-- 未登录 -->
+<t-dialog
+  visible="{{showLoginDialog}}"
+  title="未登录"
+  content="由于您未登录，目前无法使用此功能"
+  confirm-btn="{{ { content: '去登录', variant: 'base' } }}"
+  bind:confirm="toLogin"
+/>
+

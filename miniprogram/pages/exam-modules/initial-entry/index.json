@@ -2,5 +2,5 @@
   "usingComponents": {
     "t-dialog": "tdesign-miniprogram/dialog/dialog"
   },
-  "navigationBarTitleText": "学习考试"
+  "navigationBarTitleText": "待考试"
 }

@@ -1,4 +1,19 @@
 <!--pages/my/diploma/index.wxml-->
-<view>
-  
+<!-- 警示通知 -->
+<t-message id="t-message" />
+<image
+  class="none_certificates"
+  src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/学习考试icon/未结果.svg"
+  wx:if="{{ certificates.length == 0 }}"
+/>
+
+<view class="certificate_box" wx:for="{{certificates}}" wx:key="index">
+  <image
+    src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/个人中心icon/certificate.svg"
+    mode=""
+  />
+  <view class="certificate_info_box">
+    <view style="font-size: 40rpx; font-weight: bold"> {{item.content}}</view>
+    <view class="stu_info"> {{name}} - {{grade}}</view>
+  </view>
 </view>

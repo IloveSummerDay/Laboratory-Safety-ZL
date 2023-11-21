@@ -1,2 +1,59 @@
 <!--pages/my/personal-data/index.wxml-->
-<view class="exit" bindtap="handleExit"> 退出 </view>
+<t-input
+  class="input"
+  type="text"
+  align="right"
+  label="姓名"
+  disabled
+  value="{{name}}"
+  bind:change="getName"
+  prefixIcon="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/注册页icon/name.svg"
+  placeholder="请输入真实姓名"
+/>
+<t-input
+  class="input"
+  align="right"
+  label="昵称"
+  value="{{nickName}}"
+  bind:change="getNickName"
+  prefixIcon="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/注册页icon/nickName.svg"
+  placeholder="请输入昵称"
+  maxlength="{{8}}"
+/>
+<t-input
+  class="input"
+  align="right"
+  label="学号"
+  value="{{stu_id}}"
+  disabled
+  type="number"
+  prefixIcon="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/注册页icon/xuehao.svg"
+  placeholder="请输入学号"
+/>
+<t-input
+  class="input"
+  align="right"
+  label="班级"
+  disabled
+  value="{{grade}}"
+  bind:change="getGrade"
+  type="text"
+  prefixIcon="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/注册页icon/grade.svg"
+  placeholder="请输入所在班级"
+/>
+<!-- <t-input
+  class="input"
+  align="right"
+  label="新密码"
+  value="{{password}}"
+  bind:change="getPassword"
+  prefixIcon="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/注册页icon/password.svg"
+  placeholder="请输入新的密码"
+  type="number"
+/> -->
+<t-button t-class="btn" theme="primary" size="large" bindtap="handleSave">保存</t-button>
+<t-button t-class="exit" theme="danger  " size="large" bindtap="handleExit" variant="outline"
+  >退出登录</t-button
+>
+<!-- 轻提示 -->
+<t-toast id="t-toast" />

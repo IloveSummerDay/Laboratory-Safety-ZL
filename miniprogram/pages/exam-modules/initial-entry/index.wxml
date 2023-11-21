@@ -1,0 +1,35 @@
+<!--pages/exam-modules/initial-entry/index.wxml-->
+<view wx:for="{{examModules}}" wx:key="index" bindtap="handleAnswer" class="exam_module_box">
+  <view class="title"> {{item.title}} </view>
+  <view class="start_time"> 开始时间：{{item.start}} </view>
+  <view class="end_time"> 结束时间：{{item.end}} </view>
+</view>
+
+<!-- 未获取考试资格 -->
+<t-dialog
+  visible="{{showExamQualificationsDialog}}"
+  title="未获取考试资格"
+  content="很遗憾你的学习进度未达标，你暂未获取考试资格"
+  confirm-btn="{{ { content: '去学习', variant: 'base' } }}"
+  cancel-btn="如何获取资格？"
+  bind:confirm="closeQualificationsDialog"
+  bind:cancel="openExamStandardDialog"
+/>
+<!-- 了解如何获取资格 -->
+<t-dialog
+  visible="{{showExamStandardDialog}}"
+  title="获取考试资格标准"
+  content="1、练习量达到10+ \n 2、安全手册学习模块最少1个 \n 3、规章制度学习数量不低于3个"
+  confirm-btn="{{ { content: '知道了', variant: 'base' } }}"
+  bind:confirm="closeExamStandardDialog"
+/>
+<!-- 去考试 -->
+<t-dialog
+  visible="{{showEnterDialog}}"
+  title="考生须知"
+  content="1、进入考试后不可中途退出，否则考试作废。2、考试过程中，可提前交卷，但是会记入学习成绩"
+  confirm-btn="{{ { content: '进入考试', variant: 'base'} }}"
+  cancel-btn="再想想"
+  bind:confirm="toExam"
+  bind:cancel="closeExamDialog"
+/>

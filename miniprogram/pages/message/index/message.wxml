@@ -1,4 +1,9 @@
 <!--pages/message/message.wxml-->
+<t-message id="t-message" />
+<image class="no_message"
+  src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/消息通知icon/noMessage.svg"
+  wx:if="{{ messageList == 0 }}"
+/>
 <block wx:for="{{ messageList }}" wx:key="index">
   <navigator
     class="message_item shadow"

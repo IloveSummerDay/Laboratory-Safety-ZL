@@ -8,7 +8,7 @@ Page({
     isLogin: false,
     avatarUrl:
       'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0',
-    nickName: '点击添加您的昵称'
+    nickName: ''
   },
   onChooseAvatar(e) {
     const { avatarUrl } = e.detail
@@ -28,7 +28,8 @@ Page({
     console.log('【个人中心页显示】')
     app = getApp()
     this.setData({
-      isLogin: app.globalData.isLogin
+      isLogin: app.globalData.isLogin,
+      nickName: app.globalData.nickName ? app.globalData.nickName : '点击添加昵称'
     })
   },
 

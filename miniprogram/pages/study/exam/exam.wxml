@@ -108,18 +108,3 @@
   confirm-btn="{{ { content:'知道且退出' , variant: 'base' } }}"
   bind:confirm="handleExit"
 />
-<!-- 未登录对话框 -->
-<t-dialog
-  visible="{{showLoginDialog}}"
-  title="未登录"
-  content="由于您未登录，目前无法使用此功能"
-  confirm-btn="{{ { content: '去登录', variant: 'base' } }}"
-  bind:confirm="toLogin"
-/>
-<t-dialog
-  visible="{{showExamQualificationsDialog}}"
-  title="未获取考试资格"
-  content="很遗憾你的学习进度未达标，你暂未获取考试资格"
-  confirm-btn="{{ { content: '去学习', variant: 'base' } }}"
-  bind:confirm="handleExit"
-/>

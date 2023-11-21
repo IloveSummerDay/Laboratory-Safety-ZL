@@ -34,8 +34,14 @@
     "pages/studytask/m_safety_notice/safety_notice",
     "pages/studytask/c_show_video/show_video",
     "pages/my/sign-up/index",
-    "pages/my/personal-data/index"
+    "pages/my/personal-data/index",
+    "pages/exam-modules/initial-entry/index"
   ],
+  "networkTimeout": {
+    "request": 15000,
+    "uploadFile": 15000,
+    "downloadFile": 30000
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

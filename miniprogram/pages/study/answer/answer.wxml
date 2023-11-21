@@ -51,15 +51,11 @@
   </view>
   <view class="analysis_content_box">
     <text style="font-size: 40rpx; font-weight: bold">答案解析：</text>
-    <text
-      >答案解析答案解析答案解析答案解析答案解析答案解析答案解析答案解析答案解析答案解析答案解析答案解析答案解析答案解析答案解析答案解析答案解析答案解析答案解析答案</text
-    >
+    <text>{{analysis}}</text>
   </view>
 </view>
 
 <!-- 辅助类对话框 -->
-<!-- 提交题目后 提示对话框 -->
-<t-toast id="t-toast" duration="{{ 1000 }}" style="--td-toast-max-width: 400rpx" />
 <!-- 点击退出后，练习情况对话框 -->
 <t-dialog
   visible="{{showAnswerSituationDialog}}"
@@ -67,12 +63,4 @@
   content="{{ answerSituation }}"
   confirm-btn="{{ { content:'知道了' , variant: 'base' } }}"
   bind:confirm="handleExit"
-/>
-<!-- 未登录对话框 -->
-<t-dialog
-  visible="{{showLoginDialog}}"
-  title="未登录"
-  content="由于您未登录，目前无法使用此功能"
-  confirm-btn="{{ { content: '去登录', variant: 'base' } }}"
-  bind:confirm="toLogin"
 />

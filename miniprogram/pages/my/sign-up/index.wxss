@@ -20,3 +20,6 @@
   text-decoration: underline;
   margin-top: 40rpx;
 }
+.tip {
+  color: red;
+}

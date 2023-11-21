@@ -4,7 +4,7 @@
   <t-input
     class="account_input"
     label="账号"
-    placeholder="学号/手机号/邮箱"
+    placeholder="请输入学号"
     bind:change="getAccount"
   ></t-input>
   <t-input

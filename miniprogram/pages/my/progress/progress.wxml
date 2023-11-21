@@ -1,12 +1,26 @@
 <!--pages/my/progress/progress.wxml-->
 <view class="top_box">
-  <text
-    >爱好学习实验室知识的小伙伴 你好~ 
-    安全知识学习进度为：{{knowProgress}}%
-    安全标识学习进度为：{{identifyingProgress}}% 
-    规则制度学习进度为：{{systemProgress}}%
-    要注意安全知识的学习规划哦~</text
+  <view>爱好学习实验室知识的小伙伴 你好~ </view>
+  <view>目前你的学习进度为：</view>
+  <view
+    ><text style="color: {{ knowProgress == 100 ? '#2BA471': '#105A9D'}}">安全手册</text>
+    学习进度为：<text style="color: {{ knowProgress == 100 ? '#2BA471': '#105A9D'}}"
+      >{{knowProgress}}%</text
+    ></view
   >
+  <view
+    ><text style="color: {{ identifyingProgress == 100 ? '#2BA471': '#105A9D'}}">安全标识</text>
+    学习进度为：<text style="color: {{ identifyingProgress == 100 ? '#2BA471': '#105A9D'}}"
+      >{{identifyingProgress}}%</text
+    >
+  </view>
+  <view
+    ><text style="color: {{ systemProgress == 100 ? '#2BA471': '#105A9D'}}">规则制度</text>
+    学习进度为：<text style="color: {{ systemProgress == 100 ? '#2BA471': '#105A9D'}}"
+      >{{systemProgress}}%</text
+    ></view
+  >
+  <view>要注意安全知识的学习规划哦~</view>
 </view>
 
 <view class="progress_box">

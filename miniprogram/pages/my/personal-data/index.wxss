@@ -1,12 +1,25 @@
 /* pages/my/personal-data/index.wxss */
-.exit {
-  width: 80%;
-  height: 80rpx;
-  background-color: #e23535;
-  border-radius: 40rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
+.input {
+  width: 600rpx;
   margin: 0 auto;
+  margin-top: 40rpx;
+  border-radius: 20rpx;
+}
+.btn {
+  margin-top: 100rpx;
+  width: 600rpx;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  --td-button-primary-bg-color: rgba(16, 90, 157, 1);
+  --td-button-border-width: 0;
+}
+.exit {
+  margin-top: 50rpx;
+  width: 600rpx;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2rpx solid;
+  --td-button-primary-bg-color: #e23535;
 }

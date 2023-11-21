@@ -67,9 +67,13 @@ Page({
    * @desc 计算最终成绩
    */
   async handleCalGrades() {
+    wx.showLoading({
+      title: '计算分数中'
+    })
     // chooseOptionList currentOptionList
     let answered = this.data.answered // 已答题数 == 总题量
     let errorQuestionNumbers = []
+    let score = 0
     for (let i = 0; i < answered; i++) {
       if (chooseOptionList[i].chooseOption == currentOptionList[i].currentOption) {
         currentSum += 1
@@ -81,12 +85,27 @@ Page({
         }) // 错题题号数组
       }
     }
-    this.setData({
-      answerSituation: `已答题${answered} 正确${currentSum} 错误${errorSum}`,
-      showAnswerSituationDialog: true
-    })
-    if (errorQuestionNumbers.length > 0)
-      this.handleUpExamData(errorQuestionNumbers, Math.ceil((currentSum / answered) * 100))
+    score = answered == 0 ? 0 : Math.ceil((currentSum / answered) * 100)
+    let ifSuccess = true // 检查 上传错题、上传考试分数接口 是否调用成功
+    if (errorQuestionNumbers.length > 0 || score > 0) {
+      console.log(
+        '【调用上传错题 上传考试分数时携带数据】【错题信息列表 和 考试分数】',
+        errorQuestionNumbers,
+        score
+      )
+      ifSuccess = await this.handleUpExamData(errorQuestionNumbers, score)
+      console.log('【上传错题 上传考试分数接口 是否调用成功】', ifSuccess)
+    } else wx.hideLoading()
+
+    ifSuccess
+      ? this.setData({
+          answerSituation: `已答题${answered} | 正确为 ${currentSum} | 错误为 ${errorSum} | 分数为 ${score}`,
+          showAnswerSituationDialog: true
+        })
+      : wx.showToast({
+          icon: 'error',
+          title: '网络不佳请重试'
+        })
     console.log(`【交卷成功 ----- 已答题${answered} 正确${currentSum} 错误${errorSum}】`)
   },
   /**
@@ -104,34 +123,43 @@ Page({
         student_answer: numbers[i].student_answer
       })
     }
+    let res_wrongAnswer = undefined
+    let res_finalScore = undefined
     // 调用上传错题接口
-    const res_wrongAnswer = await app.call({
-      method: 'POST',
-      path: `/addWrongAnswer`,
-      header: {
-        'content-type': 'application/json'
-      },
-      data: errQuestionsList
-    })
-    const res_finalScore = await app.call({
-      method: 'PUT',
-      path: `/updateFinalScore?id=${app.globalData.id}&score2=${score}`,
-      header: {
-        'content-type': 'application/form-data'
-      }
-    })
+    try {
+      res_wrongAnswer = await app.call({
+        method: 'POST',
+        path: `/addWrongAnswer`,
+        header: {
+          'content-type': 'application/json'
+        },
+        data: errQuestionsList
+      })
+      res_finalScore = await app.call({
+        method: 'PUT',
+        path: `/updateFinalScore?id=${app.globalData.id}&score2=${score}`,
+        header: {
+          'content-type': 'application/form-data'
+        }
+      })
+    } catch (error) {
+      wx.hideLoading()
+      wx.showToast({
+        icon: 'error',
+        title: '网络不佳请重试'
+      })
+      return
+    }
+    wx.hideLoading()
+    console.log(res_wrongAnswer, res_finalScore)
     if (res_wrongAnswer.code == 200 && res_finalScore.code == 200) {
-      console.log(
-        '【调用上传错题接口时携带数据】【错题信息列表 和 考试分数】',
-        errQuestionsList,
-        score
-      )
       console.log(
         '【 调用上传 错题、分数 接口 上传成功】',
         res_wrongAnswer.message,
         res_finalScore.message
       )
-    }
+      return true
+    } else return false
   },
   /**
    * @desc 考试进行时调用的API如下
@@ -243,6 +271,7 @@ Page({
           console.log('【设置题目类型type / wx.nextTick / wx:if】', type)
           console.log('——————————————————————————————————————')
           this.setData({
+            questionNumber,
             answered:
               questionNumber - 1 <= this.data.answered
                 ? this.data.answered
@@ -267,6 +296,7 @@ Page({
           console.log('【设置题目类型type / wx.nextTick / wx:if】', type)
           console.log('——————————————————————————————————————')
           this.setData({
+            questionNumber,
             question: `${questionNumber}、` + resp.content,
             checked: optionsIndex,
             chooseCheckBoxOption: checkBoxOption,
@@ -327,32 +357,34 @@ Page({
    */
   async onLoad(options) {
     let app = getApp()
-    // 是否登录
-    if (!app.globalData.isLogin) {
-      this.setData({
-        showLoginDialog: true
-      })
-      return
-    }
-    // 是否获取考试资格
-    if (!(await this.isQualify())) {
-      console.log('【检查到用户没有资格时自动返回到上一页并提示信息】')
-      this.setData({
-        showExamQualificationsDialog: true
-      })
-      return
-    }
+    // 获取考题
     ranExamQuestions = getRanQuestions()
     console.log('【随机考试题目题号】', ranExamQuestions)
     wx.showLoading({
       title: '获取题目中'
     })
-    const res = await app.call({
-      path: `/findQuestion?id=${ranExamQuestions[questionNumber - 1]}`,
-      header: {
-        'content-type': 'application/form-data'
-      }
-    })
+    let res = undefined
+    try {
+      res = await app.call({
+        path: `/findQuestion?id=${ranExamQuestions[questionNumber - 1]}`,
+        header: {
+          'content-type': 'application/form-data'
+        }
+      })
+    } catch (error) {
+      wx.showModal({
+        title: '网络不佳',
+        content: '请重新进入考试',
+        complete: res => {
+          if (res.confirm) {
+            wx.switchTab({
+              url: '../index/index'
+            })
+          }
+        }
+      })
+      return
+    }
     if (res.code == 200) {
       console.log('【查询题目成功回调】', res.message, res.data.answer, res.data.type)
       let resp = res.data
@@ -373,6 +405,21 @@ Page({
         })
       })
       wx.hideLoading()
+    } else {
+      console.log(res)
+      wx.hideLoading()
+      wx.showModal({
+        title: '网络不佳',
+        content: '查询考题失败，请重新进入考试',
+        complete: res => {
+          if (res.confirm) {
+            wx.switchTab({
+              url: '../index/index'
+            })
+          }
+        }
+      })
+      return
     }
   },
   /**
@@ -380,8 +427,8 @@ Page({
    */
   onUnload() {
     let app = getApp()
-    app.globalData.examPass = this.data.answered == 50
-    console.log('【退出考试页后 全局状态】', app.globalData)
+    app.globalData.examPass = this.data.answered == examQuestionsSum
+    console.log('【退出考试页后 全局状态是否通过考试】', app.globalData.examPass)
     // 重置
     chooseOptionList = []
     currentOptionList = []
@@ -390,20 +437,6 @@ Page({
     chooseOption = undefined // 当前题目用户选项0123
     currentSum = 0 // 当前题目用户选项0123
     errorSum = 0 // 当前题目用户选项0123
-  },
-  async isQualify() {
-    //返回True表示有资格
-    //返回False表示没有资格
-    let app = getApp()
-    const res = await app.call({
-      path: `/selectExamQualifications?id=${app.globalData.id}`
-    })
-    if (res.data.indexOf('你暂未获取考试资格') > -1) {
-      // 查询到字符串表示 没有资格
-      return true // false
-    } else {
-      return true
-    }
   },
   toLogin() {
     console.log('【跳转到个人中心去登录】')

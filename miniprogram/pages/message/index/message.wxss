@@ -1,4 +1,10 @@
 /* pages/message/message.wxss */
+.no_message {
+  display: block;
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 50%;
+}
 .message_item {
   width: 95%;
   height: 200rpx;
@@ -7,7 +13,8 @@
   margin: 0 auto;
   margin-top: 20rpx;
 }
-.title_box, .content_box{
+.title_box,
+.content_box {
   width: 90%;
   height: 50%;
   margin: 0 auto;
@@ -18,14 +25,14 @@
   border-bottom: 1px solid #ccc;
   color: #919191;
 }
-.title_box image{
+.title_box image {
   width: 50rpx;
   height: 100%;
 }
 .title_text {
   margin-left: 20rpx;
   font-weight: bold;
-  font-family: "微软雅黑";
+  font-family: '微软雅黑';
   color: black;
 }
 
@@ -33,16 +40,16 @@
   position: absolute;
   right: 0;
 }
-.content_box{
+.content_box {
   border: 0;
 }
-.content_box text{
+.content_box text {
   width: 90%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.content_box image{
+.content_box image {
   width: 50rpx;
   height: 50rpx;
   position: absolute;

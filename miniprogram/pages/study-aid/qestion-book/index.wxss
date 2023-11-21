@@ -3,6 +3,12 @@
   width: 100%;
   display: flex;
 }
+.none_img {
+  display: block;
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 200rpx;
+}
 .scroll_view {
   flex: 1;
   overflow-y: scroll;
@@ -21,13 +27,6 @@
   --td-button-border-width: 20rpx;
   --td-button-primary-bg-color: #105a9d;
   --td-button-primary-active-bg-color: #3178bb;
-}
-.none_err_img {
-  display: block;
-  width: 300rpx;
-  margin: 0 auto;
-  margin-top: 50%;
-  transform: translateY(-50%);
 }
 .t-class {
   --td-collapse-horizontal-padding: 20rpx !important;

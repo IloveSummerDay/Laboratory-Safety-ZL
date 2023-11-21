@@ -1,1 +1,37 @@
 /* pages/my/diploma/index.wxss */
+.certificate_box {
+  width: 660rpx;
+  height: 200rpx;
+  border-radius: 40rpx;
+  margin: 40rpx auto;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+}
+.certificate_box image {
+  height: 160rpx;
+  width: 200rpx;
+}
+.certificate_info_box {
+  width: 500rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.stu_info {
+  width: 90%;
+  height: 1.5rem;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.none_certificates {
+  display: block;
+  width: 300rpx;
+  margin: 0 auto;
+  margin-top: 100rpx;
+}

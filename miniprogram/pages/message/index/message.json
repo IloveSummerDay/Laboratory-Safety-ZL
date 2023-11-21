@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "t-dialog": "tdesign-miniprogram/dialog/dialog"
+    "t-dialog": "tdesign-miniprogram/dialog/dialog",
+    "t-message": "tdesign-miniprogram/message/message"
   },
   "navigationBarTitleText": "消息通知"
 }

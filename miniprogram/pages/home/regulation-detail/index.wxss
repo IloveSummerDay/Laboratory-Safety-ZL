@@ -1,1 +1,12 @@
 /* pages/home/regulation-detail/index.wxss */
+.main_title {
+  font-size: 40rpx;
+  text-align: center;
+  font-weight: bold;
+  padding: 40rpx;
+}
+.para {
+  display: block;
+  text-indent: 2rem;
+  padding: 20rpx 20rpx 0 20rpx;
+}

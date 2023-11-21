@@ -3,5 +3,5 @@
     "t-input": "tdesign-miniprogram/input/input",
     "t-button": "tdesign-miniprogram/button/button"
   },
-  "navigationBarTitleText": "注册"
+  "navigationBarTitleText": "账号注册"
 }

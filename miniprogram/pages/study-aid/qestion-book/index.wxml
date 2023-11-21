@@ -14,20 +14,24 @@
   </t-tab-bar>
 </t-sticky>
 <view>
-  <image class="none_err_img"
-    src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/学习考试icon/noneErrorQuestion.png"
-    mode=""
-    wx:if="{{ errorList.length == 0 }}"
-  />
-  <view class="scroll_view">
+  <image
+    class="none_img"
+    wx:if="{{ questionsList.length == 0 }}"
+    src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/学习考试icon/未结果.svg"
+  >
+    无
+  </image>
+  <view class="scroll_view" wx:else>
     <t-collapse value="{{activeValues}}" t-class="zl">
-      <block wx:for="{{errorList}}" wx:key="index">
+      <block wx:for="{{questionsList}}" wx:key="index">
         <view class="err_box">
-          <view> {{item.questionText}} </view>
+          <view> {{item.content}} </view>
 
           <view class="answer_box">
-            <text style="color: #13b05d">正确答案：{{item.currentAnswer}}</text>
-            <text style="padding-left: 40rpx; color: #e80101">我的答案：{{item.myAnswer}}</text>
+            <text style="color: #13b05d">正确答案：{{item.answer}}</text>
+            <text style="padding-left: 20rpx; color: #e80101"
+              >我的答案：{{item.student_answer}}</text
+            >
             <t-button
               t-class="look_analysis"
               theme="primary"
@@ -42,7 +46,13 @@
           <view class="analysis_box" style="margin-top: 20rpx" wx:if="{{activeAnalysis[index]}}">
             <!-- <t-collapse value="{{item.activeValues}}" bind:change="handleLookAnalysis" t-class="nalysis_header"> -->
             <t-collapse-panel value="{{index}}" header="答案详解如下" expandIcon>
-              此处可自定义内容此处可自定义内容此处可自定义内容此处可自定义内容此处可自定义内容此处可自定义内容此处可自定义内容此处可自定义内容
+              <text wx:if="{{ item.type !== '判断'}}"
+                >{{item.option_A + '\n'}} {{item.option_B + '\n'}} {{item.option_C+
+                '\n'}}{{item.option_D+ '\n'}}</text
+              >
+
+              <text style="font-weight: bold">解析：</text>
+              {{item.analysis ? item.analysis : '此题没有解析'}}
             </t-collapse-panel>
             <!-- </t-collapse> -->
           </view>

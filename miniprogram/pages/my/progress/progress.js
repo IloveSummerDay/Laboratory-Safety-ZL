@@ -40,6 +40,7 @@ Page({
       })
       return
     }
+    // 根据后端数据库数据实时更新学习进度
     let data = res[0]
     let konwLedgeModules = ['dianqi', 'feiwu', 'xiaofang', 'jiuyuan', 'yanlian']
     let regulationModules = ['rule1', 'rule2', 'rule3', 'rule4', 'rule5']
