@@ -9,10 +9,10 @@
 
 <block wx:for="{{ rules }}" wx:key="{{ index }}">
   <navigator
-    class="item shadow shadow_inside"
+    class="item shadow"
     url="../regulation-detail/index?index={{index}}"
     open-type="navigate"
   >
-    <text>{{(index+1) + '. ' + item }}</text>
+    <text><text style="font-weight: bold">{{(index+1) + '. '}}</text>{{ item }}</text>
   </navigator>
 </block>

@@ -7,9 +7,31 @@ Page({
   data: {
     certificates: [],
     name: 'xxx',
-    grade: 'xxx'
+    grade: 'xxx',
+    visible: false,
+    closeBtn: false,
+    deleteBtn: false,
+    image: ''
   },
-
+  handleClickCertificates(e) {
+    const { index } = e.currentTarget.dataset
+    console.log(index)
+    const images = [
+      'cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/个人中心icon/合格准入证.svg',
+      'cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/个人中心icon/实验优秀学员.svg'
+    ]
+    this.setData({
+      image: images[index],
+      visible: true
+    })
+  },
+  handleCloseImageViewer(e) {
+    // const { index } = e.detail
+    // console.log('change', index) // 与 data-index 对应，证书索引位置
+    this.setData({
+      visible: false
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -77,7 +99,7 @@ Page({
     } else {
       wx.showModal({
         title: '网络不佳',
-        content: '请尝试重新进入所获证书页',
+        content: '请尝试重新进入',
         complete: res => {
           if (res.confirm) {
             wx.navigateBack()

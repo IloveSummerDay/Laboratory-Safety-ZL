@@ -1,2 +1,52 @@
 <!--pages/study-aid/study-notes/index.wxml-->
-<text>暂未完善</text>
+<!-- <view class="func_box">
+  <image
+    class="edit_icon"
+    src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/学习考试icon/编辑.svg"
+    mode=""
+  />
+</view> -->
+<view>
+  <image
+    wx:if="{{showEditIcon}}"
+    class="edit_icon"
+    src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/学习考试icon/编辑.svg"
+    mode=""
+    bindtap="openTitleDialog"
+  />
+  <image class="noNotes"
+    wx:else
+    src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/学习考试icon/未结果.svg"
+    mode=""
+  />
+</view>
+<view class="note_box">
+  <block wx:for="{{noteList}}" wx:key="index">
+    <view class="note_item" bindtap="toNoteDetail" data-index="{{index}}">
+      <view class="order"> {{index + 1}} </view>
+      <view class="note_title">【{{item.title}}】</view>
+    </view>
+  </block>
+</view>
+
+<!-- 笔记标题填写对话框 -->
+<t-dialog
+  visible="{{showTitleInput}}"
+  title="请输入一个笔记标题"
+  confirm-btn="确定"
+  cancel-btn="取消"
+  bind:confirm="handleWriteNote"
+  bind:cancel="closeDialog"
+>
+  <t-input
+    maxcharacter="{{12}}"
+    borderless
+    class="dialog-input"
+    clearable
+    slot="content"
+    value="{{titleInputValue}}"
+    bind:change="getTitle"
+    placeholder="输入12以内的笔记标题"
+    placeholder-class="placeholder"
+  />
+</t-dialog>

@@ -45,7 +45,6 @@ Page({
     } else {
       activeValues.push(index)
     }
-    console.log(index, activeValues)
     for (let j = 0; j < activeValues.length; j++) {
       activeAnalysis[activeValues[j]] = true
     }

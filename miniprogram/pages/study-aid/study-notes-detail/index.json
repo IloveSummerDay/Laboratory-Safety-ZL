@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-button": "tdesign-miniprogram/button/button"
+  },
+  "navigationBarTitleText": "学习笔记详情"
+}

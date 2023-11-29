@@ -1,19 +1,46 @@
 <!--pages/my/diploma/index.wxml-->
 <!-- 警示通知 -->
 <t-message id="t-message" />
+<!-- 未有证书时的提示 -->
 <image
   class="none_certificates"
   src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/学习考试icon/未结果.svg"
   wx:if="{{ certificates.length == 0 }}"
 />
 
-<view class="certificate_box" wx:for="{{certificates}}" wx:key="index">
-  <image
-    src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/个人中心icon/certificate.svg"
-    mode=""
-  />
-  <view class="certificate_info_box">
-    <view style="font-size: 40rpx; font-weight: bold"> {{item.content}}</view>
-    <view class="stu_info"> {{name}} - {{grade}}</view>
+<block wx:for="{{certificates}}" wx:key="index">
+  <view class="certificate_box" bindtap="handleClickCertificates" data-index="{{index}}">
+    <image
+      src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/个人中心icon/certificate.svg"
+      mode=""
+    />
+    <view class="certificate_info_box">
+      <view style="font-size: 40rpx; font-weight: bold"> {{item.content}}</view>
+      <view class="stu_info"> {{name}} - {{grade}}</view>
+    </view>
   </view>
-</view>
+  <view
+    wx:if="{{index+1 == certificates.length}}"
+    style="text-align: center; color: #ccc; margin-top: 40rpx"
+  >
+    点击证书，可保存和查看具体内容哦~
+  </view>
+</block>
+
+<!-- 证书预览弹窗 -->
+<van-overlay show="{{ visible }}" lock-scroll root-portal bind:click="handleCloseImageViewer">
+  <view class="image_wrapper">
+    <view class="certificate_img_box">
+      <image src="{{image}}" class="certificate_img" />
+      <view class="certificate_info"> {{grade}} - {{name}} </view>
+    </view>
+    <view class="save_text" style="color: rgba(255, 255, 255, 0.7)">请 自 行 截 图 保 存 哦~</view>
+  </view>
+</van-overlay>
+<!-- <t-image-viewer
+  backgroundColor="rgba(0, 0, 0, 0.7)"
+  closeBtn="{{true}}"
+  visible="{{visible}}"
+  images="{{images}}"
+  bind:close="handleCloseImageViewer"
+></t-image-viewer> -->

@@ -15,10 +15,12 @@ video {
 }
 .class_item {
   width: 90%;
-  height: 80rpx;
+  height: 120rpx;
+  box-shadow: 6rpx 6rpx 10rpx #cccccc;
   background-color: white;
   margin: 0 auto;
   margin-top: 20rpx;
+  margin-bottom: 20rpx;
   display: flex;
   position: relative;
   align-items: center;
@@ -36,4 +38,13 @@ image {
   right: 20rpx;
   width: 48rpx;
   height: 48rpx;
+}
+
+.video_intro,
+.course_intro {
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
 }

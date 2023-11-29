@@ -6,13 +6,14 @@ page {
 }
 #aperture {
   overflow: hidden;
-  background-color: wheat;
+  position: relative;
   height: 80%;
 }
 #tempPic {
+  display: block;
+  position: absolute;
   top: 0;
   left: 0;
-  position: absolute;
   width: 100%;
   height: 100%;
 }

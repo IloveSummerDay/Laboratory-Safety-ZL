@@ -9,17 +9,18 @@ page {
 }
 .account_input,
 .password_input {
-  margin-top: 10rpx;
+  margin-top: 40rpx;
   --td-input-bg-color: none;
   --td-input-border-color: #ccc;
+  --td-input-vertical-padding: 32rpx;
 }
 .forget_box {
   display: flex;
   justify-content: space-between;
-  padding: 40rpx 0 20rpx 20rpx;
+  padding: 60rpx 0 20rpx 20rpx;
 }
 .forget_password {
-  color: black;
+  color: rgba(0, 0, 0, 0.5);
 }
 .forget_password:active,
 .login:active {

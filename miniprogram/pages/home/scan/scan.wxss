@@ -6,13 +6,14 @@ page {
 }
 #aperture {
   overflow: hidden;
-  background-color: wheat;
+  position: relative;
   height: 80%;
 }
 #tempPic {
+  display: block;
+  position: absolute;
   top: 0;
   left: 0;
-  position: absolute;
   width: 100%;
   height: 100%;
 }
@@ -109,15 +110,12 @@ canvas {
   justify-content: center;
   align-items: center;
 }
-
-.button {
-  display: inline-block;
-  background-color: rgb(44, 80, 145);
-  color: #fff;
-  border-radius: 10px;
-  padding: 10px 15px;
-  text-align: center;
-  transition: all 0.3s ease;
+.button_box {
+  margin-top: 40rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .button:hover,
@@ -125,11 +123,15 @@ button:focus {
   background-color: rgb(86, 123, 196);
 }
 
-#entry {
-  display: block;
+#entry_btn,
+#cancel_btn {
   width: 320rpx;
-  margin: 0 auto;
-  margin-top: 40rpx;
+  padding: 20rpx 0 20rpx 0;
+  background-color: rgb(44, 80, 145);
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
 @keyframes modal-enter {

@@ -1,8 +1,20 @@
 <!--pages/exam-modules/initial-entry/index.wxml-->
-<view wx:for="{{examModules}}" wx:key="index" bindtap="handleAnswer" class="exam_module_box">
-  <view class="title"> {{item.title}} </view>
+<view
+  wx:for="{{examModules}}"
+  wx:key="index"
+  bindtap="handleAnswer"
+  class="exam_module_box"
+  data-index="{{index}}"
+>
+  <view class="title {{item.complete ? 'complete_title' : ''}}"> {{item.title}} </view>
   <view class="start_time"> 开始时间：{{item.start}} </view>
   <view class="end_time"> 结束时间：{{item.end}} </view>
+  <image
+    class="complete_icon"
+    wx:if="{{item.complete}}"
+    src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/学习考试icon/已完成.svg"
+    mode=""
+  />
 </view>
 
 <!-- 未获取考试资格 -->
@@ -27,9 +39,15 @@
 <t-dialog
   visible="{{showEnterDialog}}"
   title="考生须知"
-  content="1、进入考试后不可中途退出，否则考试作废。2、考试过程中，可提前交卷，但是会记入学习成绩"
+  content="1、进入考试后不可中途退出，否则考试作废。 \n 2、考试过程中，可提前交卷，但是会记入学习成绩"
   confirm-btn="{{ { content: '进入考试', variant: 'base'} }}"
-  cancel-btn="再想想"
+  cancel-btn="取消"
   bind:confirm="toExam"
   bind:cancel="closeExamDialog"
+/>
+<t-dialog
+  visible="{{showExamCompleteDialog}}"
+  title="您已完成该考试，请前往其他模块考试吧"
+  confirm-btn="{{ { content: '知道了', variant: 'base' } }}"
+  bind:confirm="closeExamCompleteDialog"
 />

@@ -35,12 +35,13 @@
     "pages/studytask/c_show_video/show_video",
     "pages/my/sign-up/index",
     "pages/my/personal-data/index",
-    "pages/exam-modules/initial-entry/index"
+    "pages/exam-modules/initial-entry/index",
+    "pages/study-aid/study-notes-detail/index"
   ],
   "networkTimeout": {
-    "request": 15000,
-    "uploadFile": 15000,
-    "downloadFile": 30000
+    "request": 60000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
   },
   "window": {
     "backgroundTextStyle": "light",

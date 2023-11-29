@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "t-dialog": "tdesign-miniprogram/dialog/dialog"
+    "t-dialog": "tdesign-miniprogram/dialog/dialog",
+    "t-image": "tdesign-miniprogram/image/image",
+    "t-input": "tdesign-miniprogram/input/input"
   },
   "navigationBarTitleText": "隐患随手拍"
 }

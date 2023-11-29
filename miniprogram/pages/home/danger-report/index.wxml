@@ -1,12 +1,4 @@
 <!--pages/danger-report/index.wxml-->
-<t-dialog
-  visible="{{showLoginDialog}}"
-  title="未登录"
-  content="由于您未登录，目前无法使用此功能"
-  confirm-btn="{{ { content: '去登录', variant: 'base' } }}"
-  bind:confirm="toLogin"
-/>
-
 <view id="aperture">
   <camera
     device-position="{{cameraSide}}"
@@ -14,6 +6,7 @@
     id="camera"
     style="height: 100%; width: 100%"
   ></camera>
+  <image wx:if="{{tempPicVisible}}" src="{{tempPicPath}}" mode="aspectFill" id="tempPic"></image>
 </view>
 
 <view id="operation">
@@ -24,7 +17,7 @@
       src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/随手拍icon/album.svg"
       mode="widthFix"
       id="album"
-      bindtap="toAlbum"
+      bindtap="fromAlbum"
     ></image>
     <!-- 拍照按钮 -->
     <div id="capture" bindtap="takePhoto"></div>
@@ -37,3 +30,34 @@
     ></image>
   </view>
 </view>
+
+<!-- 未登录对话框 -->
+<t-dialog
+  visible="{{showLoginDialog}}"
+  title="未登录"
+  content="由于您未登录，目前无法使用此功能"
+  confirm-btn="{{ { content: '去登录', variant: 'base' } }}"
+  bind:confirm="toLogin"
+/>
+<!-- 上传图片确认对话框 -->
+<t-dialog
+  visible="{{showUploadImgDialog}}"
+  title="是否确认上传此图片"
+  content="请详细描述发现隐患时间、隐患所在地点以及是否上报实验室相关工作人员（若上报，请填写工作人员姓名）"
+  confirm-btn="{{ {content: '确定', variant: 'base' } }}"
+  cancel-btn="取消"
+  bind:confirm="handleUploadDangerImg"
+  bind:cancel="closeDialog"
+>
+  <t-image slot="top" t-class="dialog-image" src="{{tempPicPath}}" />
+  <t-input
+    borderless
+    class="dialog-input"
+    clearable
+    slot="content"
+    value="{{dangerDesc}}"
+    placeholder="请输入你所发现的隐患"
+    placeholder-class="placeholder"
+    bind:change="getDangerDesc"
+  />
+</t-dialog>

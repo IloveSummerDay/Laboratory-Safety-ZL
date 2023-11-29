@@ -35,13 +35,19 @@ Page({
     app.globalData.nickName = this.data.nickName
     // app.globalData.password = this.data.password
     let res = undefined
+    let data = {
+      id: app.globalData.id,
+      password: app.globalData.password,
+      netName: this.data.nickName
+    }
     try {
       res = await app.call({
-        path: `/updateUser?id=${app.globalData.id}&password=${app.globalData.password}&netName=${this.data.nickName}`,
+        path: `/updateUser`,
         method: 'PUT',
         header: {
           'content-type': 'application/json;charset=utf-8'
-        }
+        },
+        data
       })
     } catch (error) {
       wx.hideLoading()

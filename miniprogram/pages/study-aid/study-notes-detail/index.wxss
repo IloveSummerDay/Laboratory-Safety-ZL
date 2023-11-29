@@ -1,0 +1,36 @@
+/* pages/study-aid/study-notes-detail/index.wxss */
+page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  text-align: center;
+  padding: 40rpx;
+  font-weight: bold;
+  font-size: 60rpx;
+  height: 80rpx;
+  color: var(--theme-color);
+}
+.textarea {
+  height: 900rpx;
+  --td-textarea-label-color: var(--theme-color);
+  --td-textarea-background-color: rgb(255, 255, 255);
+}
+.content {
+  display: block;
+  padding: 40rpx;
+  --td-textarea-background-color: rgb(255, 255, 255, 0);
+}
+
+.tip {
+  margin-top: 40rpx;
+  font-size: 30rpx;
+  color: #b8b8b8;
+  text-align: right;
+  padding: 0 40rpx 40rpx 40rpx;
+}
+.btn {
+  --td-button-primary-bg-color: var(--theme-color);
+  --td-button-primary-active-bg-color: rgba(16, 90, 157, 1);
+}

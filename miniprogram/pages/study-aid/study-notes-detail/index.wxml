@@ -1,0 +1,32 @@
+<!--pages/study-aid/study-notes-detail/index.wxml-->
+<input class="title" value="{{title}}" />
+
+<view wx:if="{{!isEdit}}" bindtap="handleEdit">
+  <text class="content">{{content}}</text>
+  <view class="tip"> （ 轻点笔记文字可进行编辑哦~ ） </view>
+</view>
+
+<view wx:else>
+  <t-textarea
+    t-class="external-class textarea"
+    label="快来写下新的笔记吧"
+    adjust-position="{{false}}"
+    autosize
+    fixed
+    value="{{content}}"
+    maxcharacter="1000"
+    disableDefaultPadding="{{true}}"
+    indicator
+    show-confirm-bar
+    bind:change="updataNewNotes"
+    bind:enter="handleCompleteEdit"
+  />
+  <t-button
+    theme="primary"
+    size="large"
+    t-class="btn"
+    style="width: 200rpx; margin: 0 auto; display: block; margin-top: 40rpx"
+    bindtap="handleCompleteEdit"
+    >完成</t-button
+  >
+</view>

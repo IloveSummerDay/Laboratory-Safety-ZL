@@ -47,8 +47,13 @@ Page({
     })
   },
   handleTimeEndSubmit() {
-    console.log('【时间耗尽 提交答卷】')
-    this.handleExit()
+    wx.showModal({
+      title: '倒计时结束',
+      content: '时间到，考试结束，将不计入考试成绩',
+      complete: res => {
+        this.handleExit()
+      }
+    })
   },
   handleOpenDialog(bool = true) {
     this.setData({
@@ -64,7 +69,7 @@ Page({
     }
   },
   /**
-   * @desc 计算最终成绩
+   * @desc 对话框确认后，计算最终成绩
    */
   async handleCalGrades() {
     wx.showLoading({
@@ -85,21 +90,28 @@ Page({
         }) // 错题题号数组
       }
     }
-    score = answered == 0 ? 0 : Math.ceil((currentSum / answered) * 100)
-    let ifSuccess = true // 检查 上传错题、上传考试分数接口 是否调用成功
+    score = answered == 0 ? 0 : Math.ceil((currentSum / examQuestionsSum) * 100)
+    // 记录考试后数据 （上传错题、上传考试分数）--->
+    let ifUpExamError = true // 检查 上传错题、上传考试分数接口 是否调用成功
+    let ifGetCertificate = true // 检查 上传错题、上传考试分数接口 是否调用成功
     if (errorQuestionNumbers.length > 0 || score > 0) {
       console.log(
         '【调用上传错题 上传考试分数时携带数据】【错题信息列表 和 考试分数】',
         errorQuestionNumbers,
         score
       )
-      ifSuccess = await this.handleUpExamData(errorQuestionNumbers, score)
-      console.log('【上传错题 上传考试分数接口 是否调用成功】', ifSuccess)
-    } else wx.hideLoading()
-
-    ifSuccess
+      ifUpExamError = await this.handleUpExamData(errorQuestionNumbers, score)
+      console.log('【上传错题 上传考试分数接口 是否调用成功】', ifUpExamError)
+    }
+    // 分数达标 获取证书
+    if (score >= 80) {
+      ifGetCertificate = await this.getCertificate()
+      console.log('【分数达标 获取证书 是否调用成功】', ifGetCertificate)
+    }
+    wx.hideLoading()
+    ifUpExamError && ifGetCertificate
       ? this.setData({
-          answerSituation: `已答题${answered} | 正确为 ${currentSum} | 错误为 ${errorSum} | 分数为 ${score}`,
+          answerSituation: `已答题${answered}  |  正确为 ${currentSum}  |  错误为 ${errorSum}  |  题目总量为 ${examQuestionsSum}  |  分数为 ${score}`,
           showAnswerSituationDialog: true
         })
       : wx.showToast({
@@ -110,7 +122,8 @@ Page({
   },
   /**
    * @desc 上传错题、上传考试分数
-   * @params numbers（错题题号）、score（分数）
+   * @param {Array} numbers
+   * @param {number} score
    */
   async handleUpExamData(numbers, score) {
     console.log('【错题信息列表 每个元素为错题题号 + 用户所选答案】', numbers)
@@ -143,15 +156,10 @@ Page({
         }
       })
     } catch (error) {
-      wx.hideLoading()
-      wx.showToast({
-        icon: 'error',
-        title: '网络不佳请重试'
-      })
-      return
+      return false
     }
     wx.hideLoading()
-    console.log(res_wrongAnswer, res_finalScore)
+    console.log('【上传错题、上传考试分数接口返回结果】', res_wrongAnswer, res_finalScore)
     if (res_wrongAnswer.code == 200 && res_finalScore.code == 200) {
       console.log(
         '【 调用上传 错题、分数 接口 上传成功】',
@@ -160,6 +168,24 @@ Page({
       )
       return true
     } else return false
+  },
+  /**
+   * @desc 分数达标 获取证书
+   */
+  async getCertificate() {
+    let app = getApp()
+    let res = undefined
+    try {
+      res = await app.call({
+        path: `/setCertificate1?id=${app.globalData.id}`,
+        method: 'PUT'
+      })
+    } catch (error) {
+      return false
+    }
+    if (res.code == 200) {
+      return true
+    } else false
   },
   /**
    * @desc 考试进行时调用的API如下
@@ -319,13 +345,14 @@ Page({
     this.getNextQuestion(true)
   },
   handleNext() {
+    // 翻阅做题历史时 点击“下一题”按钮 (可修改答案)
     if (questionNumber <= this.data.answered) {
-      // 翻阅做题历史时 点击“下一题”按钮 (可修改答案)
       console.log('——————————————————————————————————————')
       console.log('【翻阅做题历史时 点击“下一题”按钮】')
       if (chooseOption) chooseOptionList[questionNumber - 1].chooseOption = chooseOption
-    } else {
-      // 正常做题且无论跳过该题（chooseOption是否为undefined）时 点击“下一题”按钮
+    }
+    // 正常做题且无论跳过该题（chooseOption是否为undefined）时 点击“下一题”按钮
+    else {
       console.log('——————————————————————————————————————')
       console.log('【正常做题且无论跳过该题】')
       chooseOptionList.push({
@@ -344,8 +371,11 @@ Page({
         '题号 ' + questionNumber
       )
     }
+    // 已经答完全部题目时
     if (questionNumber == examQuestionsSum) {
-      // 已经答完全部题目
+      this.setData({
+        answered: examQuestionsSum
+      })
       this.handleOpenDialog()
       return
     }

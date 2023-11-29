@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "t-message": "tdesign-miniprogram/message/message"
+    "t-message": "tdesign-miniprogram/message/message",
+    "t-image-viewer": "tdesign-miniprogram/image-viewer/image-viewer",
+    "van-overlay": "@vant/weapp/overlay/index"
   },
   "navigationBarTitleText": "所获证书"
 }

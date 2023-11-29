@@ -1,20 +1,17 @@
 <!--pages/message/message_detail/index.wxml-->
 <view class="box">
-
   <view class="title_box">
-      <image src="{{typeIconURL}}" mode="aspectFit" />
-      <view class="title_text">
-        {{ messageClassify }}
-      </view>
-      <view class="title_time">
-        {{ time }}
-      </view>
+    <image
+      src="{{messageClassify == 'tip' ? 'cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/消息通知icon/system_icon.svg' : 'cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/消息通知icon/tip_icon.svg'}}"
+      mode="aspectFit"
+    />
+    <view class="title_text"> {{ messageClassify == 'tip' ? '实验室通知' : '系统消息' }}</view>
+    <view class="title_time"> {{ time }} </view>
   </view>
 
   <view class="content_box">
     <!-- 将来管理员端限制题目字数（10以内） -->
-    <text class="title" max-lines="{{ 1 }}">【{{title}}】</text>
+    <text class="title" max-lines="{{ 1 }}">{{title}}</text>
     <text class="content">{{content}}</text>
   </view>
-
 </view>

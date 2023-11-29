@@ -1,5 +1,5 @@
 // pages/home/regulation-detail/index.js
-import { regulationsTxt } from './table'
+import { articleURL } from './table'
 let regualtionIndex = undefined
 Page({
   /**
@@ -7,7 +7,8 @@ Page({
    */
   data: {
     regulationTitle: '',
-    regualtionsParas: []
+    regualtionsParas: [],
+    articleURL: ''
   },
   /**
    * 生命周期函数--监听页面加载
@@ -15,15 +16,13 @@ Page({
   onLoad(options) {
     regualtionIndex = Number(options.index) // "0/1/2/3..."
     this.setData({
-      regulationTitle: regulationsTxt[regualtionIndex].title,
-      regualtionsParas: [
-        regulationsTxt[regualtionIndex].para1,
-        regulationsTxt[regualtionIndex].para2
-      ]
+      articleURL: articleURL[regualtionIndex]
+      // regulationTitle: regulationsTxt[regualtionIndex].title,
+      // regualtionsParas: regulationsTxt[regualtionIndex].paras
     })
   },
   /**
-   * 生命周期函数--监听页面卸载
+   * @desc 监听页面卸载 记录 规则制度学习进度
    */
   async onUnload() {
     let app = getApp()

@@ -2,7 +2,7 @@
 <view class="func_box">
   <t-count-down
     content="default"
-    time="{{ 600 *1000 }}"
+    time="{{ 300 *1000 }}"
     theme="square"
     size="large"
     bind:finish="handleTimeEndSubmit"

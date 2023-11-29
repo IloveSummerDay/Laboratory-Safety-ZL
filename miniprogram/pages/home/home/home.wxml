@@ -1,8 +1,7 @@
 <!-- pages/home/home/home.wxml -->
-<!-- <view class="search">
-  <image src="http://114.55.238.17:81/LabSafe/icons/home/search.png" />
-  <cover-view class="search_text">搜索安全知识</cover-view>
-</view> -->
+
+<!-- 关注公众号 -->
+<official-account></official-account>
 
 <!-- 跳转到扫描拍照页面 -->
 <view class="home_center">

@@ -1,1 +1,53 @@
 /* pages/study-aid/study-notes/index.wxss */
+page {
+  position: relative;
+}
+.func_box {
+  height: 100rpx;
+  position: relative;
+  padding: 20rpx 40rpx 20rpx 40rpx;
+}
+.edit_icon {
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 40rpx;
+  right: 40rpx;
+}
+.noNotes {
+  width: 300rpx;
+  height: 300rpx;
+  margin: 0 auto;
+  display: block;
+  margin-top: 200rpx;
+}
+.note_box {
+  padding: 40rpx;
+}
+.note_item {
+  margin-bottom: 40rpx;
+  padding-bottom: 40rpx;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  align-items: center;
+  font-size: 40rpx;
+}
+.order {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-right: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #2b5f8e;
+}
+.note_title {
+  max-width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

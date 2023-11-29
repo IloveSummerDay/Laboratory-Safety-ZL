@@ -1,5 +1,6 @@
 /**app.wxss**/
 page {
+  --theme-color: #2b5f8e;
   font-family: '黑体 normal';
 }
 .shadow {

@@ -1,12 +1,4 @@
 <!--pages/home/scan/scan.wxml-->
-<t-dialog
-  visible="{{showLoginDialog}}"
-  title="未登录"
-  content="由于您未登录，目前无法使用此功能"
-  confirm-btn="{{ { content: '去登录', variant: 'base' } }}"
-  bind:confirm="toLogin"
-/>
-
 <view id="aperture">
   <camera
     device-position="{{cameraSide}}"
@@ -15,13 +7,7 @@
     style="height: 100%; width: 100%"
   ></camera>
   <!-- <canvas id="canvas" type="2d" style="width:{{canvasWidth}}px;height:{{canvasHeight}}px;"></canvas> -->
-  <image
-    wx:if="{{tempPicVisible}}"
-    src="{{tempPicPath}}"
-    mode="aspectFill"
-    id="tempPic"
-    bindtap="hideModal"
-  ></image>
+  <image wx:if="{{tempPicVisible}}" src="{{tempPicPath}}" mode="aspectFill" id="tempPic"></image>
 </view>
 
 <view id="operation">
@@ -31,7 +17,7 @@
       src="cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/随手拍icon/album.svg"
       mode="widthFix"
       id="album"
-      bindtap="toAlbum"
+      bindtap="fromAlbum"
     ></image>
     <div id="capture" bindtap="takePhoto"></div>
     <image
@@ -56,6 +42,18 @@
   <view id="showcase">
     <text id="obj-name">{{objName}}</text>
     <image id="placeholder" src="{{ objPic }}"></image>
-    <div class="button" id="entry" bindtap="toStudy">{{btnTitle}}</div>
+    <view class="button_box">
+      <view class="button" id="entry_btn" bindtap="hideModal">{{cancelBtn}}</view>
+      <view class="button" id="cancel_btn" bindtap="toStudy">{{entryBtn}}</view>
+    </view>
   </view>
 </view>
+
+<!-- 未登录对话框 -->
+<t-dialog
+  visible="{{showLoginDialog}}"
+  title="未登录"
+  content="由于您未登录，目前无法使用此功能"
+  confirm-btn="{{ { content: '去登录', variant: 'base' } }}"
+  bind:confirm="toLogin"
+/>

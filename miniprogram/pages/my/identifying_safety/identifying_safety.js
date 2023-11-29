@@ -31,7 +31,7 @@ Page({
     })
     if (res.code == 200) {
       wx.showToast({
-        title: '已完成'
+        title: '安全标识已学习'
       })
       app.globalData.safeSign = true
       console.log('【完成安全标识学习回调】', res)

@@ -1,5 +1,7 @@
 <!--pages/home/regulation-detail/index.wxml-->
-<view class="main_title"> {{regulationTitle}} </view>
+<!-- <view class="main_title"> {{regulationTitle}} </view>
 <block wx:for="{{regualtionsParas}}" wx:key="index">
   <text class="para">{{item + '\n'}}</text>
 </block>
+<view class="bottom" style="height: 100rpx"> </view> -->
+<web-view src="{{articleURL}}"> </web-view>

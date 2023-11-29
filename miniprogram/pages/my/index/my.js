@@ -29,7 +29,7 @@ Page({
     app = getApp()
     this.setData({
       isLogin: app.globalData.isLogin,
-      nickName: app.globalData.nickName ? app.globalData.nickName : '点击添加昵称'
+      nickName: app.globalData.nickName ? app.globalData.nickName : ''
     })
   },
 

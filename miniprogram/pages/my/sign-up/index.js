@@ -70,19 +70,16 @@ Page({
     }
     console.log(res)
     if (res.code == 200) {
-      let timer = setTimeout(() => {
-        wx.hideLoading()
-        wx.showModal({
-          title: '注册成功',
-          content: '请返回至登录页进行登录',
-          complete: res => {
-            if (res.confirm) {
-              wx.navigateBack()
-            }
+      wx.hideLoading()
+      wx.showModal({
+        title: '注册成功',
+        content: '请返回至登录页进行登录',
+        complete: res => {
+          if (res.confirm) {
+            wx.navigateBack()
           }
-        })
-        clearTimeout(timer)
-      }, 2000)
+        }
+      })
     } else {
       wx.hideLoading()
       wx.showModal({

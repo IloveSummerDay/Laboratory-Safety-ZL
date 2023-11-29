@@ -3,6 +3,7 @@
   background-color: white;
   padding: 20rpx;
   border-bottom: 1px solid #ccc;
+  position: relative;
 }
 
 .title {
@@ -14,4 +15,15 @@
 .start_time,
 .end_time {
   color: rgb(196, 196, 196);
+}
+.complete_title {
+  color: rgb(52, 182, 84);
+}
+.complete_icon {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  right: 20rpx;
+  bottom: 20rpx;
+  transform: rotateZ(10deg);
 }
