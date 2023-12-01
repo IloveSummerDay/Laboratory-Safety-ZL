@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@vant/weapp": "^1.11.1",
-    "tdesign-miniprogram": "^1.2.3"
+    "tdesign-miniprogram": "^1.2.3",
+    "three-platformize": "^1.133.3",
+    "threejs-miniprogram": "^0.0.8"
   }
 }

@@ -62,11 +62,18 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "灭火器详细操作页",
+          "pathName": "pages/studytask/c_show_video/show_video",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
   },
   "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
   "projectname": "Laboratory-Safety-ZL",
-  "libVersion": "3.1.5"
+  "libVersion": "3.2.2"
 }

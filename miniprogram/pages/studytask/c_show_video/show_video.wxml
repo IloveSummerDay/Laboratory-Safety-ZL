@@ -1,23 +1,47 @@
 <!-- 灭火器演示视频页pages/studytask/c_show_video/show_video.wxml -->
 <view class="home">
   <view class="showcase">
-    <canvas type="webgl" id="canvas" style="width: 100%; height: 100%;" bindtouchstart="touchEventHandler" bindtouchmove="touchEventHandler" bindtouchend="touchEventHandler"></canvas>
+    <canvas
+      type="webgl"
+      id="canvas"
+      style="width: 100%; height: 100%"
+      bindtouchstart="touchEventHandler"
+      bindtouchmove="touchEventHandler"
+      bindtouchend="touchEventHandler"
+      binderror="logError"
+    ></canvas>
   </view>
+
   <view class="operations" wx:if="{{ !isDownloading }}">
-    <div class="op {{state === index ? 'active' : ''}}" wx:for="{{use}}" wx:key="index" bindtap="selectStep" data-key="{{index}}">{{item.use_name}}</div>
+    <div
+      wx:for="{{use}}"
+      wx:key="index"
+      class="op {{state === index ? 'active' : ''}}"
+      bindtap="selectStep"
+      data-key="{{index}}"
+    >
+      {{item.use_name}}
+    </div>
   </view>
-  <navigator wx:if="{{ !isDownloading }}" url="../b_knowledge_introduce/knowledge_introduce.wxml" style="animation: fade-in .5s ease;">
+
+  <navigator
+    class="bottom_button_box"
+    wx:if="{{ !isDownloading }}"
+    url="../b_knowledge_introduce/knowledge_introduce.wxml"
+    style="animation: fade-in 0.5s ease"
+  >
     <cover-view class="bottom_button">安全要点</cover-view>
   </navigator>
-  <!-- <cover-view 
-  class="ti" 
-  bind:touchstart="bingTi_taiqi" 
-  bind:touchend="bindTi_anxia"
-  style="color: {{activeColor}}; background-color: {{activeBgColor}};"
-  >提</cover-view>
-  <cover-view class="huang">晃</cover-view>
-  <cover-view class="ba" bindtap="bingBa">拔</cover-view>
-  <cover-view class="dui" bindtap="bingDui">对</cover-view>
-  <cover-view class="pen" bindtap="bingPen">喷</cover-view> -->
 </view>
-<progress id="prg" wx:if="{{ isDownloading && dlPer !== -1 }}" percent="{{ dlPer }}" show-info stroke-width="5" color="rgb(51,92,165)"></progress>
+
+<view class="progress_box">
+  <progress
+    id="prg"
+    wx:if="{{ isDownloading && dlPer !== -1 }}"
+    percent="{{ dlPer }}"
+    active
+    show-info
+    stroke-width="10"
+    color="rgb(51,92,165)"
+  ></progress>
+</view>

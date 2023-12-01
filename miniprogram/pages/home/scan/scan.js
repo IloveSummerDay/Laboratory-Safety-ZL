@@ -124,7 +124,7 @@ Page({
         this.setData({ tempPicVisible: true, tempPicPath })
         this.detectObjectAPI(this.toBase64())
       },
-      fail: () => {
+      fail: err => {
         wx.showToast({
           icon: 'error',
           title: '请重新选择照片'
@@ -194,16 +194,16 @@ Page({
    */
   onLoad: function (options) {
     let app = getApp()
-    if (!app.globalData.isLogin) {
-      this.setData({
-        showLoginDialog: true
-      })
-    } else {
-      wx.authorize({
-        scope: 'scope.camera'
-      })
-      cameraCtx = wx.createCameraContext()
-    }
+    // if (!app.globalData.isLogin) {
+    //   this.setData({
+    //     showLoginDialog: true
+    //   })
+    // } else {
+    //   wx.authorize({
+    //     scope: 'scope.camera'
+    //   })
+    //   cameraCtx = wx.createCameraContext()
+    // }
   },
   toLogin() {
     console.log('【跳转到个人中心去登录】')

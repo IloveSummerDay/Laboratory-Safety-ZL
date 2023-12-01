@@ -1,101 +1,55 @@
 /* pages/studytask/d_drypowderfire_extinguisher/drypowderfire_extinguishe.wxss */
 /* 直接设置页面背景 */
-page{
-  background:#f8f8f8;
+page {
+  background: #f8f8f8;
 }
-.drypowder_text{
-	text-align:center; 
-	color: rgba(80, 80, 80, 1);
-	font-size: 29rpx;
+.drypowder_text {
+  text-align: center;
+  color: rgba(80, 80, 80, 1);
+  font-size: 29rpx;
 }
-.drypowder_top{
+.drypowder_top {
   width: 704rpx;
   background-color: white;
   /* height: 534rpx; */
-	border-radius: 9rpx;
+  border-radius: 9rpx;
   margin-left: 25rpx;
   margin-top: 20rpx;
   box-shadow: 0rpx 12rpx 12rpx 0rpx rgba(0, 0, 0, 0.03);
 }
-.drypowder_top image{
+.drypowder_top image {
   width: 523rpx;
   height: 571rpx;
   margin-left: 90rpx;
   margin-top: 39rpx;
 }
 /* 灭火器使用方法 */
-.bottom1_bold,.bottom1_titletwo{
-  position: absolute;
-  left: 20rpx;
-  top: 706rpx;
-	color: rgba(17, 17, 17, 1);
-	font-size: 28rpx;
-	font-weight: bold;
+.drypowder_bottom {
+  padding: 20rpx 40rpx 0 40rpx;
 }
-.bottom1_titleone,.bottom1_one,.bottom1_two,.bottom1_three,.bottom1_four,.bottom1_five,.bottom1_titletwo,.bottom1_six,.bottom1_seven,.bottom1_eight,.bottom1_nine{
-  position: absolute;
-	color: rgba(17, 17, 17, 1);
-	font-size: 28rpx;
+.bold {
+  font-weight: bold;
 }
-.bottom1_titleone{
-  left: 162rpx;
-	top: 706rpx;
-}
-.bottom1_one{
-	left: 162rpx;
-	top: 747rpx;
-}
-.bottom1_two{
-  left: 20rpx;
-	top: 788rpx;
-}
-.bottom1_three{
-  left: 114rpx;
-	top: 829rpx;
-}
-.bottom1_four{
-  left: 114rpx;
-	top: 870rpx;
-}
-.bottom1_five{
-  left: 95rpx;
-	top: 911rpx;
-}
-.bottom1_titletwo{
-  left: 20rpx;
-	top: 1050rpx;
-}
-.bottom1_six{
-  left: 114rpx;
-  top: 952rpx;
-}
-.bottom1_seven{
-  left: 114rpx;
-  top: 993rpx;
-}
-.bottom1_eight{
-  left: 147rpx;
-  top: 1091rpx;
+.text_indent {
+  text-indent: 2em;
 }
 /* 按钮 */
-.drypowder_back,.drypowder_detail{
-    position: absolute;
-    height: 58rpx;
-    top: 1155rpx;
-    color: rgba(255, 255, 255, 1);
-    background-color: rgba(44, 80, 145, 1);
-    border-radius: 9rpx;
-    font-size: 28rpx;
-    line-height: 225%;
-    box-shadow: 0rpx 12rpx 12rpx 0rpx rgba(0, 0, 0, 0.03);
-    text-align: center;
-
+.drypowder_btn {
+  height: 160rpx;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.drypowder_back{
-  width: 105rpx;
-  left: 14rpx;
-}
-.drypowder_detail{
-  width: 146rpx;
-  left: 585rpx; 
+.drypowder_back,
+.drypowder_detail {
+  height: 80rpx;
+  width: 300rpx;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(44, 80, 145, 1);
+  border-radius: 9rpx;
+  font-size: 28rpx;
+  box-shadow: 0rpx 12rpx 12rpx 0rpx rgba(0, 0, 0, 0.03);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

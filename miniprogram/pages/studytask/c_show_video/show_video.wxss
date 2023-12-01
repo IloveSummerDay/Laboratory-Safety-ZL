@@ -1,59 +1,24 @@
 /* pages/studytask/c_show_video/show_video.wxss */
-page{
-  background:#f8f8f8;
+page {
+  background: #f8f8f8;
 }
-.home{
+.home {
   position: relative;
 }
-.showcase{
-  position: relative;
-  width: 704rpx;
-	height: 950rpx;
-	left: 24rpx;
+.showcase {
+  padding: 0 40rpx 0 40rpx;
+  height: 750rpx;
 }
-/* .ti,.ba,.huang,.dui,.pen{
-  position: absolute;
-  width: 188rpx;
-	height: 84rpx;
-	color: rgba(80, 80, 80, 1);
-	background-color: rgba(255, 255, 255, 1);
-	border-radius: 9rpx;
-	font-size: 28rpx;
-	line-height: 310%;
-	box-shadow: 0rpx 5rpx 5rpx 0rpx rgba(96, 157, 243, 0.09285714285714292);
-	text-align: center;
-	font-weight: bold;
-}
-.ti{
-  left: 24rpx;
-	top: 997rpx;
-}
-.huang{
-  left: 282rpx;
-	top: 997rpx;
-}
-.ba{
-  left: 538rpx;
-  top: 997rpx;
-}
-.dui{
-  left: 24rpx;
-  top: 1129rpx;
-}
-.pen{
-  left: 282rpx;
-	top: 1129rpx;
-} */
-/*  */
-/*  */
+
 .operations {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
+  align-items: center;
   flex-wrap: wrap;
   padding-left: 20px;
   padding-right: 20px;
   margin-top: 20px;
-  animation: fade-in .5s ease;
+  animation: fade-in 0.5s ease;
 }
 
 .op {
@@ -64,7 +29,7 @@ page{
   border-radius: 6px;
   margin-right: 10px;
   margin-bottom: 20px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   font-weight: bold;
 }
 
@@ -73,29 +38,36 @@ page{
   border-color: rgb(44, 80, 145);
 }
 
-.bottom_button{
-  position: absolute;
-  width: 188rpx;
-	height: 70rpx;
-	left: 538rpx;
-	top: 1232rpx;
-	color: rgba(255, 255, 255, 1);
-	background-color: rgb(44, 80, 145);
-	border-radius: 9rpx;
-	font-size: 28rpx;
-	line-height: 250%;
-	box-shadow: 0rpx 12rpx 12rpx 0rpx rgba(96, 157, 243, 0.09);
-	text-align: center;
-	font-weight: bold;
+.bottom_button_box {
+  height: 140rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.bottom_button {
+  width: 600rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgb(44, 80, 145);
+  border-radius: 9rpx;
+  font-size: 30rpx;
+  box-shadow: 0rpx 12rpx 12rpx 0rpx rgba(96, 157, 243, 0.09);
+  text-align: center;
+  font-weight: bold;
+}
+.progress_box {
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #prg {
-  margin-top: 20px;
-  animation: fade-in .5s ease;
-  width: 85%;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 90%;
+  animation: fade-in 0.5s ease;
 }
 
 @keyframes fade-in {
