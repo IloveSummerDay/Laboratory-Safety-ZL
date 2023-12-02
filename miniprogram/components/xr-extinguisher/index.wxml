@@ -1,5 +1,38 @@
 <!--components/xr-extinguisher/index.wxml-->
 <xr-scene>
-  <xr-mesh node-id="cube" geometry="cube" />
-  <xr-camera clear-color="0.4 0.8 0.6 1" position="0 1 4" target="cube" camera-orbit-control />
+  <xr-assets>
+    <xr-asset-load
+      type="gltf"
+      asset-id="extinguisher_model_id"
+      src="https://7072-prod-2gchtexr0201dccd-1314621544.tcb.qcloud.la/AR-model/extinguisher.glb?sign=bcb1ca934a1c1408185ab410a523f06d&t=1701525551"
+    />
+    <xr-asset-load
+      type="gltf"
+      asset-id="miku"
+      src="https://mmbizwxaminiprogram-1258344707.cos.ap-guangzhou.myqcloud.com/xr-frame/demo/miku.glb"
+    />
+  </xr-assets>
+  <xr-gltf
+    model="miku"
+    position="-0.15 0 0"
+    scale="0.07 0.07 0.07"
+    rotation="0 180 0"
+    anim-autoplay
+  />
+  <xr-gltf
+    node-id="extinguisher_model_id"
+    model="extinguisher_model_id"
+    anim-autoplay
+    scale="0.07 0.07 0.07"
+  />
+  <xr-env env-data="xr-frame-team-workspace-day" sky-map="video-office" />
+  <xr-light type="ambient" color="1 1 1" intensity="1" />
+  <xr-light type="directional" rotation="40 70 0" color="1 1 1" intensity="3" cast-shadow />
+  <xr-camera
+    position="0 1.5 4"
+    target="extinguisher_model_id"
+    background="skybox"
+    clear-color="0.4 0.8 0.9 1"
+    camera-orbit-control
+  />
 </xr-scene>

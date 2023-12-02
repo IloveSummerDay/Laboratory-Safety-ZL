@@ -16,7 +16,7 @@ Page({
     showModal: false,
     modalDom: null,
     modalTransition: null,
-    tempPicPath: undefined
+    tempPicPath: ''
   },
   takePhoto() {
     // 1、调用Camera拍照
@@ -102,7 +102,7 @@ Page({
       })
       this.setData({
         tempPicVisible: false,
-        tempPicPath: undefined
+        tempPicPath: ''
       })
     }
   },
@@ -194,16 +194,16 @@ Page({
    */
   onLoad: function (options) {
     let app = getApp()
-    // if (!app.globalData.isLogin) {
-    //   this.setData({
-    //     showLoginDialog: true
-    //   })
-    // } else {
-    //   wx.authorize({
-    //     scope: 'scope.camera'
-    //   })
-    //   cameraCtx = wx.createCameraContext()
-    // }
+    if (!app.globalData.isLogin) {
+      this.setData({
+        showLoginDialog: true
+      })
+    } else {
+      wx.authorize({
+        scope: 'scope.camera'
+      })
+      cameraCtx = wx.createCameraContext()
+    }
   },
   toLogin() {
     console.log('【跳转到个人中心去登录】')
@@ -222,7 +222,7 @@ Page({
           complete: res => {
             this.setData({
               tempPicVisible: false,
-              tempPicPath: undefined
+              tempPicPath: ''
             })
           }
         })
@@ -235,7 +235,7 @@ Page({
           complete: res => {
             this.setData({
               tempPicVisible: false,
-              tempPicPath: undefined
+              tempPicPath: ''
             })
           }
         })
@@ -248,7 +248,7 @@ Page({
           complete: res => {
             this.setData({
               tempPicVisible: false,
-              tempPicPath: undefined
+              tempPicPath: ''
             })
           }
         })
@@ -261,7 +261,7 @@ Page({
           complete: res => {
             this.setData({
               tempPicVisible: false,
-              tempPicPath: undefined
+              tempPicPath: ''
             })
           }
         })

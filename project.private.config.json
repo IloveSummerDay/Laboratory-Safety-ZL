@@ -8,6 +8,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "",
+          "pathName": "pages/studytask/extinguisher_3d_study/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "首页 - 安全手册学习视频页",
           "pathName": "pages/home/class-table/index",
           "query": "className=电气安全&classIndex=0",

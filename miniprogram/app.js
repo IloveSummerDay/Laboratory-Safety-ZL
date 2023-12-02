@@ -1,5 +1,6 @@
 // app.js\
 'use strict'
+
 App({
   async onLaunch() {
     // 使用callContainer前一定要init一下，全局执行一次即可
@@ -11,40 +12,28 @@ App({
         traceUser: true
       })
     }
-    // 加载全局字体临时路径
-    wx.cloud.getTempFileURL({
-      fileList: [
-        'cloud://cloud1-9gesq8mi1d4ae3de.636c-cloud1-9gesq8mi1d4ae3de-1314621544/字体woff2/黑体 regular.woff'
-      ],
-      success: res => {
-        let url = res.fileList[0].tempFileURL
-        wx.loadFontFace({
-          global: true,
-          family: '黑体 normal', // 自定义字体名
-          source: 'url("' + url + '")',
-          desc: {
-            style: 'normal',
-            weight: 'normal',
-            variant: 'normal'
-          }
-        })
-      },
-      fail: console.error
-    })
-    // 展示本地存储能力
-    // const logs = wx.getStorageSync('logs') || []
-    // logs.unshift(Date.now())
-    // wx.setStorageSync('logs', logs)
-    // wx.getSetting({
-    //   withSubscriptions: true,
-    //   success(res) {
-    //     if (!res.authSetting['scope.userInfo']) {
-    //       wx.authorize({
-    //         scope: 'scope.userInfo'
-    //       })
-    //     }
-    //   }
-    // })
+    try {
+      // 加载全局字体临时路径
+      wx.loadFontFace({
+        global: true,
+        family: '黑体 normal', // 自定义字体名
+        source:
+          'url("https://7072-prod-2gchtexr0201dccd-1314621544.tcb.qcloud.la/%E9%BB%91%E4%BD%93%20regular.woff?sign=e2fe6725f331f4cc0a456db40be57573&t=1701531538")',
+        desc: {
+          style: 'normal',
+          weight: 'normal',
+          variant: 'normal'
+        },
+        success: res => {
+          console.log('【全局字体加载成功】', res.status)
+        },
+        fail: () => {
+          console.log('【全局字体加载失败】')
+        }
+      })
+    } catch (error) {
+      console.log('【全局字体加载出现一些小错误...】')
+    }
   },
   globalData: {
     id: '',
@@ -97,7 +86,7 @@ App({
           // 其他header参数
           ...obj.header
         },
-        data: obj.data,
+        data: obj.data
         // 其余参数同 wx.request
       })
       console.log(`微信云托管调用结果${result.errMsg} | callid:${result.callID}`)

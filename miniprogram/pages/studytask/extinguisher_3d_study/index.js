@@ -1,4 +1,3 @@
-import { ThreeInstance } from '../../../threejs/index'
 Page({
   /**
    * 页面的初始数据
@@ -26,14 +25,15 @@ Page({
     platform: null,
     disposing: false,
     animationMixer: null,
-    three: null
+    three: null,
+    width: 300,
+    height: 300,
+    renderWidth: 300,
+    renderHeight: 300
   },
   logError(e) {
     console.log(e)
   },
-  /**
-   * @desc
-   */
   onLoad: function () {
     const _this = this
     let model // string 模型存储路径
@@ -43,6 +43,8 @@ Page({
     try {
       model = wx.getStorageSync('mesh_extinguisher')
       console.log('【本地存储getStorageSync得到的模型路径】', model)
+
+      _this.downlaodRes()
 
       if (!model) {
         console.log('【模型还没有本地存储】', model)
@@ -187,6 +189,9 @@ Page({
           const canvas = res[0].node
           // const gl = canvas.getContext('webgl')
           console.log('2、【初始化场景并渲染】', res, canvas)
+          //
+          // const THREE = createScopedThreejs(canvas)
+          //
           const three = new ThreeInstance(canvas)
           const sceneConfig = {
             cameraFov: 1.2,

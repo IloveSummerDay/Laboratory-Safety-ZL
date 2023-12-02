@@ -1,15 +1,15 @@
-<!-- 灭火器演示视频页pages/studytask/c_show_video/show_video.wxml -->
+<!--pages/studytask/extinguisher_3d_study/index.wxml-->
 <view class="home">
   <view class="showcase">
-    <canvas
-      type="webgl2"
+    <!-- <canvas
+      type="webgl"
       id="canvas"
       style="width: 100%; height: 100%"
       bindtouchstart="touchEventHandler"
       bindtouchmove="touchEventHandler"
       bindtouchend="touchEventHandler"
       binderror="logError"
-    ></canvas>
+    ></canvas> -->
   </view>
 
   <view class="operations" wx:if="{{ !isDownloading }}">

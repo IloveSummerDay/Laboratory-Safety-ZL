@@ -36,7 +36,8 @@
     "pages/my/sign-up/index",
     "pages/my/personal-data/index",
     "pages/exam-modules/initial-entry/index",
-    "pages/study-aid/study-notes-detail/index"
+    "pages/study-aid/study-notes-detail/index",
+    "pages/studytask/extinguisher_3d_study/index"
   ],
   "networkTimeout": {
     "request": 60000,
@@ -83,5 +84,6 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
 }

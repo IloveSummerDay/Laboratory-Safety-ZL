@@ -1,7 +1,7 @@
 import * as THREE from 'three-platformize'
-import { WechatPlatform } from 'three-platformize/src/WechatPlatform'
 import { OrbitControls } from 'three-platformize/examples/jsm/controls/OrbitControls'
 import { GLTF, GLTFLoader } from 'three-platformize/examples/jsm/loaders/GLTFLoader'
+import { WechatPlatform } from 'three-platformize/src/WechatPlatform'
 
 export { OrbitControls }
 
@@ -25,8 +25,6 @@ export class ThreeInstance {
    * @param Object
    */
   constructor(canvas: any) {
-    console.log('【ThreeInstance构造函数执行】')
-
     const platform = new WechatPlatform(canvas)
     platform.enableDeviceOrientation('normal')
     THREE.PLATFORM.set(platform)
@@ -110,24 +108,7 @@ export class ThreeInstance {
       },
       e => console.log(e)
     )
-    // loader.load(meshUrl, (res: GLTF) => {
-    //   console.log(res)
-    //   const mesh = res.scene
-    //   mesh.position.y -= meshOffsetY
-    //   if (cameraLookAt)
-    //     camera.lookAt(new THREE.Vector3(cameraLookAt[0], cameraLookAt[1], cameraLookAt[2]))
-    //   else camera.lookAt(mesh.position)
-    //   if (res.animations.length > 0) {
-    //     const mixer = new THREE.AnimationMixer((mesh as unknown) as THREE.Object3D)
-    //     this.animationMixer = mixer
-    //     const actions: any[] = []
-    //     for (let i = 0; i < res.animations.length; i++)
-    //       actions[i] = mixer.clipAction(res.animations[i])
-    //     this.actions = actions
-    //   }
-    //   if (onloadCallback) onloadCallback(res)
-    //   mainScene.add(mesh)
-    // })
+
     const control = new OrbitControls(camera, this.canvasNode)
     control.enableDamping = true
 
@@ -145,9 +126,7 @@ export class ThreeInstance {
       if (this.disposing) return
       const time = this.clock.getDelta()
       if (this.animationMixer) this.animationMixer.update(time)
-      // type FrameRequestCallback = (callback: FrameRequestCallback) => number
-      let myRender: FrameRequestCallback = this.render as FrameRequestCallback
-      THREE.$requestAnimationFrame(myRender)
+      // THREE.$requestAnimationFrame(this.render)
       control.update()
       renderer.render(this.mainScene, this.camera)
     }
@@ -158,10 +137,13 @@ export class ThreeInstance {
     wxCtx.onUnload = () => {
       this.platform.dispose()
     }
+
     this.render()
+
     return mainScene
   }
 }
+
 export interface Scene {
   cameraFov?: number
   cameraNear?: number
