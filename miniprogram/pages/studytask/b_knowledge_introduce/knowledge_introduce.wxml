@@ -39,6 +39,6 @@
   <cover-view class="bottom_nine">火器的物品，要确保通畅</cover-view>
 </view>
 
-<navigator open-type="navigate" url="../c_show_video/show_video" style="padding-bottom: 40rpx">
+<!-- <navigator open-type="navigate" url="../c_show_video/show_video" style="padding-bottom: 40rpx">
   <view class="knowintro_button">使用演示</view>
-</navigator>
+</navigator> -->

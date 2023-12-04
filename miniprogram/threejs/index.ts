@@ -14,7 +14,7 @@ export class ThreeInstance {
   public mainScene: any
   public defaultAmbientLight: any
   public defaultDirectLight: any
-  public render: Function
+  public render: () => void
   public animationMixer: any
   public clock: any
   public actions: any[]
@@ -126,7 +126,7 @@ export class ThreeInstance {
       if (this.disposing) return
       const time = this.clock.getDelta()
       if (this.animationMixer) this.animationMixer.update(time)
-      // THREE.$requestAnimationFrame(this.render)
+      THREE.$requestAnimationFrame(this.render)
       control.update()
       renderer.render(this.mainScene, this.camera)
     }

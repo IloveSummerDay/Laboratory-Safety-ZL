@@ -24,6 +24,6 @@
   </text>
 </view>
 
-<navigator open-type="navigate" url="../c_show_video/show_video" style="padding: 40rpx 0 40rpx 0">
+<!-- <navigator open-type="navigate" url="../c_show_video/show_video" style="padding: 40rpx 0 40rpx 0">
   <view class="carbon_detail">详细操作</view>
-</navigator>
+</navigator> -->

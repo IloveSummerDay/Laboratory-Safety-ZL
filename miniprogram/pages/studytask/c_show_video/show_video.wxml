@@ -2,7 +2,7 @@
 <view class="home">
   <view class="showcase">
     <canvas
-      type="webgl2"
+      type="webgl"
       id="canvas"
       style="width: 100%; height: 100%"
       bindtouchstart="touchEventHandler"

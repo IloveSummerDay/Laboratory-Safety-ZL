@@ -26,7 +26,7 @@ Page({
     platform: null,
     disposing: false,
     animationMixer: null,
-    three: null
+    three: undefined
   },
   logError(e) {
     console.log(e)
@@ -49,43 +49,17 @@ Page({
         _this.downlaodRes()
       } else {
         console.log('【模型已经本地存储了】', model)
+        // 根据本地临时路径，加载本地模型
         const fs = wx.getFileSystemManager()
         fs.getFileInfo({
           filePath: model,
           success: res => {
-            console.log('【获取该小程序下的 本地临时文件 或 本地缓存文件 信息】', res, res.digest)
-            const { digest } = res // 按照传入的 digestAlgorithm 计算得出的的文件摘要
-            wx.request({
-              url: 'https://www.logosw.top/LabSafe/model/extinguisher.md5.txt',
-              method: 'GET',
-              header: {
-                'Content-Type': 'text/plain'
-              },
-              success: res => {
-                if (res.statusCode === 200) {
-                  console.log('【请求模型文本extinguisher.md5.txt成功】', res)
-                  const { data } = res // 一长串html文本
-                  if (digest !== data) {
-                    console.log('【digest !== dat】')
-                    _this.downlaodRes()
-                  } else {
-                    console.log('【digest === dat】')
-                    // _this.initCanvas(model, () => {
-                    //   _this.setData({ isDownloading: false })
-                    //   wx.hideLoading()
-                    // })
-                  }
-                }
-              },
-              fail: err => {
-                wx.hideLoading()
-                console.log(err)
-              }
-            })
+            console.log('【获取该小程序下的 本地临时文件 或 本地缓存文件 信息】', res)
+            _this.downlaodRes()
           },
           fail: err => {
             wx.hideLoading()
-            console.log(err)
+            console.log('【加载本地已储存模型失败】', err)
           }
         })
       }
@@ -155,7 +129,7 @@ Page({
     // 监听下载进度（本地没有存储模型时）
     if (downloadTask) {
       downloadTask.onProgressUpdate(res => {
-        console.log('【模型加载进度】', res)
+        // console.log('【模型加载进度】', res)
         let progress = res.progress
         if (res.progress > 99) progress = 99
         _this.setData({ dlPer: progress })
@@ -165,20 +139,21 @@ Page({
   /**
    * @desc 选择灭火步骤进行 灭火器 动画演示
    */
-  selectStep: function (e) {
-    const key = e.currentTarget.dataset.key
-    const length = this.three.actions.length
-    this.setData({
-      state: key
-    })
-    for (let i = 0; i < length; i++) {
-      if (i !== key) this.three.actions[i].stop()
-    }
-    this.three.actions[key].play()
-  },
+  // selectStep: function (e) {
+  //   const key = e.currentTarget.dataset.key
+  //   const length = this.three.actions.length
+  //   this.setData({
+  //     state: key
+  //   })
+  //   for (let i = 0; i < length; i++) {
+  //     if (i !== key) this.three.actions[i].stop()
+  //   }
+  //   this.three.actions[key].play()
+  // },
 
   initCanvas(model, onloadCallback) {
-    console.log('1、【初始化场景并渲染】', model, onloadCallback)
+    console.log('1、【进入初始化场景并渲染函数】', model, onloadCallback)
+    let three = undefined
     try {
       wx.createSelectorQuery()
         .select('#canvas')
@@ -186,8 +161,8 @@ Page({
         .exec(res => {
           const canvas = res[0].node
           // const gl = canvas.getContext('webgl')
-          console.log('2、【初始化场景并渲染】', res, canvas)
-          const three = new ThreeInstance(canvas)
+          console.log('2、【开始初始化场景并渲染】', res, canvas)
+          three = new ThreeInstance(canvas)
           const sceneConfig = {
             cameraFov: 1.2,
             cameraNear: 0.1,
@@ -198,11 +173,13 @@ Page({
             onloadCallback: onloadCallback
           }
           console.log('3、【初始化场景并渲染 传入画布的DOM节点，生成THREE实例】', three)
-          console.log(three.init(sceneConfig, this))
-          console.log('4、【初始化场景并渲染，返回主场景对象】', three)
+          console.log('4、【初始化场景并渲染，返回主场景对象】', three.init(sceneConfig, this))
         })
     } catch (error) {
       console.log('【初始化场景错误】', error)
     }
+    this.setData({
+      three: three
+    })
   }
 })

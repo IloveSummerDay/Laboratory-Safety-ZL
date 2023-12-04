@@ -1,3 +1,7 @@
+// const url = 'https://lab-safe.logosw.top/detectProduct'
+// const url = 'http://122.51.114.193:1337/detectProduct'
+const url = 'https://lab-safe.hongyuanf.com/detectProduct'
+
 /**
  * @desc 请求后端接口，调用腾讯云图像AI识别物体
  * @param {string} ImageBase64
@@ -5,7 +9,7 @@
 const detectObject = ImageBase64 => {
   return new Promise((resolve, reject) => {
     wx.request({
-      url: 'https://lab-safe.logosw.top/detectProduct',
+      url: url,
       method: 'POST',
       data: { ImageBase64 },
       // timeout: 15000,

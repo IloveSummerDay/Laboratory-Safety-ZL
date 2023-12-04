@@ -5,6 +5,6 @@
     "three-platformize": "^1.133.3"
   },
   "devDependencies": {
-    "typescript": "^5.3.2"
+    "typescript": "*"
   }
 }

@@ -19,11 +19,11 @@
   <text class=""> 1、检查灭火器是否在正常的压力范围！ 2、ABC灭火器BC灭火器两者灭火剂不可混合 </text>
 </view>
 
-<view class="drypowder_btn">
+<!-- <view class="drypowder_btn">
   <navigator open-type="navigateBack">
     <view class="drypowder_back">返回</view>
   </navigator>
   <navigator open-type="navigate" url="../c_show_video/show_video">
     <view class="drypowder_detail">详细操作</view>
   </navigator>
-</view>
+</view> -->
